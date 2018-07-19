@@ -559,7 +559,9 @@
 <li>九、<a href="">脚本组件</a></li>
 <li>十、<a href="">对接大数据平台</a></li>
 <li>十一、<a href="">使用Windows计划任务定时执行Kettle作业</a></li>
-<li>十二、<a href="">使用Java执行Kettle作业</a><h3 id="本章说明"><a href="#本章说明" class="headerlink" title="本章说明"></a>本章说明</h3></li>
+<li>十二、<a href="">使用Java执行Kettle作业</a>    </li>
+</ul>
+<h3 id="本章说明"><a href="#本章说明" class="headerlink" title="本章说明"></a>本章说明</h3><ul>
 <li>本篇内容为第一章：运行环境配置。</li>
 <li>本章内容基于Windows平台，可能不适用于Linux下的环境配置。</li>
 <li>本章所有操作都是重启Kettle后生效。<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3>Kettle 8.1要求jdk版本1.8以上，Windows下jdk环境的配置这里就不赘述了。只说一下其中一种可能的情况：系统已配置jdk环境，但不是jdk1.8，又不想升级已配置的jdk环境，即需要<strong>单独为Kettle配置jdk1.8环境</strong>。<br>操作如下：首先安装jdk1.8，不用修改系统环境变量。然后进入 <code>data-integration</code>目录找到<code>Spoon.bat</code>文件，右键使用<strong>除了记事本以外的文本编辑器</strong>打开（比如 VS Code、EditPlus、Notepad ++），在”<code>cd /D %~dp0</code>“下面添加一行（路径指向jdk1.8的目录，可以使用相对路径）：”<code>set JAVA_HOME=/path/to/jdk1.8</code>“即可。如图所示:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/xkOTRakGtwyB.png" alt="img"><h3 id="JVM参数"><a href="#JVM参数" class="headerlink" title="JVM参数"></a>JVM参数</h3>Kettle 8.1默认使用的最大jvm堆内存是2G，执行某些复杂作业可能会出现堆内存溢出错误（<code>OutOfMemoryError</code>），此时就需要调正Kettle的jvm参数。<br>依旧是<code>data-integration</code>目录下的<code>Spoon.bat</code>文件，找到<pre><code class="bat">if &quot;%PENTAHO_DI_JAVA_OPTIONS%&quot;==&quot;&quot; set PENTAHO_DI_JAVA_OPTIONS=&quot;-Xms1024m&quot; &quot;-Xmx2048m&quot; &quot;-XX:MaxPermSize=256m&quot;
