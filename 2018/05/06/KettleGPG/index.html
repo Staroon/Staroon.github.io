@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            Gpg4win&amp;Kettle文件加密、解密组件的使用 | 
+        
+        山小杰的博客
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#3F51B5">
+    <meta name="author" content="山小杰">
+    <meta name="description" itemprop="description" content="大数据相关技术分享">
+    <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,Kettle,GPG,ETL,文件加密">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/blog-logo.png">
+    <link rel="icon" sizes="192x192" href="/img/blog-logo.png">
+    <link rel="apple-touch-icon" href="/img/blog-logo.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="山小杰的博客">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="lEnDItNWAfbVs3VjiepIG9BYjdbFaNPtoy_c0TiEc7M" />
+    <meta name="baidu-site-verification" content="J0WOdIteAT" />
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night.min.css?QlnGZk/a4+d8XbwtXBDPiA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #3F51B5;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #3F51B5 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #3F51B5 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #3F51B5 !important;
+  }
+
+  .toTop {
+    background: #3F51B5 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #3F51B5;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #3F51B5;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #3F51B5;
+  }
+
+  .post-toc a:hover {
+    color: #3F51B5;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #E8EAF6;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://staroon.pro">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Gpg4win&amp;Kettle文件加密、解密组件的使用 | 山小杰的博客">
+    <meta property="og:image" content="https://staroon.pro/img/blog-logo.png" />
+    <meta property="og:description" content="大数据相关技术分享">
+    <meta property="og:article:tag" content="Kettle"> <meta property="og:article:tag" content="GPG"> <meta property="og:article:tag" content="ETL"> <meta property="og:article:tag" content="文件加密"> 
+
+    
+        <meta property="article:published_time" content="Sun May 06 2018 15:00:00 GMT+0800" />
+        <meta property="article:modified_time" content="Mon May 07 2018 16:24:00 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Gpg4win&amp;Kettle文件加密、解密组件的使用 | 山小杰的博客">
+    <meta name="twitter:description" content="大数据相关技术分享">
+    <meta name="twitter:image" content="https://staroon.pro/img/blog-logo.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://staroon.pro" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://staroon.pro/2018/05/06/KettleGPG/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://staroon.pro/2018/05/06/KettleGPG/index.html",
+    "headline": "Gpg4win&Kettle文件加密、解密组件的使用",
+    "datePublished": "Sun May 06 2018 15:00:00 GMT+0800",
+    "dateModified": "Mon May 07 2018 16:24:00 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "山小杰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar-ssj.png"
+        },
+        "description": "心之所向，身之所往"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "山小杰的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/blog-logo.png"
+        }
+    },
+    "keywords": ",Kettle,GPG,ETL,文件加密大数据,Hadoop,ETL,CDH,Linux",
+    "description": "大数据相关技术分享",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?1ce550edc9875a89e860c4510e1ec799';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GPG加密软件的使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">GPG加密软件的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在Windows下安装GPG加密软件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">在Windows下安装GPG加密软件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#密钥的导入与导出"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">密钥的导入与导出</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除私钥保护密码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">删除私钥保护密码</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Kettle文件加密组件的使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">Kettle文件加密组件的使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Kettle文件解密组件的使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">Kettle文件解密组件的使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用Kettle进行文件加密、解密注意事项"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用Kettle进行文件加密、解密注意事项</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Gpg4win&Kettle文件加密、解密组件的使用
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>山小杰</strong>
+        <span>5月 06, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aUU5EIQwF0Nn/pnUBKnPbPhDN4cuYF+AwCTRtXx//erzw8PDw8PDw8PAu473i8dP3X///0/zrdb/ZaHFveHh4eCd5b67agLfGJEezXjfZGx4eHt55XrJ87xLPD26yNzw8PLw7eWvMetPrEDyZBw8PD+8v8pLrPk835CE1Hh4e3p286vLJJqpPSBK+b8y14OHh4cW8yYZ2//0L9T08PDy8Je+BJqfW0VQfp2bTFR4eHt4GXp6iTZoGkiPIC2nN9gU8PDy8g7zeJZ4HwfMmg6jJFQ8PD28zL7+Ue4X/Xgq4d3B4eHh4Z3jVBZJAPA/W85mTnwEPDw/vDG+SqE1SA71AfBTi4+Hh4R3hVRtGm1d2qwGrHKbj4eHhbeZVC2DVb3L85DHAw8PDO8nrBbh5USppqOolcJshNR4eHt6YN2kXqMJ2NAo0OyPw8PDwNvN6B1FNOlSfisceBjw8PLwBr3opJ+naeZGsnErGw8PD28yrJgjyqzxPRlSPrJzGxcPDw3uUVy1rTcLlSUo3byPAw8PDO8ObBM3VcLkXao8eBjw8PLwNvGpiolrcygEPFN7w8PDwDvJ6l/V6nryglYzoKPHw8PCO8Kqbq1KrzQdVJB4eHt5JXnVMEhDV5qo83YyHh4d3kvdsODspkiVfJoU0PDw8vDO8vBGqerk/dWSFBwkPDw/vIO+pVqq8YNZ7nN4E33h4eHgX8/J0Q7W9oJrwxcPDw7uZl6dle8Fx/szg4eHh3cBLkhG98lV1RTw8PLz7eZMC2LzQtT6spNiGh4eHd5L3/wYeHh4eHh4eHt4F4xOHhB/rKftCRwAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/ETL/">ETL</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/GPG/">GPG</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Kettle/">Kettle</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/文件加密/">文件加密</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Gpg4win&amp;Kettle文件加密、解密组件的使用&url=https://staroon.pro/2018/05/06/KettleGPG/index.html&pic=https://staroon.pro/img/blog-logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Gpg4win&amp;Kettle文件加密、解密组件的使用&url=https://staroon.pro/2018/05/06/KettleGPG/index.html&via=山小杰" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=Gpg4win&amp;Kettle文件加密、解密组件的使用&summary=大数据相关技术分享&pics=https://staroon.pro/img/blog-logo.png&url=https://staroon.pro/2018/05/06/KettleGPG/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>Kettle是一个很强大的开源的数据ETL工具，并且可以与大数据平台整合，直接将关系型数据库中的数据接入到Hadoop平台上。    </p>
+<p>在对数据文件进行操作的时候有些场景可能需要对数据文件进行加密，以保证数据的安全性，而Kettle刚好提供了文件加密组件<strong>用PGP加密文件</strong>，这个组件在<strong>作业</strong>/<strong>文件加密</strong>模块下，使用的加密方式是GPG加密。    </p>
+<p>所以在介绍Kettle加密文件之前，先介绍一下GPG这个软件:    </p>
+<h3 id="GPG加密软件的使用"><a href="#GPG加密软件的使用" class="headerlink" title="GPG加密软件的使用"></a>GPG加密软件的使用</h3><p>GPG，全称GnuPG，根据<a href="https://www.gnupg.org/" target="_blank" rel="noopener">GPG官网</a>的说法，是商业加密软件PGP的免费版，可以对数据和通信进行加密和签名，并具有多功能密钥管理系统。    </p>
+<p>GPG提供了非对称加密的方式，即加密和解密使用的是不同的密钥（分别叫公钥、私钥），公钥只能用于加密，不能解密，私钥可以解密。顾名思义，公钥是可以共享给别人的密钥，而私钥则是需要自己好好保护的密钥。别人使用公钥对要发送给你的数据进行加密，你收到加密后的密文后就可以拿私钥对该密文进行解密，由于私钥只在自己手中，就算是黑客也没办法获取密文中的真实数据，可以保证信息的安全传输。    </p>
+<h4 id="在Windows下安装GPG加密软件"><a href="#在Windows下安装GPG加密软件" class="headerlink" title="在Windows下安装GPG加密软件"></a>在Windows下安装GPG加密软件</h4><p>Windows下需要安装<a href="https://www.gpg4win.org/" target="_blank" rel="noopener">Gpg4win</a>。<br>下载Gpg4win安装程序后，双击安装：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/dl3gHjbdAj.png" alt="mark"><br>只勾选第二个选项（注意：XP系统下第二个选项不可选，需要勾选第三个选项）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/7fmB5dCFbF.png" alt="mark"><br>下一步，默认安装位置安装。    </p>
+<p>安装完成，桌面上会多出一个图标（密钥管理器）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/BBGg3Gd9c9.png" alt="mark"><br>双击这个图标打开<strong>密钥管理器</strong>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/aGhdCA513A.png" alt="mark"><br>首先需要创建一个密钥对，点击<strong>新建密钥对</strong>按钮：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/d6Lg1f8FJf.png" alt="mark"><br>输入相关信息，下一步：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/d6Lg1f8FJf.png" alt="mark"><br>点击创建：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/H394HLlGmC.png" alt="mark"><br>然后会弹出一个输入框，需要给私钥设置一个保护密码：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/9cDea9beH4.png" alt="mark"><br>如果你设置的密码不够复杂的话，会弹出一个警告，点击Take this one anyway即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/I5eli5EE6c.png" alt="mark"><br>创建完成：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/HfcK07Dkfl.png" alt="mark"><br>可以在密钥列表中看到新建的密钥对：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/A7EEjkGimb.png" alt="mark">    </p>
+<h4 id="密钥的导入与导出"><a href="#密钥的导入与导出" class="headerlink" title="密钥的导入与导出"></a>密钥的导入与导出</h4><ul>
+<li>导出密钥<br>选中密钥对，鼠标右键即可弹出菜单，第一个<strong>导出</strong>只是导出公钥，如果想要导出私钥，需要选择下面的<strong>导出绝对密钥</strong>选项：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/7DK4ED844F.png" alt="mark">    </li>
+<li>导入密钥<br>点击菜单栏的导入按钮（示例是一个绝对密钥文件的导入）:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/fdj2BH16DG.png" alt="mark"><br>点击<strong>是</strong>修改密钥的信任级别为<strong>无限制</strong>，关于信任级别的作用后面会有提到。    <h4 id="删除私钥保护密码"><a href="#删除私钥保护密码" class="headerlink" title="删除私钥保护密码"></a>删除私钥保护密码</h4>文件加密解密操作这里就不再介绍，密钥管理器界面上有操作按钮。<br>刚刚新建的密钥对是设置了私钥保护密码的，解密的时候就需要输入保护密码，为了方便操作，可以将保护密码去除掉。<br>右键要去掉私钥保护密码的密钥，选择更改密码句：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/J3jL04kkFc.png" alt="mark"><br>输入原密码：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/DmjI5l51cj.png" alt="mark"><br>留空，直接OK：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/kdC30C9Ike.png" alt="mark"><br>点击Yes：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/ih2GkJjFF6.png" alt="mark"><br>再次直接OK：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/kdC30C9Ike.png" alt="mark"><br>再次YES：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/ih2GkJjFF6.png" alt="mark"><br>密码去除成功：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180506/7ebbigAiEg.png" alt="mark"><br>此后再去解密文件就不需要输入保护密码了。    </li>
+</ul>
+<p>关于GPG软件的其它进阶操作这里就不再介绍。</p>
+<h3 id="Kettle文件加密组件的使用"><a href="#Kettle文件加密组件的使用" class="headerlink" title="Kettle文件加密组件的使用"></a>Kettle文件加密组件的使用</h3><p>打开Kettle，新建一个作业[Ctrl + Alt + N]，将<strong>核心对象</strong>下的<strong>文件加密</strong>文件夹下的<strong>用PGP加密文件</strong>组件拖到右侧，组成一个简单的流程：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/mfl5H8e2df.png" alt="mark"><br>为了操作方便，先双击<strong>作业空白处</strong>配置两个参数（<strong>源文件夹</strong>和<strong>目标文件夹</strong>）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/KEibA64JAD.png" alt="mark"><br>然后双击<strong>用PGP加密文件</strong>组件，打开配置页面：<br>最上面<strong>GPG文件路径</strong>，是设置<code>gpg.exe</code>这个文件路径的，如果是默认位置安装的话就是图示的这个位置；<br><strong>源文件/文件夹</strong>和<strong>目标文件/文件夹</strong>分别填写上刚刚设置的参数项；<br><strong>通配符</strong>设为<code>.*</code>表示对源文件夹的的所有文件都进行加密操作：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/HiG0FfAIJ9.png" alt="mark"><br>配置完以后，点击<strong>源文件/文件夹</strong>后面的<strong>添加</strong>按钮：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/kGad6I51fD.png" alt="mark"><br>然后需要填写<strong>用户ID</strong>，<strong>用户ID</strong>即为GPG<strong>密钥管理器</strong>密钥列表中的<strong>名称</strong>列：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/7FBlBm2I91.png" alt="mark"><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/fHFege6EJj.png" alt="mark"><br>切换到<strong>目标文件</strong>选项卡，勾选上<strong>创建目标文件夹</strong>选项，这样如果目标文件夹不存在，Kettle会自动创建目标文件夹；下方还可以配置<strong>如果目标文件已存在</strong>的处理方式，这里我选择的是<strong>覆盖</strong>已存在文件。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/2lLCKdCJg3.png" alt="mark"><br>然后就可以测试文件加密了，向待加密文件夹里放几个文件：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/EdEKlaGKef.png" alt="mark"><br>跑一下加密流程：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/13iI3cKKdA.png" alt="mark"><br>看一下待解密文件夹：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/G0I0b5EBCm.png" alt="mark"><br>图片已经不可查看，文件加密成功！</p>
+<h3 id="Kettle文件解密组件的使用"><a href="#Kettle文件解密组件的使用" class="headerlink" title="Kettle文件解密组件的使用"></a>Kettle文件解密组件的使用</h3><p>新建一个作业[Ctrl + Alt + N]，将<strong>核心对象</strong>下的<strong>文件加密</strong>文件夹下的<strong>用PGP解密文件</strong>组件拖到右侧，组成一个简单的流程：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/ebmiECi9a6.png" alt="mark"><br>同样的，为了操作方便，先双击<strong>作业空白处</strong>配置两个参数（<strong>源文件夹</strong>和<strong>目标文件夹</strong>）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/15iaAA3cJh.png" alt="mark"><br>与加密类似，需要配置<strong>gpg文件路径</strong>，<strong>源路径</strong>和<strong>目标路径</strong>，<strong>密钥</strong>不用填写：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/2GiAk2hdJi.png" alt="mark"><br><strong>目标文件夹</strong>选项卡也与加密类似：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/HclG8Edd9H.png" alt="mark"><br>配置完成后，确定，保存，即可开始运行解密流程（如果未去除私钥保护密码，则第一次运行会弹出输入密码窗口）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/9c63kE7m1C.png" alt="mark"><br>查看<strong>已解密文件</strong>文件夹：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/J7K10amE34.png" alt="mark"><br>文件解密成功！</p>
+<h3 id="使用Kettle进行文件加密、解密注意事项"><a href="#使用Kettle进行文件加密、解密注意事项" class="headerlink" title="使用Kettle进行文件加密、解密注意事项"></a>使用Kettle进行文件加密、解密注意事项</h3><p>加密报错:<code>Error running command: gpg: B3CC28EC0344DA15: There is no assurance this key belongs to the named user</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/cmH1g35I2l.png" alt="mark"><br>则可能是因为该密钥信任级别较低，这个时候就需要修改一下密钥的信任级别或者进行认证。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/1k5Fg1ea5K.png" alt="mark">    </p>
+<ul>
+<li>方法一：使用密钥管理器可以右键要认证的密钥，点击认证，不过需要至少已经存在一个信任级别为5级的密钥才能认证。    </li>
+<li>方法二：使用CMD命令修改密钥信任级别。打开cmd窗口，进入<strong>gpg.exe</strong>所在目录，执行<code>gpg --edit-key staroon</code>，<strong>staroon</strong>是想要修改信任级别的密钥的<strong>密钥ID</strong>，然后输入<strong>trust</strong>回车，再输入<strong>5</strong>回车，再输入<strong>y</strong>回车，最后输入<strong>save</strong>保存，即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/I4078iJeCb.png" alt="mark"><br>认证以后再回到密钥管理器就可以看到密钥的认证级别已变为<strong>认证的</strong>，Kettle就可以正常加密了：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleGPG/180507/Kgdb08DeCG.png" alt="mark"></li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/05/06/KettleGPG/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt9lqbfL';
+var conf = 'prod_66f287c11142ec7e8c4d010761c31d8f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/02/08/CDH5Install/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/gallery/Apr-2.PNG);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar-ssj.png" alt="山小杰's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        staroon@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: staroon@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">move_to_inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">bookmark</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">loyalty</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">schedule</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="图片库">
+                
+                    <i class="material-icons sidebar-material-icons">style</i>
+                
+                图片库
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/Dreaoon" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Staroon/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/12587459/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>山小杰的博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#1A237E'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #1A237E, 0 0 15px #1A237E'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#1A237E',
+        'border-left-color': '#1A237E'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==", true)</script>
+    
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt9lqbfL">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+<script type="text/javascript" src="/js/JSClickBubble.user.js"></script>
+        </body>
+    
+</html>
