@@ -552,14 +552,46 @@
 <li>从资源库打开流程</li>
 </ul>
 </li>
-<li>五、<a href="">变量/参数</a></li>
-<li>六、<a href="">转换流程-输入组件</a></li>
-<li>七、<a href="">转换流程-转换组件</a></li>
-<li>八、<a href="">转换流程-输出组件</a></li>
-<li>九、<a href="">脚本组件</a></li>
-<li>十、<a href="">对接大数据平台</a></li>
-<li>十一、<a href="">使用Windows计划任务定时执行Kettle作业</a></li>
-<li>十二、<a href="">使用Java执行Kettle作业</a>    </li>
+<li>五、<a href="https://staroon.pro/2018/07/30/KettleDoc-5/">变量/参数</a><ul>
+<li>参数的配置与使用</li>
+<li>变量的配置与使用</li>
+</ul>
+</li>
+<li>六、<a href="https://staroon.pro/2018/07/30/KettleDoc-6/">转换流程-输入组件</a><ul>
+<li>Excel输入</li>
+<li>表输入</li>
+</ul>
+</li>
+<li>七、<a href="https://staroon.pro/2018/07/30/KettleDoc-7/">转换流程-输出组件</a><ul>
+<li>Excel输出</li>
+<li>文本文件输出</li>
+<li>表输出</li>
+</ul>
+</li>
+<li>八、<a href="https://staroon.pro/2018/07/30/KettleDoc-8/">转换流程-转换组件</a></li>
+<li>九、<a href="https://staroon.pro/2018/07/30/KettleDoc-9/">脚本组件</a><ul>
+<li>转换-Java代码组件</li>
+<li>作业-SQL组件</li>
+<li>作业Shell组件</li>
+</ul>
+</li>
+<li>十、<a href="https://staroon.pro/2018/07/30/KettleDoc-10/">对接大数据平台</a><ul>
+<li>基础文件配置</li>
+<li>上传文件到HDFS</li>
+<li>连接Hive</li>
+</ul>
+</li>
+<li>十一、<a href="https://staroon.pro/2018/07/30/KettleDoc-11/">使用Windows计划任务定时执行Kettle作业</a><ul>
+<li>命令说明</li>
+<li>编写批处理脚本执行Kettle作业</li>
+<li>创建计划任务定时执行Kettle作业</li>
+</ul>
+</li>
+<li>十二、<a href="https://staroon.pro/2018/07/30/KettleDoc-12/">使用Java执行Kettle作业</a>    <ul>
+<li>搭建Kettle运行环境</li>
+<li>代码示例（作业、转换、资源库）    </li>
+</ul>
+</li>
 </ul>
 <h3 id="本章说明"><a href="#本章说明" class="headerlink" title="本章说明"></a>本章说明</h3><p>本篇内容为第三章：数据库连接配置。<br>使用Kettle的时候，肯定要与数据库打交道，常用的是jdbc连接方式。</p>
 <h3 id="创建数据库连接"><a href="#创建数据库连接" class="headerlink" title="创建数据库连接"></a>创建数据库连接</h3><p>新建一个作业或者转换，可以在<code>主对象树</code>下面看到<code>DB连接</code>选项，<strong>双击</strong><code>DB连接</code>或者<code>右键菜单</code>点击<code>新建</code>，打开创建数据库连接窗口。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/lFK1WQll6nTJ.png" alt="img"><br>选择数据库类型以及连接方式（默认JDBC），填写相应配置：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/rFPib3lPJNVs.png" alt="img"><br>配置完成后点击<code>测试</code>按钮测试一下数据库连接，如下图所示表示配置成功，然后就可以点击<code>确认</code>保存数据库连接了，新建的数据库连接会显示在<code>DB连接</code>分组下：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/O365X5qfls5L.png" alt="img"> -&gt; <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/z8ZvSBRLxoDx.png" alt="img">    </p>
@@ -714,7 +746,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -732,7 +764,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

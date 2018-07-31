@@ -552,14 +552,46 @@
 <li>从资源库打开流程</li>
 </ul>
 </li>
-<li>五、<a href="">变量/参数</a></li>
-<li>六、<a href="">转换流程-输入组件</a></li>
-<li>七、<a href="">转换流程-转换组件</a></li>
-<li>八、<a href="">转换流程-输出组件</a></li>
-<li>九、<a href="">脚本组件</a></li>
-<li>十、<a href="">对接大数据平台</a></li>
-<li>十一、<a href="">使用Windows计划任务定时执行Kettle作业</a></li>
-<li>十二、<a href="">使用Java执行Kettle作业</a>    </li>
+<li>五、<a href="https://staroon.pro/2018/07/30/KettleDoc-5/">变量/参数</a><ul>
+<li>参数的配置与使用</li>
+<li>变量的配置与使用</li>
+</ul>
+</li>
+<li>六、<a href="https://staroon.pro/2018/07/30/KettleDoc-6/">转换流程-输入组件</a><ul>
+<li>Excel输入</li>
+<li>表输入</li>
+</ul>
+</li>
+<li>七、<a href="https://staroon.pro/2018/07/30/KettleDoc-7/">转换流程-输出组件</a><ul>
+<li>Excel输出</li>
+<li>文本文件输出</li>
+<li>表输出</li>
+</ul>
+</li>
+<li>八、<a href="https://staroon.pro/2018/07/30/KettleDoc-8/">转换流程-转换组件</a></li>
+<li>九、<a href="https://staroon.pro/2018/07/30/KettleDoc-9/">脚本组件</a><ul>
+<li>转换-Java代码组件</li>
+<li>作业-SQL组件</li>
+<li>作业Shell组件</li>
+</ul>
+</li>
+<li>十、<a href="https://staroon.pro/2018/07/30/KettleDoc-10/">对接大数据平台</a><ul>
+<li>基础文件配置</li>
+<li>上传文件到HDFS</li>
+<li>连接Hive</li>
+</ul>
+</li>
+<li>十一、<a href="https://staroon.pro/2018/07/30/KettleDoc-11/">使用Windows计划任务定时执行Kettle作业</a><ul>
+<li>命令说明</li>
+<li>编写批处理脚本执行Kettle作业</li>
+<li>创建计划任务定时执行Kettle作业</li>
+</ul>
+</li>
+<li>十二、<a href="https://staroon.pro/2018/07/30/KettleDoc-12/">使用Java执行Kettle作业</a>    <ul>
+<li>搭建Kettle运行环境</li>
+<li>代码示例（作业、转换、资源库）    </li>
+</ul>
+</li>
 </ul>
 <h3 id="本章说明"><a href="#本章说明" class="headerlink" title="本章说明"></a>本章说明</h3><p>本篇内容为第四章：资源库（数据库存储方式）。<br>由于默认的转换、作业流程存储方式为单个文件存储，当有很多个转换、作业文件的时候，管理起来会很麻烦，所以这个时候就需要用到资源库了，用于统一管理转换、作业流程。资源库有两种存储方式：<strong>数据库存储</strong>和<strong>文件存储</strong>，本章只讲解<strong>数据库存储</strong>方式。</p>
 <h3 id="创建资源库"><a href="#创建资源库" class="headerlink" title="创建资源库"></a>创建资源库</h3><p>首先需要创建一个字符集编码为<code>UTF8</code>的空白数据库（为什么指定编码为<code>UTF8</code>？因为不指定编码可能会出现中文乱码情况）。还是以MySQL为例，创建一个数据库名为<code>kettle</code>的空白数据库，并指定字符集编码：<code>CREATE DATABASE kettle DEFAULT CHARSET=UTF8;</code>。<br>然后点击Spoon界面右上角的<code>Connect</code>按钮，在弹出的窗口中点击<code>Other Repositories</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/Jo9RSgaMFNbB.png" alt="img"><br>然后选中<code>Database Repository</code>，点击<code>Get Started</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/EZreriA004WL.png" alt="img"><br>给资源库起个名字，再点击<em>None</em>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/RNXvLPeNHX9N.png" alt="img"><br>弹出的窗口中点击<code>Create New Connection</code>:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/v0Oipld6JT83.png" alt="img"><br>配置一下刚创建的kettle数据库的连接信息：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/AfZWTscKj27v.png" alt="img"><br>再配置一下连接参数：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/o5N6cYwoHcgK.png" alt="img"><br>测试通过后，即可保存。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/eijtS9aasIuY.png" alt="img"><br>然后选中刚创建的数据库连接<code>mysql-repo</code>，再点击<code>Back</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/MISKU8SGiSlR.png" alt="img"><br>确认配置无误后，点击<code>Finish</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/tr0NyKI2PAx7.png" alt="img"><br>初始化数据库，稍等一会即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/FxI8gvdWiXOa.png" alt="img"><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/4u67q8araddj.png" alt="img"><br>初始化完成，点击<code>Connect Now</code>，输入<code>admin/admin</code>，然后点击<code>Connect</code>即可连接到资源库。有兴趣的话可以去看下资源库的表结构：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/IBhuzwh5sAOx.png" alt="img"><br>此时Spoon界面右上角会变成这样：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/xBbythB976mT.png" alt="img"></p>
@@ -568,7 +600,7 @@
 <li>打开单个流程：<br><code>Ctrl + O</code>或者左上角 <code>文件 -&gt; 打开</code>，选中要打开的流程，<code>Open</code>即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/85zBswd9EtZT.png" alt="img">    </li>
 <li>批量打开多个流程：<br><code>Ctrl + E</code>或者 <code>菜单栏 -&gt; 工具 -&gt; 资源库 -&gt; 探索资源库</code>，同时选中多个流程，然后按<code>回车键</code>，即可批量打开多个流程：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/SRzozZpTt8pn.png" alt="img">    <h3 id="管理资源库"><a href="#管理资源库" class="headerlink" title="管理资源库"></a>管理资源库</h3><code>Ctrl + E</code>或者 <code>菜单栏 -&gt; 工具 -&gt; 资源库 -&gt; 探索资源库</code>，右键菜单可以对目录、流程进行删除或者重命名等操作：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/iSE6Pl6ykqMm.png" alt="img">    </li>
 </ul>
-<p>本章完！<br>下一章：<a href="">变量/参数</a></p>
+<p>本章完！<br>下一章：<a href="https://staroon.pro/2018/07/30/KettleDoc-5/">变量/参数</a></p>
 
         
     
@@ -608,6 +640,14 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/07/30/KettleDoc-5/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -709,7 +749,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -727,7 +767,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

@@ -21,13 +21,6 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/categories/Kettle/</loc>
-        <lastmod>2018-07-18T08:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://staroon.pro/categories/%E6%95%99%E7%A8%8B/</loc>
         <lastmod>2018-07-19T03:40:17.702Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -37,6 +30,13 @@
     <url>
         <loc>https://staroon.pro/categories/%E6%9D%82%E8%AE%B0/</loc>
         <lastmod>2018-07-19T03:47:48.466Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://staroon.pro/categories/Kettle/</loc>
+        <lastmod>2018-07-30T09:10:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

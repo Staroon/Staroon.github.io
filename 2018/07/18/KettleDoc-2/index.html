@@ -552,14 +552,46 @@
 <li>从资源库打开流程</li>
 </ul>
 </li>
-<li>五、<a href="">变量/参数</a></li>
-<li>六、<a href="">转换流程-输入组件</a></li>
-<li>七、<a href="">转换流程-转换组件</a></li>
-<li>八、<a href="">转换流程-输出组件</a></li>
-<li>九、<a href="">脚本组件</a></li>
-<li>十、<a href="">对接大数据平台</a></li>
-<li>十一、<a href="">使用Windows计划任务定时执行Kettle作业</a></li>
-<li>十二、<a href="">使用Java执行Kettle作业</a>    </li>
+<li>五、<a href="https://staroon.pro/2018/07/30/KettleDoc-5/">变量/参数</a><ul>
+<li>参数的配置与使用</li>
+<li>变量的配置与使用</li>
+</ul>
+</li>
+<li>六、<a href="https://staroon.pro/2018/07/30/KettleDoc-6/">转换流程-输入组件</a><ul>
+<li>Excel输入</li>
+<li>表输入</li>
+</ul>
+</li>
+<li>七、<a href="https://staroon.pro/2018/07/30/KettleDoc-7/">转换流程-输出组件</a><ul>
+<li>Excel输出</li>
+<li>文本文件输出</li>
+<li>表输出</li>
+</ul>
+</li>
+<li>八、<a href="https://staroon.pro/2018/07/30/KettleDoc-8/">转换流程-转换组件</a></li>
+<li>九、<a href="https://staroon.pro/2018/07/30/KettleDoc-9/">脚本组件</a><ul>
+<li>转换-Java代码组件</li>
+<li>作业-SQL组件</li>
+<li>作业Shell组件</li>
+</ul>
+</li>
+<li>十、<a href="https://staroon.pro/2018/07/30/KettleDoc-10/">对接大数据平台</a><ul>
+<li>基础文件配置</li>
+<li>上传文件到HDFS</li>
+<li>连接Hive</li>
+</ul>
+</li>
+<li>十一、<a href="https://staroon.pro/2018/07/30/KettleDoc-11/">使用Windows计划任务定时执行Kettle作业</a><ul>
+<li>命令说明</li>
+<li>编写批处理脚本执行Kettle作业</li>
+<li>创建计划任务定时执行Kettle作业</li>
+</ul>
+</li>
+<li>十二、<a href="https://staroon.pro/2018/07/30/KettleDoc-12/">使用Java执行Kettle作业</a>    <ul>
+<li>搭建Kettle运行环境</li>
+<li>代码示例（作业、转换、资源库）    </li>
+</ul>
+</li>
 </ul>
 <h3 id="本章说明"><a href="#本章说明" class="headerlink" title="本章说明"></a>本章说明</h3><p>本篇内容为第二章：转换与作业。<br>经过第一章的学习，运行环境配置完成以后，就可以开始运行Kettle了，双击<code>data-integration</code>目录下的<code>Spoon.bat</code>文件，即可启动Kettle的任务设计器Spoon。启动速度较慢，可能会出现假死情况，耐心等待即可，<strong>不要连续多次双击</strong><code>Spoon.bat</code>文件。<br>Spoon主页：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/58LwsXEkyOFJ.png" alt="img"><br>Kettle有两种流程，转换流程和作业流程。<br>本章只介绍基本操作，不进行具体可执行流程设计。</p>
 <h3 id="转换流程"><a href="#转换流程" class="headerlink" title="转换流程"></a>转换流程</h3><p>Kettle是个<strong>ETL</strong>工具嘛，转换流程就是主要进行数据转换（T）步骤设计的地方。当然也包含数据源（E）和目标（L）。<br>新建转换流程的方式有很多，比如左上角 <code>文件 -&gt; 新建 -&gt; 转换</code> ，或者点击欢迎页面WORK图标下的<code>New transforation</code>，亦可<code>双击左侧主对象树下的转换图标</code>，又可按快捷键<code>Ctrl + N</code>。<br>转换流程设计页面左侧<code>核心对象</code>下面是一个个的分类模块，每个分类下面又有许多个功能不同的组件，鼠标按住左侧组件图标拖拽到右侧流程设计面板即可增加一个步骤。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/VNaTpu1Z9jNY.png" alt="img"><br>步骤之间需要使用箭头连接，箭头方向表示步骤流向，按住Shift键的同时鼠标点住步骤图标向外拉即可拉出一条箭头（按住鼠标中键也可拉出箭头），将箭头拉向下一个步骤，即可形成一个简单的转换流程：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/Ap4s4RqfMXdv.png" alt="img"> -&gt; <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/4eSh5bkcIzMG.png" alt="img"><br>需要注意的是步骤之间箭头的颜色，<strong>深色表示连接状态，浅色表示断开状态</strong>。比如下面这个转换流程，<strong>表输出</strong>步骤与上一步骤是断开连接的，执行流程的时候执行到<strong>去除重复记录</strong>这一步骤后就不会再往下执行了。单击箭头可以调整连接状态。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/RV0bXtVlWSno.png" alt="img"><br><code>Ctrl + S</code>保存，将保存为<code>ktr</code>后缀的文件。</p>
@@ -719,7 +751,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -737,7 +769,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
