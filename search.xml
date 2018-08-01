@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>Kettle中实现步骤循环操作</title>
+      <link href="/2018/08/01/KettleLoop/"/>
+      <url>/2018/08/01/KettleLoop/</url>
+      <content type="html"><![CDATA[<p>本文介绍了如何使用Kettle实现循环执行某个流程操作。<br>注意：本流程在Kettle 7.1版本下可以正常运行，但是在Kettle 8.1版本下无法正常运行，【执行体】步骤【表输入】部分参数无法正确传入，可能是BUG？    </p><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p> 如下图所示，DB1,DB2,DB3,DB4,DB_INFO,TARGET_DB都是数据库，且都不在同一台服务器上，DB1-DB4数据库中含有相同的表及表结构，DB_INFO中有张表存放着需要操作的的数据库的连接信息，要使用Kettle实现：从DB_INFO中获取数据库连接信息，然后分别对获取到的数据库执行相同的数据抽取转换步骤并将结果写入到TARGET_DB中。另外任务是每天定时执行的，DB_INFO中的数据可能会有更新。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleLoop/20180615/YgFDIHGKOVa6.png" alt="img">    </p><p>DB_INFO表结构：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleLoop/20180615/OAApNNNv6jrs.png" alt="img">   </p><h2 id="需求实现"><a href="#需求实现" class="headerlink" title="需求实现"></a>需求实现</h2><p>整体作业流程很简单，只需要两个转换步骤：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleLoop/20180615/v3f4LIMiG2Y6.png" alt="img"><br>【获取db_info】转换步骤，就两个组件，即从数据库中查出数据库连接信息，然后复制记录到结果，配置如下图所示：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleLoop/20180801/ZPYYEjXCGUmw.png" alt="img"><br>【循环读取db_info】转换步骤，也是两个组件，首先是获取上一步骤结果记录，然后将结果记录传递给下一个转换步骤，组件配置如下图所示：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleLoop/20180801/4qRoyGuLq8rT.png" alt="img"><br>另外，在【循环读取db_info】步骤配置窗口一定要勾选【执行每一个输入行】，该选项是实现循环执行的必需项：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleLoop/20180801/xkMCTrRTOxBu.png" alt="img"><br>最后是嵌套在【循环读取db_info】中的【执行体】转换流程，表输入部分数据库连接全部配置成参数即可，参数名需与【循环读取db_info】转换中【执行体】步骤配置的一致：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleLoop/20180801/T85AP5ISX8hv.png" alt="img"><br>至此，即可实现循环执行步骤的需求。    </p>]]></content>
+      
+      <categories>
+          
+          <category> Kettle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kettle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Kettle系列教程-第十二章：使用Java执行Kettle作业</title>
       <link href="/2018/07/30/KettleDoc-12/"/>
       <url>/2018/07/30/KettleDoc-12/</url>
@@ -300,9 +321,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> 高可用 </tag>
-            
             <tag> CDH </tag>
+            
+            <tag> 高可用 </tag>
             
         </tags>
       
@@ -463,9 +484,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> HBase </tag>
-            
             <tag> 高可用 </tag>
+            
+            <tag> HBase </tag>
             
             <tag> HA </tag>
             
@@ -490,9 +511,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> Hadoop </tag>
-            
             <tag> 高可用 </tag>
+            
+            <tag> Hadoop </tag>
             
             <tag> HA </tag>
             
@@ -548,9 +569,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> Hadoop </tag>
-            
             <tag> CDH </tag>
+            
+            <tag> Hadoop </tag>
             
             <tag> HDP </tag>
             
