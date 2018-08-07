@@ -51,14 +51,14 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/tags/HBase/</loc>
+        <loc>https://staroon.pro/tags/HA/</loc>
         <lastmod>2017-11-30T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://staroon.pro/tags/HA/</loc>
+        <loc>https://staroon.pro/tags/HBase/</loc>
         <lastmod>2017-11-30T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -67,13 +67,6 @@
     <url>
         <loc>https://staroon.pro/tags/Hive/</loc>
         <lastmod>2017-12-09T12:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://staroon.pro/tags/Hadoop/</loc>
-        <lastmod>2018-01-24T02:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -184,8 +177,15 @@
     </url>
 
     <url>
+        <loc>https://staroon.pro/tags/Hadoop/</loc>
+        <lastmod>2018-08-07T09:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://staroon.pro/tags/Kettle/</loc>
-        <lastmod>2018-08-01T08:00:00.000Z</lastmod>
+        <lastmod>2018-08-07T09:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

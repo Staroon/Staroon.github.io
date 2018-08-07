@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Kettle连接Hadoop集群</title>
+      <link href="/2018/08/07/KettleConnectHadoop/"/>
+      <url>/2018/08/07/KettleConnectHadoop/</url>
+      <content type="html"><![CDATA[<p>其实在<strong>Kettle系列教程</strong>中第十章【<a href="https://staroon.pro/2018/07/30/KettleDoc-10/">对接大数据平台</a>】一文中已经介绍过了连接Hadoop集群需要的基本文件配置，但是呢，那种方式不能从表输入中直接输出数据到HDFS上，本章呢就介绍一下不经过【Hadoop Copy Files】如何直接输出数据到HDFS上。<br>可能你已经注意到，不管是转换还是作业，在Spoon界面左侧【主对象树】下面都有一个【Hadoop clusters】分组：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/4yvsRWj4RHs6.png" alt="img"><br>本章的主要内容就是如何在这里创建一个Hadoop集群连接！</p><h2 id="基础文件准备"><a href="#基础文件准备" class="headerlink" title="基础文件准备"></a>基础文件准备</h2><p>这一部分与<strong>Kettle系列教程</strong>中第十章【<a href="https://staroon.pro/2018/07/30/KettleDoc-10/#基础文件配置">对接大数据平台-基础文件配置</a>】中操作一样，这里不再赘述。    </p><h2 id="创建集群连接"><a href="#创建集群连接" class="headerlink" title="创建集群连接"></a>创建集群连接</h2><p>在【Hadoop clusters】分组图标右键菜单中点击【New Cluster】弹出集群配置窗口：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/C0qK9irTzXDI.png" alt="img"><br>首先给集群起个名字【Cluster name】；    </p><p>然后【Storage】选择<strong>HDFS</strong>；    </p><p>再然后配置【HDFS】连接信息：如果你的集群未开启<strong>NameNode HA</strong>，那么【Hostname】和【Port】如实填写即可，注意【Port】可不是50070这个web端口哈。如果开启了<strong>NameNode HA</strong>，那么【Hostname】这里就填写HDFS的Namespace（命名空间），命名空间即为<code>core-site.xml</code>中<code>fs.defaultFS</code>去掉<code>hdfs://</code>后的的属性值，【Port】一定要留空。集群未配置访问认证的话，【Username】和【Password】不用填写；    </p><p>接着配置【JobTracker】，其实应该改名叫【Yarn】了：与HDFS类似，如果ResourceManager未配置HA，则【Hostname】和【Port】如实填写。如果配置了HA，则【Hostname】这里需要将所有ResourceManager的主机地址都填写上，中间使用英文逗号分隔，【Port】一定要留空！    </p><p>再接着配置【Zookeeper】：【Hostname】这里需要将集群中所有的Zookeeper主机地址填写上，中间使用英文逗号分隔，【Port】如实填写；    </p><p>我的集群没有安装Oozie，故留空；    </p><p>最后配置【Kafka】：需要填写<code>bootstrap-server</code>所在主机地址以及运行端口，多个之间使用英文逗号分隔。未安装Kafka的话留空即可。    </p><p>配置完成以后，点击【测试】按钮可以测试一下集群连接，如果配置无误的话，可以看到全是绿色的对勾：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/RufmFTrJ3ltR.png" alt="img">    </p><h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>这一小节就对集群连接测试时容易出现的报错或者警告进行一下解答：    </p><ul><li>【Active Shim Load】出现报错或者警告，需要检查是否在<code>Spoon工具栏 -&gt; 工具 -&gt; Hadoop Distribution</code>中设置了对应的Hadoop平台；</li><li>【Shim Configuration Verification】报出警告：<code>The Hadoop File System URL does not match the URL in the shims core-site.xml</code>，这个时候就需要检查【HDFS】的【Hostname】是否与<code>core-site.xml</code>中<code>fs.defaultFS</code>属性值一致；</li><li>【User Home Directory Access】报错：<code>Could not read directory contents</code>，是因为Kettle是使用当前操作系统用户去访问HDFS的，如果HDFS上<code>/user/</code>目录下没有该用户的目录，则该项检测就会失败。解决办法：手动在HDFS上<code>/user/</code>目录下创建以当前操作系统用户名命名的文件夹即可。</li><li>【Root Directory Access】报错，是因为Kettle访问HDFS的用户没有读写HDFS跟目录的权限，可通过修改集群配置文件解决：在<code>hdfs-site.xml</code>文件中增加一个属性配置，重启集群生效：    <pre><code class="xml">&lt;property&gt;  &lt;name&gt;dfs.permissions.enabled&lt;/name&gt;  &lt;value&gt;false&lt;/value&gt;&lt;/property&gt;</code></pre></li></ul><h2 id="Hadoop-File-Output"><a href="#Hadoop-File-Output" class="headerlink" title="Hadoop File Output"></a>Hadoop File Output</h2><p>创建完成集群连接以后，就可以直接输出数据到HDFS上了，本小节使用的是转换中【Big Data】分组下的【Hadoop File Output】组件：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/4dKzsRvxBgVf.png" alt="img"><br>直接看【Hadoop File Output】的配置项，其实与【文本文件输出】类似，只不过输出位置从本地变成了HDFS：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/SOhAYhStFDx7.png" alt="img"><br>【内容】选项卡，设置字段分隔符，要注意选择<code>LF</code>换行格式，编码<code>UTF-8</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/G6Lg6o8bJbkq.png" alt="img"><br>【字段】选项卡与【文本文件输出】配置方法相同，先【获取字段】，再【最小宽度】。    </p><p>保存，运行，重看结果：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/WHvOBmiYN0AK.png" alt="img"></p>]]></content>
+      
+      <categories>
+          
+          <category> Kettle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hadoop </tag>
+            
+            <tag> Kettle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Kettle中实现步骤循环操作</title>
       <link href="/2018/08/01/KettleLoop/"/>
       <url>/2018/08/01/KettleLoop/</url>
@@ -486,9 +509,9 @@
             
             <tag> 高可用 </tag>
             
-            <tag> HBase </tag>
-            
             <tag> HA </tag>
+            
+            <tag> HBase </tag>
             
         </tags>
       
@@ -515,9 +538,9 @@
             
             <tag> Hadoop </tag>
             
-            <tag> HA </tag>
-            
             <tag> Zookeeper </tag>
+            
+            <tag> HA </tag>
             
         </tags>
       
@@ -538,9 +561,9 @@
       
         <tags>
             
-            <tag> CentOS </tag>
-            
             <tag> 大数据 </tag>
+            
+            <tag> CentOS </tag>
             
             <tag> Hadoop </tag>
             

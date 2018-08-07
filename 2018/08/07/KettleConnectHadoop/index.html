@@ -41,7 +41,7 @@
     
     <title>
         
-            标签: 大数据 | 
+            Kettle连接Hadoop集群 | 
         
         山小杰的博客
     </title>
@@ -53,7 +53,7 @@
     <meta name="theme-color" content="#3F51B5">
     <meta name="author" content="山小杰">
     <meta name="description" itemprop="description" content="大数据相关技术分享">
-    <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux">
+    <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,Hadoop,Kettle">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -102,6 +102,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night.min.css?QlnGZk/a4+d8XbwtXBDPiA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -237,15 +240,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://staroon.pro">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 大数据 | 山小杰的博客">
+    <meta property="og:title" content="Kettle连接Hadoop集群 | 山小杰的博客">
     <meta property="og:image" content="https://staroon.pro/img/blog-logo.png" />
     <meta property="og:description" content="大数据相关技术分享">
-    
+    <meta property="og:article:tag" content="Hadoop"> <meta property="og:article:tag" content="Kettle"> 
 
+    
+        <meta property="article:published_time" content="Tue Aug 07 2018 16:00:00 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Aug 07 2018 17:00:00 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签: 大数据 | 山小杰的博客">
+    <meta name="twitter:title" content="Kettle连接Hadoop集群 | 山小杰的博客">
     <meta name="twitter:description" content="大数据相关技术分享">
     <meta name="twitter:image" content="https://staroon.pro/img/blog-logo.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -253,13 +259,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://staroon.pro/tags/大数据/index.html" />
+        <link rel="canonical" href="https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html",
+    "headline": "Kettle连接Hadoop集群",
+    "datePublished": "Tue Aug 07 2018 16:00:00 GMT+0800",
+    "dateModified": "Tue Aug 07 2018 17:00:00 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "山小杰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar-ssj.png"
+        },
+        "description": "心之所向，身之所往"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "山小杰的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/blog-logo.png"
+        }
+    },
+    "keywords": ",Hadoop,Kettle大数据,Hadoop,ETL,CDH,Linux",
+    "description": "大数据相关技术分享",
+}
+</script>
 
 
     
@@ -302,569 +338,277 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础文件准备"><span class="post-toc-number">1.</span> <span class="post-toc-text">基础文件准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建集群连接"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建集群连接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Q-amp-A"><span class="post-toc-number">3.</span> <span class="post-toc-text">Q&amp;A</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hadoop-File-Output"><span class="post-toc-number">4.</span> <span class="post-toc-text">Hadoop File Output</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/02/08/CDH5Install/">CDH5高可用集群离线部署</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前几篇文章介绍了下原生Hadoop集群的部署过程，这篇文章就来介绍下CDH的部署过程，毕竟发行版Hadoop的部署、运维都很方便，稳定性也好，实际生产环境上用原生Hadoop的并不是很多。...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/02/08/CDH5Install/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>2月 08, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/02/08/CDH5Install/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/24/ClusterManager/">Hadoop集群快捷启动/停止脚本</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            由于原生Hadoop集群没有统一的管理工具，当向集群中部署了越来越多的组件后，集群的管理就变得非常繁琐复杂，包括集群的启动与停止，需要执行好多条命令，所以我就写了个一键启动、停止集群的sh...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/24/ClusterManager/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>1月 24, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/01/24/ClusterManager/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/22/Hadoop3Install/">Hadoop-3.0.0体验</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言距离Hadoop 3.0.0 GA版的发布已经过去好多...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/22/Hadoop3Install/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>12月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/12/22/Hadoop3Install/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/09/HiveInstall/">Hive-1.2.1安装配置</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            上一篇：HBase安装这一篇进行Hive-1.2.1的安装与基...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/09/HiveInstall/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>12月 09, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/12/09/HiveInstall/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/30/HBaseInstall/">HBase-1.2.6高可用配置</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            接上一篇:Hadoop安装这一篇进行HBase-1.2.6(...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/30/HBaseInstall/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>11月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/11/30/HBaseInstall/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/HadoopInstall/171130/82DA3L1F5A.jpg?imageslim">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/18/HadoopInstall/">Hadoop-2.7.3高可用配置</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            简介
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/18/HadoopInstall/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>11月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/11/18/HadoopInstall/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/SetEnv.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/05/SetEnv/">Hadoop集群搭建系统环境准备</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            简介Hadoop集群的搭建需要一系列的环境准备，包括操作系...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/05/SetEnv/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>11月 05, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/11/05/SetEnv/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/HadoopSelect/HadoopSelect.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/05/HadoopSelect/">Hadoop版本选型</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            简介说到大数据，首先得说一说Hadoop，这个Apache...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/05/HadoopSelect/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>11月 05, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/11/05/HadoopSelect/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Kettle连接Hadoop集群
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar-ssj.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>山小杰</strong>
+        <span>8月 07, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACeElEQVR42u3ay46jQBAEQP//T+9eR5oBZ/bLyApOFjK4gwNdzqrXv68+Xnh4eHh4eHh4eA/jveLj5/d/X3t15uqqP5Z1cVW+Njw8PLyTvDev2gtAcm2OvH+UyT3x8PDwzvOSzSDfANol5pvQm7Xh4eHhPYw3BrtH4uHh4X03LwG0cUZSUuPh4eE9k5f/4W+DhmQbmP9dPDw8vJO8mQbY7s8f7u/h4eHh/eK1Rz4u0A4TjDXV/vhFPDw8vM28fIgqGYqaGRSIyuUkUMbDw8PbzGtv3Ra4bfibb0J4eHh4n+KNBQHJi3smtM1bX3h4eHjneWMFbrLomXI5GSYoshY8PDy8Dby8dE4AY8FE+ygvfx0PDw9vM68Nbce2jTaAGHuIeHh4eCd5Yy2umdK5HSmYGh3Aw8PD28zLg4n80SS8PDh+szY8PDy847wZdj6U0I4F5GEuHh4e3m7eTJw6NjLVgu/vVsyU4eHh4S3lzbym84c1E4LkhTUeHh7eGd6qgYD21T8fB+Ph4eGd5+XFcRLRtvg82ihGwfDw8PAO8lbFDcmZsVd/tCo8PDy8zbyWeh9YtAVxGzosSKnx8PDwFvHysYA2UGjP5FFyMTqAh4eHt5Q3T2obaXlsMTgOi4eHh7eZ1x5JcZyHDvmrPw+C8fDw8HbzxgKIdmNoC+j7b9YlNR4eHt4GXr4ZjLXB8oI7H9ta/I8BDw8Pb4i3qjhuC/SZxluxMeDh4eF9iJfEAe1V+djB4EwZHh4e3gN4qx7KTOurDiPw8PDwNvDaplcePYzFDVEBvTZrwcPDw9vWWx87k7fKZppheHh4eLt533fg4eHh4eHh4eE94PgPbg5y3osXBA8AAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Hadoop/">Hadoop</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Kettle/">Kettle</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Kettle连接Hadoop集群&url=https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html&pic=https://staroon.pro/img/blog-logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Kettle连接Hadoop集群&url=https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html&via=山小杰" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=Kettle连接Hadoop集群&summary=大数据相关技术分享&pics=https://staroon.pro/img/blog-logo.png&url=https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>其实在<strong>Kettle系列教程</strong>中第十章【<a href="https://staroon.pro/2018/07/30/KettleDoc-10/">对接大数据平台</a>】一文中已经介绍过了连接Hadoop集群需要的基本文件配置，但是呢，那种方式不能从表输入中直接输出数据到HDFS上，本章呢就介绍一下不经过【Hadoop Copy Files】如何直接输出数据到HDFS上。<br>可能你已经注意到，不管是转换还是作业，在Spoon界面左侧【主对象树】下面都有一个【Hadoop clusters】分组：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/4yvsRWj4RHs6.png" alt="img"><br>本章的主要内容就是如何在这里创建一个Hadoop集群连接！</p>
+<h2 id="基础文件准备"><a href="#基础文件准备" class="headerlink" title="基础文件准备"></a>基础文件准备</h2><p>这一部分与<strong>Kettle系列教程</strong>中第十章【<a href="https://staroon.pro/2018/07/30/KettleDoc-10/#基础文件配置">对接大数据平台-基础文件配置</a>】中操作一样，这里不再赘述。    </p>
+<h2 id="创建集群连接"><a href="#创建集群连接" class="headerlink" title="创建集群连接"></a>创建集群连接</h2><p>在【Hadoop clusters】分组图标右键菜单中点击【New Cluster】弹出集群配置窗口：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/C0qK9irTzXDI.png" alt="img"><br>首先给集群起个名字【Cluster name】；    </p>
+<p>然后【Storage】选择<strong>HDFS</strong>；    </p>
+<p>再然后配置【HDFS】连接信息：如果你的集群未开启<strong>NameNode HA</strong>，那么【Hostname】和【Port】如实填写即可，注意【Port】可不是50070这个web端口哈。如果开启了<strong>NameNode HA</strong>，那么【Hostname】这里就填写HDFS的Namespace（命名空间），命名空间即为<code>core-site.xml</code>中<code>fs.defaultFS</code>去掉<code>hdfs://</code>后的的属性值，【Port】一定要留空。集群未配置访问认证的话，【Username】和【Password】不用填写；    </p>
+<p>接着配置【JobTracker】，其实应该改名叫【Yarn】了：与HDFS类似，如果ResourceManager未配置HA，则【Hostname】和【Port】如实填写。如果配置了HA，则【Hostname】这里需要将所有ResourceManager的主机地址都填写上，中间使用英文逗号分隔，【Port】一定要留空！    </p>
+<p>再接着配置【Zookeeper】：【Hostname】这里需要将集群中所有的Zookeeper主机地址填写上，中间使用英文逗号分隔，【Port】如实填写；    </p>
+<p>我的集群没有安装Oozie，故留空；    </p>
+<p>最后配置【Kafka】：需要填写<code>bootstrap-server</code>所在主机地址以及运行端口，多个之间使用英文逗号分隔。未安装Kafka的话留空即可。    </p>
+<p>配置完成以后，点击【测试】按钮可以测试一下集群连接，如果配置无误的话，可以看到全是绿色的对勾：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/RufmFTrJ3ltR.png" alt="img">    </p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>这一小节就对集群连接测试时容易出现的报错或者警告进行一下解答：    </p>
+<ul>
+<li>【Active Shim Load】出现报错或者警告，需要检查是否在<code>Spoon工具栏 -&gt; 工具 -&gt; Hadoop Distribution</code>中设置了对应的Hadoop平台；</li>
+<li>【Shim Configuration Verification】报出警告：<code>The Hadoop File System URL does not match the URL in the shims core-site.xml</code>，这个时候就需要检查【HDFS】的【Hostname】是否与<code>core-site.xml</code>中<code>fs.defaultFS</code>属性值一致；</li>
+<li>【User Home Directory Access】报错：<code>Could not read directory contents</code>，是因为Kettle是使用当前操作系统用户去访问HDFS的，如果HDFS上<code>/user/</code>目录下没有该用户的目录，则该项检测就会失败。解决办法：手动在HDFS上<code>/user/</code>目录下创建以当前操作系统用户名命名的文件夹即可。</li>
+<li>【Root Directory Access】报错，是因为Kettle访问HDFS的用户没有读写HDFS跟目录的权限，可通过修改集群配置文件解决：在<code>hdfs-site.xml</code>文件中增加一个属性配置，重启集群生效：    <pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dfs.permissions.enabled&lt;/name&gt;
+  &lt;value&gt;false&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+</li>
+</ul>
+<h2 id="Hadoop-File-Output"><a href="#Hadoop-File-Output" class="headerlink" title="Hadoop File Output"></a>Hadoop File Output</h2><p>创建完成集群连接以后，就可以直接输出数据到HDFS上了，本小节使用的是转换中【Big Data】分组下的【Hadoop File Output】组件：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/4dKzsRvxBgVf.png" alt="img"><br>直接看【Hadoop File Output】的配置项，其实与【文本文件输出】类似，只不过输出位置从本地变成了HDFS：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/SOhAYhStFDx7.png" alt="img"><br>【内容】选项卡，设置字段分隔符，要注意选择<code>LF</code>换行格式，编码<code>UTF-8</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/G6Lg6o8bJbkq.png" alt="img"><br>【字段】选项卡与【文本文件输出】配置方法相同，先【获取字段】，再【最小宽度】。    </p>
+<p>保存，运行，重看结果：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/WHvOBmiYN0AK.png" alt="img"></p>
+
+        
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/08/07/KettleConnectHadoop/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt9lqbfL';
+var conf = 'prod_66f287c11142ec7e8c4d010761c31d8f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/08/01/KettleLoop/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1072,6 +816,14 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
@@ -1230,6 +982,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1242,6 +998,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
