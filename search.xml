@@ -344,9 +344,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> CDH </tag>
-            
             <tag> 高可用 </tag>
+            
+            <tag> CDH </tag>
             
         </tags>
       
@@ -507,11 +507,11 @@
             
             <tag> 大数据 </tag>
             
+            <tag> HBase </tag>
+            
             <tag> 高可用 </tag>
             
             <tag> HA </tag>
-            
-            <tag> HBase </tag>
             
         </tags>
       
@@ -536,11 +536,11 @@
             
             <tag> 高可用 </tag>
             
+            <tag> HA </tag>
+            
             <tag> Hadoop </tag>
             
             <tag> Zookeeper </tag>
-            
-            <tag> HA </tag>
             
         </tags>
       
@@ -561,9 +561,9 @@
       
         <tags>
             
-            <tag> 大数据 </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> 大数据 </tag>
             
             <tag> Hadoop </tag>
             
@@ -592,9 +592,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> CDH </tag>
-            
             <tag> Hadoop </tag>
+            
+            <tag> CDH </tag>
             
             <tag> HDP </tag>
             
