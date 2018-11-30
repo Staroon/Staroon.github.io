@@ -55,7 +55,7 @@
     
     <title>
         
-            Kettle连接Hadoop集群 | 
+            CDH6集群性能调优（操作系统层面） | 
         
         山小杰的博客
     </title>
@@ -66,7 +66,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="大数据相关技术分享">
-    <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,Hadoop,Kettle">
+    <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,大数据,CDH">
     <meta name="theme-color" content="#3F51B5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -232,7 +232,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="山小杰的博客">
-    <meta name="msapplication-starturl" content="https://staroon.pro/2018/08/07/KettleConnectHadoop/">
+    <meta name="msapplication-starturl" content="https://staroon.pro/2018/11/30/CDH6Performance/">
     <meta name="msapplication-navbutton-color" content="#3F51B5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="山小杰的博客">
@@ -247,16 +247,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://staroon.pro/2018/08/07/KettleConnectHadoop/">
+    <meta property="og:url" content="https://staroon.pro/2018/11/30/CDH6Performance/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Kettle连接Hadoop集群 | 山小杰的博客">
+    <meta property="og:title" content="CDH6集群性能调优（操作系统层面） | 山小杰的博客">
     <meta property="og:image" content="/img/blog-logo.png">
     <meta property="og:description" content="大数据相关技术分享">
-    <meta property="og:article:tag" content="Hadoop"> <meta property="og:article:tag" content="Kettle"> 
+    <meta property="og:article:tag" content="大数据"> <meta property="og:article:tag" content="CDH"> 
 
     
-        <meta property="article:published_time" content="Tue Aug 07 2018 16:00:00 GMT+0800">
-        <meta property="article:modified_time" content="Tue Aug 07 2018 17:00:00 GMT+0800">
+        <meta property="article:published_time" content="Fri Nov 30 2018 21:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Fri Nov 30 2018 23:00:00 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +264,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html" />
+        <link rel="canonical" href="https://staroon.pro/2018/11/30/CDH6Performance/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -276,10 +276,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html",
-    "headline": "Kettle连接Hadoop集群",
-    "datePublished": "Tue Aug 07 2018 16:00:00 GMT+0800",
-    "dateModified": "Tue Aug 07 2018 17:00:00 GMT+0800",
+    "mainEntityOfPage": "https://staroon.pro/2018/11/30/CDH6Performance/index.html",
+    "headline": "CDH6集群性能调优（操作系统层面）",
+    "datePublished": "Fri Nov 30 2018 21:00:00 GMT+0800",
+    "dateModified": "Fri Nov 30 2018 23:00:00 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "山小杰",
@@ -297,7 +297,7 @@
             "url": "/img/blog-logo.png"
         }
     },
-    "keywords": ",Hadoop,Kettle大数据,Hadoop,ETL,CDH,Linux",
+    "keywords": ",大数据,CDH大数据,Hadoop,ETL,CDH,Linux",
     "description": "大数据相关技术分享",
 }
 </script>
@@ -372,7 +372,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础文件准备"><span class="post-toc-number">1.</span> <span class="post-toc-text">基础文件准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建集群连接"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建集群连接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Q-amp-A"><span class="post-toc-number">3.</span> <span class="post-toc-text">Q&amp;A</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hadoop-File-Output"><span class="post-toc-number">4.</span> <span class="post-toc-text">Hadoop File Output</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#禁用-RHEL7系列Linux的TUNED服务"><span class="post-toc-number">1.</span> <span class="post-toc-text">禁用 RHEL7系列Linux的TUNED服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#禁用THP"><span class="post-toc-number">2.</span> <span class="post-toc-text">禁用THP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调整Linux内核参数"><span class="post-toc-number">3.</span> <span class="post-toc-text">调整Linux内核参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置完毕！"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置完毕！</span></a></li></ol>
     </ul>
     
 
@@ -404,7 +404,7 @@
         
     
             <p class="article-headline-p">
-                Kettle连接Hadoop集群
+                CDH6集群性能调优（操作系统层面）
             </p>
         </div>
 
@@ -423,7 +423,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>山小杰</strong>
-        <span>8月 07, 2018</span>
+        <span>11月 30, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -445,7 +445,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACeElEQVR42u3ay46jQBAEQP//T+9eR5oBZ/bLyApOFjK4gwNdzqrXv68+Xnh4eHh4eHh4eA/jveLj5/d/X3t15uqqP5Z1cVW+Njw8PLyTvDev2gtAcm2OvH+UyT3x8PDwzvOSzSDfANol5pvQm7Xh4eHhPYw3BrtH4uHh4X03LwG0cUZSUuPh4eE9k5f/4W+DhmQbmP9dPDw8vJO8mQbY7s8f7u/h4eHh/eK1Rz4u0A4TjDXV/vhFPDw8vM28fIgqGYqaGRSIyuUkUMbDw8PbzGtv3Ra4bfibb0J4eHh4n+KNBQHJi3smtM1bX3h4eHjneWMFbrLomXI5GSYoshY8PDy8Dby8dE4AY8FE+ygvfx0PDw9vM68Nbce2jTaAGHuIeHh4eCd5Yy2umdK5HSmYGh3Aw8PD28zLg4n80SS8PDh+szY8PDy847wZdj6U0I4F5GEuHh4e3m7eTJw6NjLVgu/vVsyU4eHh4S3lzbym84c1E4LkhTUeHh7eGd6qgYD21T8fB+Ph4eGd5+XFcRLRtvg82ihGwfDw8PAO8lbFDcmZsVd/tCo8PDy8zbyWeh9YtAVxGzosSKnx8PDwFvHysYA2UGjP5FFyMTqAh4eHt5Q3T2obaXlsMTgOi4eHh7eZ1x5JcZyHDvmrPw+C8fDw8HbzxgKIdmNoC+j7b9YlNR4eHt4GXr4ZjLXB8oI7H9ta/I8BDw8Pb4i3qjhuC/SZxluxMeDh4eF9iJfEAe1V+djB4EwZHh4e3gN4qx7KTOurDiPw8PDwNvDaplcePYzFDVEBvTZrwcPDw9vWWx87k7fKZppheHh4eLt533fg4eHh4eHh4eE94PgPbg5y3osXBA8AAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aQW7DMAwEwPz/0+21QFF1SVqyE4xPAZqgnBwkZsnX10c/Lzw8PDw8PDw8vIfxXvGTfOrnX3+/P389qg0PDw/vCO+fo/aP96w/uy4iOuJbteHh4eGd5CUHfX5trMHJV1CtDQ8PD+99eUm7nFwheHh4eJ/ESzDrayBqjvHw8PAez0t+8FeLroYa+XWCh4eHdy8vHzKdf310voeHh4cX8HpDqWp0my8HfI0fPDw8vN28/CDOG+784snDi0I9eHh4eJt5hR/5m+OG9VeTBx94eHh4u3n5wtP6XyaLBZMhWWGQhoeHh7eZ1xtizcvqRcbNew8PDw/vUt78sM7Lio71YlSBh4eHdxdvEtr2RmLJ+5NKmpsReHh4eGPeJGytDromY7Nm1oKHh4d3KW8yfEpKLB/ryUJqL2vBw8PDu4jXa22rA6o8Jp437nh4eHj38nr/Jo8zrgqU8fDw8O7izQOIfB3hoVkLHh4e3oacMy80L7q3mBUNwPDw8PA28PK4Nr8AJoFv75rBw8PDO8/LR1PztjiPM3rXFR4eHt5JXnVxakeAmz/NrAUPDw9vG683DOuN09YBcR4c4+Hh4Z3n9Vrh5PjOMdXodvSLAQ8PD6/FmzSy+VA/L7G3aoCHh4d3ktcbz8+b5qsaejw8PLy7eNXLoDdCy4PjatuNh4eHdxev2vJOIoPeEC5q3/Hw8PAeyesNxvLVq3wlCw8PD+9deMmIqxfO5l9BIcbFw8PD28ZLWt7qWKu3ONVbQcDDw8M7yRstORXb36ThrsbBeHh4eCd5n/fg4eHh4eHh4eE94PkGlFpdyTajzKoAAAAASUVORK5CYII=">
     
 </ul>
 
@@ -459,7 +459,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Hadoop/">Hadoop</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Kettle/">Kettle</a>
+        <a class="post_tag-link" href="/tags/CDH/">CDH</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/大数据/">大数据</a>
     </ul>
     
 
@@ -487,7 +487,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Kettle连接Hadoop集群&url=https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html&pic=https://staroon.pro/img/blog-logo.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CDH6集群性能调优（操作系统层面）&url=https://staroon.pro/2018/11/30/CDH6Performance/index.html&pic=https://staroon.pro/img/blog-logo.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -496,7 +496,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Kettle连接Hadoop集群&url=https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html&via=山小杰" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CDH6集群性能调优（操作系统层面）&url=https://staroon.pro/2018/11/30/CDH6Performance/index.html&via=山小杰" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -514,7 +514,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=Kettle连接Hadoop集群&summary=大数据相关技术分享&pics=https://staroon.pro/img/blog-logo.png&url=https://staroon.pro/2018/08/07/KettleConnectHadoop/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=CDH6集群性能调优（操作系统层面）&summary=大数据相关技术分享&pics=https://staroon.pro/img/blog-logo.png&url=https://staroon.pro/2018/11/30/CDH6Performance/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -533,31 +533,34 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>其实在<strong>Kettle系列教程</strong>中第十章【<a href="https://staroon.pro/2018/07/30/KettleDoc-10/">对接大数据平台</a>】一文中已经介绍过了连接Hadoop集群需要的基本文件配置，但是呢，那种方式不能从表输入中直接输出数据到HDFS上，本章呢就介绍一下不经过【Hadoop Copy Files】如何直接输出数据到HDFS上。<br>可能你已经注意到，不管是转换还是作业，在Spoon界面左侧【主对象树】下面都有一个【Hadoop clusters】分组：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/4yvsRWj4RHs6.png" alt="img"><br>本章的主要内容就是如何在这里创建一个Hadoop集群连接！</p>
-<h2 id="基础文件准备"><a href="#基础文件准备" class="headerlink" title="基础文件准备"></a>基础文件准备</h2><p>这一部分与<strong>Kettle系列教程</strong>中第十章【<a href="https://staroon.pro/2018/07/30/KettleDoc-10/#基础文件配置">对接大数据平台-基础文件配置</a>】中操作一样，这里不再赘述。    </p>
-<h2 id="创建集群连接"><a href="#创建集群连接" class="headerlink" title="创建集群连接"></a>创建集群连接</h2><p>在【Hadoop clusters】分组图标右键菜单中点击【New Cluster】弹出集群配置窗口：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/C0qK9irTzXDI.png" alt="img"><br>首先给集群起个名字【Cluster name】；    </p>
-<p>然后【Storage】选择<strong>HDFS</strong>；    </p>
-<p>再然后配置【HDFS】连接信息：如果你的集群未开启<strong>NameNode HA</strong>，那么【Hostname】和【Port】如实填写即可，注意【Port】可不是50070这个web端口哈。如果开启了<strong>NameNode HA</strong>，那么【Hostname】这里就填写HDFS的Namespace（命名空间），命名空间即为<code>core-site.xml</code>中<code>fs.defaultFS</code>去掉<code>hdfs://</code>后的的属性值，【Port】一定要留空。集群未配置访问认证的话，【Username】和【Password】不用填写；    </p>
-<p>接着配置【JobTracker】，其实应该改名叫【Yarn】了：与HDFS类似，如果ResourceManager未配置HA，则【Hostname】和【Port】如实填写。如果配置了HA，则【Hostname】这里需要将所有ResourceManager的主机地址都填写上，中间使用英文逗号分隔，【Port】一定要留空！    </p>
-<p>再接着配置【Zookeeper】：【Hostname】这里需要将集群中所有的Zookeeper主机地址填写上，中间使用英文逗号分隔，【Port】如实填写；    </p>
-<p>我的集群没有安装Oozie，故留空；    </p>
-<p>最后配置【Kafka】：需要填写<code>bootstrap-server</code>所在主机地址以及运行端口，多个之间使用英文逗号分隔。未安装Kafka的话留空即可。    </p>
-<p>配置完成以后，点击【测试】按钮可以测试一下集群连接，如果配置无误的话，可以看到全是绿色的对勾：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/RufmFTrJ3ltR.png" alt="img">    </p>
-<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>这一小节就对集群连接测试时容易出现的报错或者警告进行一下解答：    </p>
-<ul>
-<li>【Active Shim Load】出现报错或者警告，需要检查是否在<code>Spoon工具栏 -&gt; 工具 -&gt; Hadoop Distribution</code>中设置了对应的Hadoop平台；</li>
-<li>【Shim Configuration Verification】报出警告：<code>The Hadoop File System URL does not match the URL in the shims core-site.xml</code>，这个时候就需要检查【HDFS】的【Hostname】是否与<code>core-site.xml</code>中<code>fs.defaultFS</code>属性值一致；</li>
-<li>【User Home Directory Access】报错：<code>Could not read directory contents</code>，是因为Kettle是使用当前操作系统用户去访问HDFS的，如果HDFS上<code>/user/</code>目录下没有该用户的目录，则该项检测就会失败。解决办法：手动在HDFS上<code>/user/</code>目录下创建以当前操作系统用户名命名的文件夹即可。</li>
-<li>【Root Directory Access】报错，是因为Kettle访问HDFS的用户没有读写HDFS跟目录的权限，可通过修改集群配置文件解决：在<code>hdfs-site.xml</code>文件中增加一个属性配置，重启集群生效：    <pre><code class="xml">&lt;property&gt;
-  &lt;name&gt;dfs.permissions.enabled&lt;/name&gt;
-  &lt;value&gt;false&lt;/value&gt;
-&lt;/property&gt;
+        <p>本文内容是参照CDH官方文档来写的，主要是对CDH集群主机操作系统层面上的一些性能参数调优，不包含CDH组件的参数调优（比如MR、YARN等）。    </p>
+<p>本文所有配置内容基于RHEL 7.x（CentOS 7.5），其他版本或者其他类型Linux的配置方式可能有所不同。    </p>
+<p>本文所有操作都是在<strong>root</strong>用户下进行的。    </p>
+<p>建议这部分操作在安装CDH6集群之前进行。</p>
+<h2 id="禁用-RHEL7系列Linux的TUNED服务"><a href="#禁用-RHEL7系列Linux的TUNED服务" class="headerlink" title="禁用 RHEL7系列Linux的TUNED服务"></a>禁用 RHEL7系列Linux的TUNED服务</h2><ol>
+<li>确保tuned服务已开启<br><code>systemctl start tuned</code><br><code>systemctl status tuned</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/glIS6IcEIDVb.png" alt="img"></li>
+<li>关闭tuned服务<br><code>tuned-adm off</code></li>
+<li>确保没有已激活的配置<br><code>tuned-adm list</code><br>如果输出内容中包含<code>No current active profile</code>表示关闭成功:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/JSDyuwjnqoKm.png" alt="img"></li>
+<li>关闭并且禁用tuned服务<br><code>systemctl stop tuned</code><br><code>systemctl disable tuned</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/h6JjSHEfVddp.png" alt="img"></li>
+</ol>
+<h2 id="禁用THP"><a href="#禁用THP" class="headerlink" title="禁用THP"></a>禁用THP</h2><p>大多数Linux平台都包含一个名为<strong>transparent hugepages</strong>的功能，该功能可能会严重降低Hadoop集群的性能。    </p>
+<p>注意：该部分操作将在系统重启后生效。</p>
+<ol>
+<li>检查THP是否启用<br>对于RHEL7系列Linux，查看方法如下所示：<br><code>cat /sys/kernel/mm/transparent_hugepage/enabled</code><br><code>cat /sys/kernel/mm/transparent_hugepage/defrag</code><br>输出<code>[always] never</code>意味着THP已启用，<code>always [never]</code>意味着THP未启用，下图就表示THP已启用：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/SHHCIWBLAUEg.png" alt="img"></li>
+<li>禁用THP<br>编辑<code>/etc/rc.d/rc.local</code>文件，最下面添加两行配置：<pre><code class="shell"> echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
+ echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag
 </code></pre>
-</li>
-</ul>
-<h2 id="Hadoop-File-Output"><a href="#Hadoop-File-Output" class="headerlink" title="Hadoop File Output"></a>Hadoop File Output</h2><p>创建完成集群连接以后，就可以直接输出数据到HDFS上了，本小节使用的是转换中【Big Data】分组下的【Hadoop File Output】组件：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/4dKzsRvxBgVf.png" alt="img"><br>直接看【Hadoop File Output】的配置项，其实与【文本文件输出】类似，只不过输出位置从本地变成了HDFS：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/SOhAYhStFDx7.png" alt="img"><br>【内容】选项卡，设置字段分隔符，要注意选择<code>LF</code>换行格式，编码<code>UTF-8</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/G6Lg6o8bJbkq.png" alt="img"><br>【字段】选项卡与【文本文件输出】配置方法相同，先【获取字段】，再【最小宽度】。    </p>
-<p>保存，运行，重看结果：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/KettleConnectHadoop/20180807/WHvOBmiYN0AK.png" alt="img"></p>
-
+ <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/f4uG0qMlswpK.png" alt="img"><br>然后赋予<code>/etc/rc.d/rc.local</code>文件可执行权限：<br><code>chmod +x /etc/rc.d/rc.local</code></li>
+<li>修改GRUB配置<br>仅RHEL 7.x需要进行该项操作。<br>编辑<code>/etc/default/grub</code>文件，在<strong>GRUB_CMDLINE_LINUX</strong>项目后面添加一个参数：<code>transparent_hugepage=never</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/HTawN2QTGJmW.png" alt="img"><br>然后执行命令：<code>grub2-mkconfig -o /boot/grub2/grub.cfg</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/uYEbM5lnfJSk.png" alt="img"></li>
+</ol>
+<h2 id="调整Linux内核参数"><a href="#调整Linux内核参数" class="headerlink" title="调整Linux内核参数"></a>调整Linux内核参数</h2><p>需要调整的参数为<code>vm.swappiness</code>，是一个0-100的值，用于控制应用数据从物理内存到磁盘上的虚拟内存的交换，值越高，交换越积极，值越小，交换的次数越少。    </p>
+<p>在大多数Linux系统上，该参数默认值为60，这并不适用于Hadoop集群，因为即使有足够的内存，也可能会进行进程的交换，从而可能会影响Hadoop的性能和稳定性。    </p>
+<p>CDH建议将该参数设置到<strong>1-10</strong>之间，最好设为<strong>1</strong>。    </p>
+<ol>
+<li>查看当前该项参数值<br><code>cat /proc/sys/vm/swappiness</code></li>
+<li>修改该项参数值<br><code>sysctl -w vm.swappiness=1</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/DoMtnyZK3f6F.png" alt="img"></li>
+</ol>
+<h2 id="配置完毕！"><a href="#配置完毕！" class="headerlink" title="配置完毕！"></a>配置完毕！</h2>
         
     
 
@@ -602,21 +605,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/11/30/CDH6Performance/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/01/KettleLoop/" id="post_nav-older" class="next-content">
+        <a href="/2018/08/07/KettleConnectHadoop/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

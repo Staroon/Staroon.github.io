@@ -3,11 +3,25 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2018/12/01/CDH6Performance/"/>
-      <url>/2018/12/01/CDH6Performance/</url>
-      <content type="html"><![CDATA[<p>本文内容是参照CDH官方文档来写的，主要是对CDH集群主机操作系统层面上的一些性能参数调优，不包含CDH组件的参数调优（比如MR、YARN等）。    </p><p>本文所有配置内容基于RHEL 7.x（CentOS 7.5），其他版本或者其他类型Linux的配置方式可能有所不同。    </p><p>本文所有操作都是在<strong>root</strong>用户下进行的。    </p><p>建议这部分操作在安装CDH6集群之前进行。</p><h2 id="禁用-RHEL7系列Linux的TUNED服务"><a href="#禁用-RHEL7系列Linux的TUNED服务" class="headerlink" title="禁用 RHEL7系列Linux的TUNED服务"></a>禁用 RHEL7系列Linux的TUNED服务</h2><ol><li>确保tuned服务已开启<br><code>systemctl start tuned</code><br><code>systemctl status tuned</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/glIS6IcEIDVb.png" alt="img"></li><li>关闭tuned服务<br><code>tuned-adm off</code></li><li>确保没有已激活的配置<br><code>tuned-adm list</code><br>如果输出内容中包含<code>No current active profile</code>表示关闭成功:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/JSDyuwjnqoKm.png" alt="img"></li><li>关闭并且禁用tuned服务<br><code>systemctl stop tuned</code><br><code>systemctl disable tuned</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/h6JjSHEfVddp.png" alt="img"></li></ol><h2 id="禁用THP"><a href="#禁用THP" class="headerlink" title="禁用THP"></a>禁用THP</h2><p>大多数Linux平台都包含一个名为<strong>transparent hugepages</strong>的功能，该功能可能会严重降低Hadoop集群的性能。<br>注意：该部分操作将在系统重启后生效。</p><ol><li>检查THP是否启用<br>对于RHEL7系列Linux，查看方法如下所示：<br><code>cat /sys/kernel/mm/transparent_hugepage/enabled</code><br><code>cat /sys/kernel/mm/transparent_hugepage/defrag</code><br>输出<code>[always] never</code>意味着THP已启用，<code>always [never]</code>意味着THP未启用，下图就表示THP已启用：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/SHHCIWBLAUEg.png" alt="img"></li><li>禁用THP<br>编辑<code>/etc/rc.d/rc.local</code>文件，最下面添加两行配置：<pre><code class="shell"> echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</code></pre> <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/f4uG0qMlswpK.png" alt="img"><br>然后赋予<code>/etc/rc.d/rc.local</code>文件可执行权限：<br><code>chmod +x /etc/rc.d/rc.local</code></li><li>修改GRUB配置<br>仅RHEL 7.x需要进行该项操作。<br>编辑<code>/etc/default/grub</code>文件，在<strong>GRUB_CMDLINE_LINUX</strong>项目后面添加一个参数：<code>transparent_hugepage=never</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/HTawN2QTGJmW.png" alt="img"><br>然后执行命令：<code>grub2-mkconfig -o /boot/grub2/grub.cfg</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/uYEbM5lnfJSk.png" alt="img"></li></ol><h2 id="调整Linux内核参数"><a href="#调整Linux内核参数" class="headerlink" title="调整Linux内核参数"></a>调整Linux内核参数</h2><p>需要调整的参数为<code>vm.swappiness</code>，是一个0-100的值，用于控制应用数据从物理内存到磁盘上的虚拟内存的交换，值越高，交换越积极，值越小，交换的次数越少。    </p><p>在大多数系统上，该参数默认值为60，这并不适用于Hadoop集群，因为即使有足够的内存，也可能会进行进程的交换，从而可能会影响Hadoop的性能和稳定性。    </p><p>CDH建议将该参数设置到<strong>1-10</strong>之间，最好设为<strong>1</strong>。    </p><ol><li>查看当前该项参数值<br><code>cat /proc/sys/vm/swappiness</code></li><li>修改该项参数值<br><code>sysctl -w vm.swappiness=1</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/DoMtnyZK3f6F.png" alt="img"></li></ol><h2 id="配置完毕！"><a href="#配置完毕！" class="headerlink" title="配置完毕！"></a>配置完毕！</h2>]]></content>
+      <title>CDH6集群性能调优（操作系统层面）</title>
+      <link href="/2018/11/30/CDH6Performance/"/>
+      <url>/2018/11/30/CDH6Performance/</url>
+      <content type="html"><![CDATA[<p>本文内容是参照CDH官方文档来写的，主要是对CDH集群主机操作系统层面上的一些性能参数调优，不包含CDH组件的参数调优（比如MR、YARN等）。    </p><p>本文所有配置内容基于RHEL 7.x（CentOS 7.5），其他版本或者其他类型Linux的配置方式可能有所不同。    </p><p>本文所有操作都是在<strong>root</strong>用户下进行的。    </p><p>建议这部分操作在安装CDH6集群之前进行。</p><h2 id="禁用-RHEL7系列Linux的TUNED服务"><a href="#禁用-RHEL7系列Linux的TUNED服务" class="headerlink" title="禁用 RHEL7系列Linux的TUNED服务"></a>禁用 RHEL7系列Linux的TUNED服务</h2><ol><li>确保tuned服务已开启<br><code>systemctl start tuned</code><br><code>systemctl status tuned</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/glIS6IcEIDVb.png" alt="img"></li><li>关闭tuned服务<br><code>tuned-adm off</code></li><li>确保没有已激活的配置<br><code>tuned-adm list</code><br>如果输出内容中包含<code>No current active profile</code>表示关闭成功:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/JSDyuwjnqoKm.png" alt="img"></li><li>关闭并且禁用tuned服务<br><code>systemctl stop tuned</code><br><code>systemctl disable tuned</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/h6JjSHEfVddp.png" alt="img"></li></ol><h2 id="禁用THP"><a href="#禁用THP" class="headerlink" title="禁用THP"></a>禁用THP</h2><p>大多数Linux平台都包含一个名为<strong>transparent hugepages</strong>的功能，该功能可能会严重降低Hadoop集群的性能。    </p><p>注意：该部分操作将在系统重启后生效。</p><ol><li>检查THP是否启用<br>对于RHEL7系列Linux，查看方法如下所示：<br><code>cat /sys/kernel/mm/transparent_hugepage/enabled</code><br><code>cat /sys/kernel/mm/transparent_hugepage/defrag</code><br>输出<code>[always] never</code>意味着THP已启用，<code>always [never]</code>意味着THP未启用，下图就表示THP已启用：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/SHHCIWBLAUEg.png" alt="img"></li><li>禁用THP<br>编辑<code>/etc/rc.d/rc.local</code>文件，最下面添加两行配置：<pre><code class="shell"> echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</code></pre> <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/f4uG0qMlswpK.png" alt="img"><br>然后赋予<code>/etc/rc.d/rc.local</code>文件可执行权限：<br><code>chmod +x /etc/rc.d/rc.local</code></li><li>修改GRUB配置<br>仅RHEL 7.x需要进行该项操作。<br>编辑<code>/etc/default/grub</code>文件，在<strong>GRUB_CMDLINE_LINUX</strong>项目后面添加一个参数：<code>transparent_hugepage=never</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/HTawN2QTGJmW.png" alt="img"><br>然后执行命令：<code>grub2-mkconfig -o /boot/grub2/grub.cfg</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/uYEbM5lnfJSk.png" alt="img"></li></ol><h2 id="调整Linux内核参数"><a href="#调整Linux内核参数" class="headerlink" title="调整Linux内核参数"></a>调整Linux内核参数</h2><p>需要调整的参数为<code>vm.swappiness</code>，是一个0-100的值，用于控制应用数据从物理内存到磁盘上的虚拟内存的交换，值越高，交换越积极，值越小，交换的次数越少。    </p><p>在大多数Linux系统上，该参数默认值为60，这并不适用于Hadoop集群，因为即使有足够的内存，也可能会进行进程的交换，从而可能会影响Hadoop的性能和稳定性。    </p><p>CDH建议将该参数设置到<strong>1-10</strong>之间，最好设为<strong>1</strong>。    </p><ol><li>查看当前该项参数值<br><code>cat /proc/sys/vm/swappiness</code></li><li>修改该项参数值<br><code>sysctl -w vm.swappiness=1</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/DoMtnyZK3f6F.png" alt="img"></li></ol><h2 id="配置完毕！"><a href="#配置完毕！" class="headerlink" title="配置完毕！"></a>配置完毕！</h2>]]></content>
       
+      <categories>
+          
+          <category> 大数据 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> CDH </tag>
+            
+        </tags>
       
     </entry>
     
@@ -353,9 +367,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> 高可用 </tag>
-            
             <tag> CDH </tag>
+            
+            <tag> 高可用 </tag>
             
         </tags>
       
@@ -516,9 +530,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> HBase </tag>
-            
             <tag> 高可用 </tag>
+            
+            <tag> HBase </tag>
             
             <tag> HA </tag>
             
@@ -543,9 +557,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> Hadoop </tag>
-            
             <tag> 高可用 </tag>
+            
+            <tag> Hadoop </tag>
             
             <tag> HA </tag>
             
@@ -601,9 +615,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> Hadoop </tag>
-            
             <tag> CDH </tag>
+            
+            <tag> Hadoop </tag>
             
             <tag> HDP </tag>
             
