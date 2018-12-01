@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>CentOS7下使用RPM安装MySQL5.7</title>
+      <link href="/2018/12/01/InstallMysql7OnCentos7/"/>
+      <url>/2018/12/01/InstallMysql7OnCentos7/</url>
+      <content type="html"><![CDATA[<p>MySQL5.7的RPM安装方式与MySQL5.6的安装方式略有不同。由于安装CDH6需要MySQL5.7，故这篇文章就来介绍一下CentOS7下安装MySQL5.7的操作流程。</p><ul><li><p>文件准备：<a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="noopener">mysql-5.7.24-1.el7.x86_64.rpm-bundle.tar</a><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/dZeUiydsuGE6.png" alt="img"></p></li><li><p>首先卸载操作系统可能会自带的mariadb-libs<br><code>yum -y remove mariadb-libs</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/qb9NPmvrmcnJ.png" alt="img"></p></li><li>解压mysql rpm-bundle tar包<br><code>tar -xvf mysql-5.7.24-1.el7.x86_64.rpm-bundle.tar</code></li><li>开始安装mysql<br>一定要按照下面的顺序来安装，否则会安装不成功：<br><code>rpm -ivh mysql-community-common-5.7.24-1.el7.x86_64.rpm</code><br><code>rpm -ivh mysql-community-libs-5.7.24-1.el7.x86_64.rpm</code><br><code>rpm -ivh mysql-community-client-5.7.24-1.el7.x86_64.rpm</code><br><code>rpm -ivh mysql-community-server-5.7.24-1.el7.x86_64.rpm</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/FYFU39cQLbSZ.png" alt="img"></li><li>启动mysql服务<br><code>systemctl start mysqld</code><br>如果无法启动，则需要修改mysql数据目录所有者：<code>chown -R mysql:mysql /var/lib/mysql/</code></li><li>查看root用户初始密码<br><code>grep password /var/log/mysqld.log</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/LrVOvP7ONoaQ.png" alt="img"></li><li>登录mysql修改root密码<br><code>mysql -uroot -p</code><br><code>mysql&gt; set password = password(&#39;123456&#39;);</code><br>如果密码复杂度不够，则会禁止修改，默认密码规则为：包含数字、大小写字母、特殊字符，同时还有长度要求：    <pre><code>  mysql&gt; set password = password(&#39;123456&#39;);  ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</code></pre>  可以通过修改全局参数来解决，但是还是要求密码长度至少为8位：<br><code>mysql&gt; set global validate_password_policy=0;</code><br><code>mysql&gt; set password = password(&#39;12345678&#39;);</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/inPy7TQSSL1P.png" alt="img"></li><li>设置远程登录权限<br><code>mysql&gt; grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;12345678&#39;;</code><br><code>mysql&gt; flush privileges;</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/MK1AoczaO6Dx.png" alt="img"></li><li>修改mysql数据库默认编码<br>查看原数据库编码：<code>mysql&gt; SHOW VARIABLES LIKE &#39;char%&#39;;</code>可以看到数据库和服务端的编码都还不是utf8：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/jexnClh1vJOg.png" alt="img"><br>编辑<code>/etc/my.cnf</code>文件，在<code>[mysqld]</code>下面添加一行<code>character-set-server=utf8</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/FpitZfNGvVc7.png" alt="img"><br>重启mysql服务：<code>systemctl restart mysqld</code>，再次登录数据库查看编码，修改成功：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/y252yb8RlCLP.png" alt="img"></li><li>MySQL5.7安装配置完毕！</li></ul>]]></content>
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CentOS </tag>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>CDH6集群性能调优（操作系统层面）</title>
       <link href="/2018/11/30/CDH6Performance/"/>
       <url>/2018/11/30/CDH6Performance/</url>

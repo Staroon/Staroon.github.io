@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://staroon.pro/2018/12/01/InstallMysql7OnCentos7/</loc>
+        <lastmod>2018-12-01T06:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://staroon.pro/2018/11/30/CDH6Performance/</loc>
         <lastmod>2018-11-30T15:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -111,7 +119,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/18/KettleDoc-3/</loc>
+        <loc>https://staroon.pro/2018/07/18/KettleDoc-4/</loc>
         <lastmod>2018-07-18T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -119,7 +127,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/18/KettleDoc-4/</loc>
+        <loc>https://staroon.pro/2018/07/18/KettleDoc-3/</loc>
         <lastmod>2018-07-18T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
