@@ -170,20 +170,6 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
-        <lastmod>2018-11-30T15:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://staroon.pro/tags/CDH/</loc>
-        <lastmod>2018-11-30T15:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://staroon.pro/tags/CentOS/</loc>
         <lastmod>2018-12-01T06:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -193,6 +179,27 @@
     <url>
         <loc>https://staroon.pro/tags/MySQL/</loc>
         <lastmod>2018-12-01T06:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://staroon.pro/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+        <lastmod>2018-12-01T15:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://staroon.pro/tags/CDH/</loc>
+        <lastmod>2018-12-01T15:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://staroon.pro/tags/Linux/</loc>
+        <lastmod>2018-12-01T15:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

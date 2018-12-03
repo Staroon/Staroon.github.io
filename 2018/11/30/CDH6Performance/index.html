@@ -557,8 +557,9 @@
 <p>在大多数Linux系统上，该参数默认值为60，这并不适用于Hadoop集群，因为即使有足够的内存，也可能会进行进程的交换，从而可能会影响Hadoop的性能和稳定性。    </p>
 <p>CDH建议将该参数设置到<strong>1-10</strong>之间，最好设为<strong>1</strong>。    </p>
 <ol>
-<li>查看当前该项参数值<br><code>cat /proc/sys/vm/swappiness</code></li>
-<li>修改该项参数值<br><code>sysctl -w vm.swappiness=1</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/DoMtnyZK3f6F.png" alt="img"></li>
+<li>查看当前该项参数值：<br><code>cat /proc/sys/vm/swappiness</code></li>
+<li>修改该项参数值（临时生效）：<br><code>sysctl -w vm.swappiness=1</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/DoMtnyZK3f6F.png" alt="img"></li>
+<li>编辑<code>/etc/sysctl.conf</code>文件（重启后永久生效），添加一行<code>vm.swappiness=1</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/Z0DJuamFetP0.png" alt="img"></li>
 </ol>
 <h2 id="配置完毕！"><a href="#配置完毕！" class="headerlink" title="配置完毕！"></a>配置完毕！</h2>
         
@@ -713,7 +714,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -731,7 +732,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
