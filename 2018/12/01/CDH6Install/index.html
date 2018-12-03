@@ -624,7 +624,7 @@ pid-file=/var/run/mysqld/mysqld.pid
 sql_mode=STRICT_ALL_TABLES
 </code></pre>
 <h3 id="配置mysql-jdbc驱动"><a href="#配置mysql-jdbc驱动" class="headerlink" title="配置mysql jdbc驱动"></a>配置mysql jdbc驱动</h3><p>从前面下载好的<code>mysql-connector-java-5.1.47.tar.gz</code>包中解压出<code>mysql-connector-java-5.1.47-bin.jar</code>文件，将<code>mysql-connector-java-5.1.47-bin.jar</code>文件上传至CM Server节点上的<code>/usr/share/java/</code>目录下并重命名为<code>mysql-connector-java.jar</code>（如果<code>/usr/share/java/</code>目录不存在，需要手动创建）：<br><code>tar zxvf mysql-connector-java-5.1.47.tar.gz</code><br><code>mkdir -p /usr/share/java/</code><br><code>cp mysql-connector-java-5.1.47-bin.jar /usr/share/java/mysql-connector-java.jar</code></p>
-<h3 id="创建CDH所需要的数据库"><a href="#创建CDH所需要的数据库" class="headerlink" title="创建CDH所需要的数据库"></a>创建CDH所需要的数据库</h3><p>根据所需要安装的服务参照下表创建对应的数据库以及数据库用户，数据库必须使用utf8编码，创建数据库时要记录好用户名及对应密码：<br>服务名 | 数据库名 | 用户名<br>:-:|:-:|:-:<br>Cloudera Manager Server    | scm |    scm<br>Activity Monitor |    amon |    amon<br>Reports Manager    | rman |    rman<br>Hue    | hue    | hue<br>Hive Metastore Server    | metastore    | hive<br>Sentry Server    | sentry    | sentry<br>Cloudera Navigator Audit Server    | nav    | nav<br>Cloudera Navigator Metadata Server |    navms |    navms<br>Oozie    | oozie    | oozie</p>
+<h3 id="创建CDH所需要的数据库"><a href="#创建CDH所需要的数据库" class="headerlink" title="创建CDH所需要的数据库"></a>创建CDH所需要的数据库</h3><p>根据所需要安装的服务参照下表创建对应的数据库以及数据库用户，数据库必须使用utf8编码，创建数据库时要记录好用户名及对应密码：<br>服务名 | 数据库名 | 用户名<br>:-: | :-: | :-:<br>Cloudera Manager Server    | scm |    scm<br>Activity Monitor |    amon |    amon<br>Reports Manager    | rman |    rman<br>Hue    | hue    | hue<br>Hive Metastore Server    | metastore    | hive<br>Sentry Server    | sentry    | sentry<br>Cloudera Navigator Audit Server    | nav    | nav<br>Cloudera Navigator Metadata Server |    navms |    navms<br>Oozie    | oozie    | oozie</p>
 <p>我这里就先创建4个数据库及对应用户：    </p>
 <pre><code class="sql">mysql&gt; CREATE DATABASE scm DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 Query OK, 1 row affected (0.11 sec)
@@ -708,7 +708,7 @@ mysql&gt; SHOW GRANTS FOR &#39;hive&#39;@&#39;%&#39;;
 <h3 id="JDK安装选项"><a href="#JDK安装选项" class="headerlink" title="JDK安装选项"></a>JDK安装选项</h3><p>这一步骤我就不再勾选安装JDK了，因为我在环境准备部分已经安装过了。取消勾选，然后继续：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/u7pRN3Tgh9Ba.png" alt="img"></p>
 <h3 id="SSH登录配置"><a href="#SSH登录配置" class="headerlink" title="SSH登录配置"></a>SSH登录配置</h3><p>用于配置集群主机之间的SSH登录，填写root用户的密码，根据集群配置填写合适的【同时安装数量】值即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/WCEx9xZKZ8S6.png" alt="img"></p>
 <h3 id="安装Agent"><a href="#安装Agent" class="headerlink" title="安装Agent"></a>安装Agent</h3><p>到这一步会自动进行节点Agent的安装，稍等一会儿，即可安装完成：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/P2CrQYOzRD5n.png" alt="img"><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/wOzDIDATTiby.png" alt="img"></p>
-<h3 id="安装Parcels"><a href="#安装Parcels" class="headerlink" title="安装Parcels"></a>安装Parcels</h3><p>这一步同样是自动安装，分配步骤的速度主要取决于网络环境，7耐心等待即可（我的3台虚拟机性能实在是太差了，这一步等了好久）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/gK0C7FkGUFu9.png" alt="img"><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/hr8YAhLnK0Vp.png" alt="img"></p>
+<h3 id="安装Parcels"><a href="#安装Parcels" class="headerlink" title="安装Parcels"></a>安装Parcels</h3><p>这一步同样是自动安装，分配步骤的速度主要取决于网络环境，耐心等待即可（我的3台虚拟机性能实在是太差了，这一步等了好久）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/gK0C7FkGUFu9.png" alt="img"><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/hr8YAhLnK0Vp.png" alt="img"></p>
 <h3 id="主机检查"><a href="#主机检查" class="headerlink" title="主机检查"></a>主机检查</h3><p>等待检查完成即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/yHezTfwq7iS3.png" alt="img"></p>
 <h2 id="安装CDH集群"><a href="#安装CDH集群" class="headerlink" title="安装CDH集群"></a>安装CDH集群</h2><h3 id="选择服务类型"><a href="#选择服务类型" class="headerlink" title="选择服务类型"></a>选择服务类型</h3><p>这里我选择自定义服务，HDFS，Hive，Yarn：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/Ex5GAhAXmpfB.png" alt="img"></p>
 <h3 id="角色分配"><a href="#角色分配" class="headerlink" title="角色分配"></a>角色分配</h3><p>CDH会自动给出一个角色分配，如果觉得不合理，我们可以手动调整一下，注意角色分配均衡：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/tbEKMMOnrorV.png" alt="img">    </p>
@@ -765,7 +765,7 @@ mysql&gt; SHOW GRANTS FOR &#39;hive&#39;@&#39;%&#39;;
 
     <!-- Next Nav -->
     
-        <a href="/2018/12/01/CDH6BeforInstall/" id="post_nav-older" class="next-content">
+        <a href="/2018/12/01/CDH6BeforeInstall/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
