@@ -634,7 +634,63 @@ pid-file=/var/run/mysqld/mysqld.pid
 sql_mode=STRICT_ALL_TABLES
 </code></pre>
 <h3 id="配置mysql-jdbc驱动"><a href="#配置mysql-jdbc驱动" class="headerlink" title="配置mysql jdbc驱动"></a>配置mysql jdbc驱动</h3><p>从前面下载好的<code>mysql-connector-java-5.1.47.tar.gz</code>包中解压出<code>mysql-connector-java-5.1.47-bin.jar</code>文件，将<code>mysql-connector-java-5.1.47-bin.jar</code>文件上传至CM Server节点上的<code>/usr/share/java/</code>目录下并重命名为<code>mysql-connector-java.jar</code>（如果<code>/usr/share/java/</code>目录不存在，需要手动创建）：<br><code>tar zxvf mysql-connector-java-5.1.47.tar.gz</code><br><code>mkdir -p /usr/share/java/</code><br><code>cp mysql-connector-java-5.1.47-bin.jar /usr/share/java/mysql-connector-java.jar</code></p>
-<h3 id="创建CDH所需要的数据库"><a href="#创建CDH所需要的数据库" class="headerlink" title="创建CDH所需要的数据库"></a>创建CDH所需要的数据库</h3><p>根据所需要安装的服务参照下表创建对应的数据库以及数据库用户，数据库必须使用utf8编码，创建数据库时要记录好用户名及对应密码：<br>服务名 | 数据库名 | 用户名<br>:-: | :-: | :-:<br>Cloudera Manager Server    | scm |    scm<br>Activity Monitor |    amon |    amon<br>Reports Manager    | rman |    rman<br>Hue    | hue    | hue<br>Hive Metastore Server    | metastore    | hive<br>Sentry Server    | sentry    | sentry<br>Cloudera Navigator Audit Server    | nav    | nav<br>Cloudera Navigator Metadata Server |    navms |    navms<br>Oozie    | oozie    | oozie</p>
+<h3 id="创建CDH所需要的数据库"><a href="#创建CDH所需要的数据库" class="headerlink" title="创建CDH所需要的数据库"></a>创建CDH所需要的数据库</h3><p>根据所需要安装的服务参照下表创建对应的数据库以及数据库用户，数据库必须使用utf8编码，创建数据库时要记录好用户名及对应密码： </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">服务名</th>
+<th style="text-align:center">数据库名</th>
+<th style="text-align:center">用户名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Cloudera Manager Server</td>
+<td style="text-align:center">scm</td>
+<td style="text-align:center">scm</td>
+</tr>
+<tr>
+<td style="text-align:center">Activity Monitor</td>
+<td style="text-align:center">amon</td>
+<td style="text-align:center">amon</td>
+</tr>
+<tr>
+<td style="text-align:center">Reports Manager</td>
+<td style="text-align:center">rman</td>
+<td style="text-align:center">rman</td>
+</tr>
+<tr>
+<td style="text-align:center">Hue</td>
+<td style="text-align:center">hue</td>
+<td style="text-align:center">hue</td>
+</tr>
+<tr>
+<td style="text-align:center">Hive Metastore Server</td>
+<td style="text-align:center">metastore</td>
+<td style="text-align:center">hive</td>
+</tr>
+<tr>
+<td style="text-align:center">Sentry Server</td>
+<td style="text-align:center">sentry</td>
+<td style="text-align:center">sentry</td>
+</tr>
+<tr>
+<td style="text-align:center">Cloudera Navigator Audit Server</td>
+<td style="text-align:center">nav</td>
+<td style="text-align:center">nav</td>
+</tr>
+<tr>
+<td style="text-align:center">Cloudera Navigator Metadata Server</td>
+<td style="text-align:center">navms</td>
+<td style="text-align:center">navms</td>
+</tr>
+<tr>
+<td style="text-align:center">Oozie</td>
+<td style="text-align:center">oozie</td>
+<td style="text-align:center">oozie</td>
+</tr>
+</tbody>
+</table>
 <p>我这里就先创建4个数据库及对应用户：    </p>
 <pre><code class="sql">mysql&gt; CREATE DATABASE scm DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 Query OK, 1 row affected (0.11 sec)
