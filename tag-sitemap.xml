@@ -142,20 +142,6 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/tags/%E6%9D%82%E8%AE%B0/</loc>
-        <lastmod>2018-07-19T03:47:48.466Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://staroon.pro/tags/%E9%9A%8F%E7%AC%94/</loc>
-        <lastmod>2018-07-19T03:47:48.466Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://staroon.pro/tags/Hadoop/</loc>
         <lastmod>2018-08-07T09:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -200,6 +186,20 @@
     <url>
         <loc>https://staroon.pro/tags/Linux/</loc>
         <lastmod>2018-12-01T15:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://staroon.pro/tags/%E6%9D%82%E8%AE%B0/</loc>
+        <lastmod>2019-01-06T12:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://staroon.pro/tags/%E9%9A%8F%E7%AC%94/</loc>
+        <lastmod>2019-01-06T12:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
