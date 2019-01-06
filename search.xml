@@ -603,9 +603,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> HBase </tag>
-            
             <tag> 高可用 </tag>
+            
+            <tag> HBase </tag>
             
             <tag> HA </tag>
             
@@ -630,11 +630,11 @@
             
             <tag> 大数据 </tag>
             
-            <tag> Hadoop </tag>
-            
             <tag> 高可用 </tag>
             
             <tag> HA </tag>
+            
+            <tag> Hadoop </tag>
             
             <tag> Zookeeper </tag>
             
@@ -688,9 +688,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> Hadoop </tag>
-            
             <tag> CDH </tag>
+            
+            <tag> Hadoop </tag>
             
             <tag> HDP </tag>
             
