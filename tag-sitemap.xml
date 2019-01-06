@@ -51,14 +51,14 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/tags/HBase/</loc>
+        <loc>https://staroon.pro/tags/HA/</loc>
         <lastmod>2017-11-30T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://staroon.pro/tags/HA/</loc>
+        <loc>https://staroon.pro/tags/HBase/</loc>
         <lastmod>2017-11-30T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
