@@ -605,9 +605,9 @@
             
             <tag> 高可用 </tag>
             
-            <tag> HA </tag>
-            
             <tag> HBase </tag>
+            
+            <tag> HA </tag>
             
         </tags>
       
@@ -634,9 +634,9 @@
             
             <tag> Hadoop </tag>
             
-            <tag> Zookeeper </tag>
-            
             <tag> HA </tag>
+            
+            <tag> Zookeeper </tag>
             
         </tags>
       
