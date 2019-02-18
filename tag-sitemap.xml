@@ -51,14 +51,14 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/tags/HA/</loc>
+        <loc>https://staroon.pro/tags/HBase/</loc>
         <lastmod>2017-11-30T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://staroon.pro/tags/HBase/</loc>
+        <loc>https://staroon.pro/tags/HA/</loc>
         <lastmod>2017-11-30T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -192,14 +192,14 @@
 
     <url>
         <loc>https://staroon.pro/tags/%E6%9D%82%E8%AE%B0/</loc>
-        <lastmod>2019-01-06T12:00:00.000Z</lastmod>
+        <lastmod>2019-02-18T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://staroon.pro/tags/%E9%9A%8F%E7%AC%94/</loc>
-        <lastmod>2019-01-06T12:00:00.000Z</lastmod>
+        <lastmod>2019-02-18T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
