@@ -536,73 +536,73 @@
     
         <p>本系列教程基于Kettle 8.1（pdi-ce-8.1.0.0-365）。大部分内容同样适用于Kettle 7.x版本。<br>章节目录：    </p>
 <ul>
-<li>一、<a href="https://staroon.pro/2018/07/18/KettleDoc-1/" target="_blank" rel="noopener">运行环境配置</a><ul>
+<li>一、<a href="https://www.staroon.dev/2018/07/18/KettleDoc-1/">运行环境配置</a><ul>
 <li>JDK</li>
 <li>JVM参数</li>
 <li>KETTLE_HOME</li>
 <li>依赖包导入</li>
 </ul>
 </li>
-<li>二、<a href="https://staroon.pro/2018/07/18/KettleDoc-2/" target="_blank" rel="noopener">转换与作业</a><ul>
+<li>二、<a href="https://www.staroon.dev/2018/07/18/KettleDoc-2/">转换与作业</a><ul>
 <li>转换流程</li>
 <li>作业流程</li>
 </ul>
 </li>
-<li>三、<a href="https://staroon.pro/2018/07/18/KettleDoc-3/" target="_blank" rel="noopener">数据库连接配置</a><ul>
+<li>三、<a href="https://www.staroon.dev/2018/07/18/KettleDoc-3/">数据库连接配置</a><ul>
 <li>创建数据库连接</li>
 <li>共享数据库连接</li>
 <li>数据库连接参数</li>
 </ul>
 </li>
-<li>四、<a href="https://staroon.pro/2018/07/18/KettleDoc-4/" target="_blank" rel="noopener">资源库（数据库存储方式）</a><ul>
+<li>四、<a href="https://www.staroon.dev/2018/07/18/KettleDoc-4/">资源库（数据库存储方式）</a><ul>
 <li>创建资源库</li>
 <li>保存流程到资源库</li>
 <li>从资源库打开流程</li>
 </ul>
 </li>
-<li>五、<a href="https://staroon.pro/2018/07/30/KettleDoc-5/" target="_blank" rel="noopener">变量/参数</a><ul>
+<li>五、<a href="https://www.staroon.dev/2018/07/30/KettleDoc-5/">变量/参数</a><ul>
 <li>参数的配置与使用</li>
 <li>变量的配置与使用</li>
 </ul>
 </li>
-<li>六、<a href="https://staroon.pro/2018/07/30/KettleDoc-6/" target="_blank" rel="noopener">转换流程-输入组件</a><ul>
+<li>六、<a href="https://www.staroon.dev/2018/07/30/KettleDoc-6/">转换流程-输入组件</a><ul>
 <li>Excel输入</li>
 <li>表输入</li>
 </ul>
 </li>
-<li>七、<a href="https://staroon.pro/2018/07/30/KettleDoc-7/" target="_blank" rel="noopener">转换流程-输出组件</a><ul>
+<li>七、<a href="https://www.staroon.dev/2018/07/30/KettleDoc-7/">转换流程-输出组件</a><ul>
 <li>Excel输出</li>
 <li>文本文件输出</li>
 <li>表输出</li>
 </ul>
 </li>
-<li>八、<a href="https://staroon.pro/2018/07/30/KettleDoc-8/" target="_blank" rel="noopener">转换流程-转换组件</a></li>
-<li>九、<a href="https://staroon.pro/2018/07/30/KettleDoc-9/" target="_blank" rel="noopener">脚本组件</a><ul>
+<li>八、<a href="https://www.staroon.dev/2018/07/30/KettleDoc-8/">转换流程-转换组件</a></li>
+<li>九、<a href="https://www.staroon.dev/2018/07/30/KettleDoc-9/">脚本组件</a><ul>
 <li>转换-Java代码组件</li>
 <li>作业-SQL组件</li>
 <li>作业Shell组件</li>
 </ul>
 </li>
-<li>十、<a href="https://staroon.pro/2018/07/30/KettleDoc-10/" target="_blank" rel="noopener">对接大数据平台</a><ul>
+<li>十、<a href="https://www.staroon.dev/2018/07/30/KettleDoc-10/">对接大数据平台</a><ul>
 <li>基础文件配置</li>
 <li>上传文件到HDFS</li>
 <li>连接Hive</li>
 </ul>
 </li>
-<li>十一、<a href="https://staroon.pro/2018/07/30/KettleDoc-11/" target="_blank" rel="noopener">使用Windows计划任务定时执行Kettle作业</a><ul>
+<li>十一、<a href="https://www.staroon.dev/2018/07/30/KettleDoc-11/">使用Windows计划任务定时执行Kettle作业</a><ul>
 <li>命令说明</li>
 <li>编写批处理脚本执行Kettle作业</li>
 <li>创建计划任务定时执行Kettle作业</li>
 </ul>
 </li>
-<li>十二、<a href="https://staroon.pro/2018/07/30/KettleDoc-12/" target="_blank" rel="noopener">使用Java执行Kettle作业</a>    <ul>
+<li>十二、<a href="https://www.staroon.dev/2018/07/30/KettleDoc-12/">使用Java执行Kettle作业</a>    <ul>
 <li>搭建Kettle运行环境</li>
 <li>代码示例（作业、转换、资源库）    </li>
 </ul>
 </li>
 </ul>
 <h3 id="本章说明"><a href="#本章说明" class="headerlink" title="本章说明"></a>本章说明</h3><p>本章介绍一下转换分类下几个简单的组件：排序记录、去除重复记录、拆分字段、字段选择。其中在使用【去除重复记录】组件之前一定要对去重的字段进行排序：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/USBR9oUgmFP7.png" alt="img"><br>本章使用一个小示例来介绍这几个组件的使用，数据准备如下：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/GA40jzXhDFv4.png" alt="img"><br>要求目标表数据如下，即需要把原数据中name列不规范的数据处理掉并进行去重：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/CGRN0ksnxahn.png" alt="img"><br>有人可能会说了，这个需求一个简单的SQL就可以做到，干嘛还要借助其他工具？首先，我只是用一个小示例来介绍这些组件的使用；其次Kettle是个专业的数据处理工具，在复杂处理逻辑下，最好是将这些处理步骤交给Kettle来做，而不是全部扔给数据库去做；另外，如果数据源是Excel或者文本文件的话，还能写SQL吗？<br>拖出如下组件构成一个完整的转换流程：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/Gat1PeH521hS.png" alt="img"><br>【排序记录】，以id字段进行排序：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/wIpXSfyWw0u2.png" alt="img"><br>【去除重复记录】，同样选择id字段：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/9NWEXDcYUl0K.png" alt="img"><br>【拆分字段】，选择需要拆分的字段<code>name</code>，指定分隔符”<code>,</code>“，分析原数据得知字段拆分后会有两个新字段，分别指定两个新字段相关信息（字段名、字段类型、去除空格类型）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/YKKuKTnmP36M.png" alt="img"><br>【字段选择】，第一个选项卡【选择和修改】，用于选择需要保留的字段和修改字段名；【移除】选项卡用于移除不需要的字段；【元数据】选项卡用于修改数据流的元数据，比如数据类型、数据格式、字符集编码等。【选择和修改】与【移除】这两个选项卡只需要配置其中一个即可。这里我们移除掉<code>name2</code>字段并修改<code>name1</code>字段名为<code>new_name</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/0uEV22Rba3bs.png" alt="img"><br>最后再修改下表输出配置，勾选上【裁剪表】选项，用于清空旧数据，并指定数据库字段，修改字段映射关系如下：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/lhTyzLOd6gq6.png" alt="img"><br>配置完成，保存，执行，查看结果：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/U5ZZnOKWU0T4.png" alt="img">    </p>
-<p>本章完！<br>下一章：<a href="https://staroon.pro/2018/07/30/KettleDoc-9/" target="_blank" rel="noopener">脚本组件</a></p>
+<p>本章完！<br>下一章：<a href="https://www.staroon.dev/2018/07/30/KettleDoc-9/">脚本组件</a></p>
 
         
     

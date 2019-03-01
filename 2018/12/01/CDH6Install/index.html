@@ -534,8 +534,8 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>本文是在CentOS7.5下进行CDH6集群的完全离线部署。CDH5集群与CDH6集群的部署区别比较大，关于CDH5集群的部署请移步：<a href="https://staroon.pro/2018/02/08/CDH5Install/" target="_blank" rel="noopener">CDH5高可用集群离线部署</a>。    </p>
-<p>环境准备部分在上一篇文章：<a href="https://staroon.pro/2018/12/01/CDH6BeforeInstall/" target="_blank" rel="noopener">安装CDH6集群之前的环境准备</a>。    </p>
+        <p>本文是在CentOS7.5下进行CDH6集群的完全离线部署。CDH5集群与CDH6集群的部署区别比较大，关于CDH5集群的部署请移步：<a href="https://www.staroon.dev/2018/02/08/CDH5Install/">CDH5高可用集群离线部署</a>。    </p>
+<p>环境准备部分在上一篇文章：<a href="https://www.staroon.dev/2018/12/01/CDH6BeforeInstall/">安装CDH6集群之前的环境准备</a>。    </p>
 <p>说明：本文内容所有操作都是在root用户下进行的。</p>
 <h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><p>首先一些安装CDH6集群的必须文件要先在外网环境先下载好。</p>
 <h3 id="Cloudera-Manager-6-0-1"><a href="#Cloudera-Manager-6-0-1" class="headerlink" title="Cloudera Manager 6.0.1"></a>Cloudera Manager 6.0.1</h3><p>CM6 RPM：<a href="https://archive.cloudera.com/cm6/6.0.1/redhat7/yum/RPMS/x86_64/" target="_blank" rel="noopener">https://archive.cloudera.com/cm6/6.0.1/redhat7/yum/RPMS/x86_64/</a><br>需要下载该链接下的所有RPM文件，由于jdk1.8我在环境准备部分已经手动安装了，所以可以不用下载<code>RPMS/x86_64/</code>目录下的jdk包<code>oracle-j2sdk1.8-1.8.0+update141-1.x86_64.rpm</code>，但是其他4个rpm包一定要下载，保存到<code>cloudera-repos</code>目录下。    </p>

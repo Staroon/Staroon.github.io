@@ -537,7 +537,7 @@
         <p>前几篇文章介绍了下原生Hadoop集群的部署过程，这篇文章就来介绍下CDH的部署过程，毕竟发行版Hadoop的部署、运维都很方便，稳定性也好，实际生产环境上用原生Hadoop的并不是很多。</p>
 <p>推荐还是多看<a href="https://www.cloudera.com/documentation.html" target="_blank" rel="noopener">CDH官方文档</a></p>
 <p>CDH5各版本的部署过程应该都差不多，我这边测试的CDH5.10.2的和CDH5.9.0的部署过程一模一样，这篇文章就以CDH5.9.0为例。</p>
-<h3 id="操作系统环境准备"><a href="#操作系统环境准备" class="headerlink" title="操作系统环境准备"></a>操作系统环境准备</h3><p>这个前面的文章已经介绍过，这里不再赘述。<br>包含<strong>操作系统的参数调整</strong>、<strong>MySQL安装</strong>、<strong>Jdk1.8安装</strong>等。<br>-&gt; <a href="https://staroon.pro/2017/11/05/SetEnv/" target="_blank" rel="noopener">Hadoop集群搭建系统环境准备</a></p>
+<h3 id="操作系统环境准备"><a href="#操作系统环境准备" class="headerlink" title="操作系统环境准备"></a>操作系统环境准备</h3><p>这个前面的文章已经介绍过，这里不再赘述。<br>包含<strong>操作系统的参数调整</strong>、<strong>MySQL安装</strong>、<strong>Jdk1.8安装</strong>等。<br>-&gt; <a href="https://www.staroon.dev/2017/11/05/SetEnv/">Hadoop集群搭建系统环境准备</a></p>
 <p>注意: 这里操作系统参数不调整的话，后面安装CDH集群前进行主机检查的时候会发出告警。</p>
 <h3 id="文件准备"><a href="#文件准备" class="headerlink" title="文件准备"></a>文件准备</h3><p>由于是离线部署，因此需要预先下载好需要的文件。<br>需要准备的文件有:    </p>
 <ul>

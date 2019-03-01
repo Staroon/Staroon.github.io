@@ -534,7 +534,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://staroon.pro/2017/11/05/SetEnv/" target="_blank" rel="noopener">前一篇文章</a>已经大致介绍了安装Hadoop需要的一些环境准备工作，这篇文章就来进行下原生Hadoop（完全分布式+高可用）的安装与配置。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://www.staroon.dev/2017/11/05/SetEnv/">前一篇文章</a>已经大致介绍了安装Hadoop需要的一些环境准备工作，这篇文章就来进行下原生Hadoop（完全分布式+高可用）的安装与配置。</p>
 <p>Hadoop Namenode存在单点故障问题，Hadoop2.0版本以后可以开启两个Namenode来解决这个问题，一个为Active Namenode管理集群，一个为Standby Namenode作为热备份。</p>
 <p>Standby Namenode节点与Active Namenode节点之间数据的同步依赖于JournalNode服务。<br>Zookeeper和ZKFC(ZKFailoverController)服务可以保证集群中有且只有一个Active状态的Namenode。</p>
 <p>本文同时配置了<code>NameNode</code>和<code>Resource Manager</code>的高可用(HA)。</p>

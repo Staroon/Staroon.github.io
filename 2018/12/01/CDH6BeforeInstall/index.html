@@ -701,7 +701,7 @@
 <li>重启操作系统生效或者执行：<code>setenforce 0</code>临时禁用SELinux。</li>
 <li>当CDH安装部署完成之后，可以重新启用SELinux，修改SELinux配置文件，然后执行：<code>setenforce 1</code>命令。</li>
 </ol>
-<h2 id="配置局域网内yum源"><a href="#配置局域网内yum源" class="headerlink" title="配置局域网内yum源"></a>配置局域网内yum源</h2><p>安装Cloudera Manager需要很多依赖包，强烈建议搭建一个局域网内yum源，在集群中某一个节点上部署即可。<br>可参考我之前的文章：<a href="https://staroon.pro/2018/01/24/YumRepoCreate/" target="_blank" rel="noopener">CentOS7下使用FTP搭建局域网内Yum源</a>    </p>
+<h2 id="配置局域网内yum源"><a href="#配置局域网内yum源" class="headerlink" title="配置局域网内yum源"></a>配置局域网内yum源</h2><p>安装Cloudera Manager需要很多依赖包，强烈建议搭建一个局域网内yum源，在集群中某一个节点上部署即可。<br>可参考我之前的文章：<a href="https://www.staroon.dev/2018/01/24/YumRepoCreate/">CentOS7下使用FTP搭建局域网内Yum源</a>    </p>
 <h2 id="配置NTP服务"><a href="#配置NTP服务" class="headerlink" title="配置NTP服务"></a>配置NTP服务</h2><p>集群中所有节点的时间必须要保持同步，可以选择集群中其中一个节点作为ntp服务端，其余节点作为客户端。    </p>
 <ul>
 <li>安装ntp软件：<code>yum -y install ntp</code></li>
@@ -711,10 +711,10 @@
 <li>配置开机自启动：<code>systemctl enable ntpd</code></li>
 <li>同步客户端时间与服务端时间相同：<code>ntpdate -u &lt;ntp-server&gt;</code></li>
 </ul>
-<p>具体配置说明可参考我之前的文章：<a href="https://staroon.pro/2017/11/05/SetEnv/#配置ntp时间同步" target="_blank" rel="noopener">环境准备-配置ntp时间同步</a></p>
-<h2 id="安装jdk8"><a href="#安装jdk8" class="headerlink" title="安装jdk8"></a>安装jdk8</h2><p>集群所有节点都要安装。<br>可参考我之前的文章：<a href="https://staroon.pro/2017/11/05/SetEnv/#JDK1-8安装" target="_blank" rel="noopener">环境准备-JDK1.8安装</a></p>
-<h2 id="安装mysql5-7"><a href="#安装mysql5-7" class="headerlink" title="安装mysql5.7"></a>安装mysql5.7</h2><p>只需要在集群中某一个节点上安装即可。<br>可参考我之前的文章：<a href="https://staroon.pro/2018/12/01/InstallMysql7OnCentos7/" target="_blank" rel="noopener">CentOS7下使用RPM安装MySQL5.7</a></p>
-<h2 id="集群性能优化相关配置"><a href="#集群性能优化相关配置" class="headerlink" title="集群性能优化相关配置"></a>集群性能优化相关配置</h2><p>集群所有节点都需要进行这些配置。<br>可参考我之前的文章：<a href="https://staroon.pro/2018/11/30/CDH6Performance/" target="_blank" rel="noopener">CDH6集群性能调优（操作系统层面）</a></p>
+<p>具体配置说明可参考我之前的文章：<a href="https://www.staroon.dev/2017/11/05/SetEnv/#配置ntp时间同步">环境准备-配置ntp时间同步</a></p>
+<h2 id="安装jdk8"><a href="#安装jdk8" class="headerlink" title="安装jdk8"></a>安装jdk8</h2><p>集群所有节点都要安装。<br>可参考我之前的文章：<a href="https://www.staroon.dev/2017/11/05/SetEnv/#JDK1-8安装">环境准备-JDK1.8安装</a></p>
+<h2 id="安装mysql5-7"><a href="#安装mysql5-7" class="headerlink" title="安装mysql5.7"></a>安装mysql5.7</h2><p>只需要在集群中某一个节点上安装即可。<br>可参考我之前的文章：<a href="https://www.staroon.dev/2018/12/01/InstallMysql7OnCentos7/">CentOS7下使用RPM安装MySQL5.7</a></p>
+<h2 id="集群性能优化相关配置"><a href="#集群性能优化相关配置" class="headerlink" title="集群性能优化相关配置"></a>集群性能优化相关配置</h2><p>集群所有节点都需要进行这些配置。<br>可参考我之前的文章：<a href="https://www.staroon.dev/2018/11/30/CDH6Performance/">CDH6集群性能调优（操作系统层面）</a></p>
 <h1 id="环境准备部分完毕"><a href="#环境准备部分完毕" class="headerlink" title="环境准备部分完毕"></a>环境准备部分完毕</h1>
         
     
