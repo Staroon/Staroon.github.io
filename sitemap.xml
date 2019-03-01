@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>https://staroon.pro/post-sitemap.xml</loc>
+        <loc>https://www.staroon.dev/post-sitemap.xml</loc>
         <lastmod>2019-02-18T13:00:00.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://staroon.pro/page-sitemap.xml</loc>
+        <loc>https://www.staroon.dev/page-sitemap.xml</loc>
         <lastmod>2019-02-14T13:57:49.889Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://staroon.pro/category-sitemap.xml</loc>
+        <loc>https://www.staroon.dev/category-sitemap.xml</loc>
         <lastmod>2018-07-19T03:40:17.702Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://staroon.pro/tag-sitemap.xml</loc>
+        <loc>https://www.staroon.dev/tag-sitemap.xml</loc>
         <lastmod>2017-07-31T15:04:15.000Z</lastmod>
     </sitemap>
 

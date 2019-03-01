@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://staroon.pro</loc>
+        <loc>https://www.staroon.dev</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>https://staroon.pro/about/</loc>
+        <loc>https://www.staroon.dev/about/</loc>
         <lastmod>2019-02-14T13:57:49.889Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://staroon.pro/timeline/</loc>
+        <loc>https://www.staroon.dev/timeline/</loc>
         <lastmod>2017-07-30T13:50:49.331Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://staroon.pro/tags/</loc>
+        <loc>https://www.staroon.dev/tags/</loc>
         <lastmod>2017-06-05T13:27:11.821Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://staroon.pro/gallery/</loc>
+        <loc>https://www.staroon.dev/gallery/</loc>
         <lastmod>2017-06-05T13:16:10.115Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://staroon.pro/links/</loc>
+        <loc>https://www.staroon.dev/links/</loc>
         <lastmod>2017-06-05T12:52:34.975Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

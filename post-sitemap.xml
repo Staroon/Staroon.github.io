@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://staroon.pro</loc>
+        <loc>https://www.staroon.dev</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>https://staroon.pro/2019/02/18/Miss/</loc>
+        <loc>https://www.staroon.dev/2019/02/18/Miss/</loc>
         <lastmod>2019-02-18T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -15,7 +15,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2019/01/06/Hello2019/</loc>
+        <loc>https://www.staroon.dev/2019/01/06/Hello2019/</loc>
         <lastmod>2019-01-06T12:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -23,7 +23,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/12/01/CDH6Install/</loc>
+        <loc>https://www.staroon.dev/2018/12/01/CDH6Install/</loc>
         <lastmod>2018-12-01T15:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -31,7 +31,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/12/01/CDH6BeforeInstall/</loc>
+        <loc>https://www.staroon.dev/2018/12/01/CDH6BeforeInstall/</loc>
         <lastmod>2018-12-01T12:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -39,7 +39,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/12/01/InstallMysql7OnCentos7/</loc>
+        <loc>https://www.staroon.dev/2018/12/01/InstallMysql7OnCentos7/</loc>
         <lastmod>2018-12-01T06:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -47,7 +47,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/11/30/CDH6Performance/</loc>
+        <loc>https://www.staroon.dev/2018/11/30/CDH6Performance/</loc>
         <lastmod>2018-11-30T15:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -55,7 +55,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/08/07/KettleConnectHadoop/</loc>
+        <loc>https://www.staroon.dev/2018/08/07/KettleConnectHadoop/</loc>
         <lastmod>2018-08-07T09:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -63,7 +63,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/08/01/KettleLoop/</loc>
+        <loc>https://www.staroon.dev/2018/08/01/KettleLoop/</loc>
         <lastmod>2018-08-01T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -71,7 +71,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/30/KettleDoc-12/</loc>
+        <loc>https://www.staroon.dev/2018/07/30/KettleDoc-12/</loc>
         <lastmod>2018-07-30T09:10:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -79,7 +79,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/30/KettleDoc-11/</loc>
+        <loc>https://www.staroon.dev/2018/07/30/KettleDoc-11/</loc>
         <lastmod>2018-07-30T09:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -87,7 +87,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/30/KettleDoc-10/</loc>
+        <loc>https://www.staroon.dev/2018/07/30/KettleDoc-10/</loc>
         <lastmod>2018-07-30T08:50:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -95,7 +95,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/30/KettleDoc-9/</loc>
+        <loc>https://www.staroon.dev/2018/07/30/KettleDoc-9/</loc>
         <lastmod>2018-07-30T08:40:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -103,7 +103,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/30/KettleDoc-8/</loc>
+        <loc>https://www.staroon.dev/2018/07/30/KettleDoc-8/</loc>
         <lastmod>2018-07-30T08:30:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -111,7 +111,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/30/KettleDoc-7/</loc>
+        <loc>https://www.staroon.dev/2018/07/30/KettleDoc-7/</loc>
         <lastmod>2018-07-30T08:20:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -119,7 +119,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/30/KettleDoc-6/</loc>
+        <loc>https://www.staroon.dev/2018/07/30/KettleDoc-6/</loc>
         <lastmod>2018-07-30T08:10:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -127,7 +127,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/30/KettleDoc-5/</loc>
+        <loc>https://www.staroon.dev/2018/07/30/KettleDoc-5/</loc>
         <lastmod>2018-07-30T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -135,7 +135,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/06/04/HelloWorld/</loc>
+        <loc>https://www.staroon.dev/2017/06/04/HelloWorld/</loc>
         <lastmod>2018-07-19T03:47:48.466Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -143,7 +143,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/08/12/AddCanvas/</loc>
+        <loc>https://www.staroon.dev/2017/08/12/AddCanvas/</loc>
         <lastmod>2018-07-19T03:40:17.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -151,7 +151,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/18/KettleDoc-3/</loc>
+        <loc>https://www.staroon.dev/2018/07/18/KettleDoc-4/</loc>
         <lastmod>2018-07-18T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -159,7 +159,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/18/KettleDoc-4/</loc>
+        <loc>https://www.staroon.dev/2018/07/18/KettleDoc-3/</loc>
         <lastmod>2018-07-18T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -167,7 +167,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/18/KettleDoc-2/</loc>
+        <loc>https://www.staroon.dev/2018/07/18/KettleDoc-2/</loc>
         <lastmod>2018-07-18T07:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -175,7 +175,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/07/18/KettleDoc-1/</loc>
+        <loc>https://www.staroon.dev/2018/07/18/KettleDoc-1/</loc>
         <lastmod>2018-07-18T04:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -183,7 +183,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/05/06/KettleGPG/</loc>
+        <loc>https://www.staroon.dev/2018/05/06/KettleGPG/</loc>
         <lastmod>2018-05-07T08:24:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -191,7 +191,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/02/08/CDH5Install/</loc>
+        <loc>https://www.staroon.dev/2018/02/08/CDH5Install/</loc>
         <lastmod>2018-02-08T01:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -199,7 +199,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/02/02/AddDiskOnLinux/</loc>
+        <loc>https://www.staroon.dev/2018/02/02/AddDiskOnLinux/</loc>
         <lastmod>2018-02-02T07:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -207,7 +207,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/01/24/YumRepoCreate/</loc>
+        <loc>https://www.staroon.dev/2018/01/24/YumRepoCreate/</loc>
         <lastmod>2018-01-24T06:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -215,7 +215,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/01/24/ClusterManager/</loc>
+        <loc>https://www.staroon.dev/2018/01/24/ClusterManager/</loc>
         <lastmod>2018-01-24T02:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -223,7 +223,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2018/01/01/Hello2018/</loc>
+        <loc>https://www.staroon.dev/2018/01/01/Hello2018/</loc>
         <lastmod>2018-01-01T00:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -231,7 +231,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/12/22/Hadoop3Install/</loc>
+        <loc>https://www.staroon.dev/2017/12/22/Hadoop3Install/</loc>
         <lastmod>2017-12-22T12:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -239,7 +239,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/12/09/HiveInstall/</loc>
+        <loc>https://www.staroon.dev/2017/12/09/HiveInstall/</loc>
         <lastmod>2017-12-09T12:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -247,7 +247,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/11/30/HBaseInstall/</loc>
+        <loc>https://www.staroon.dev/2017/11/30/HBaseInstall/</loc>
         <lastmod>2017-11-30T13:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -255,7 +255,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/11/18/HadoopInstall/</loc>
+        <loc>https://www.staroon.dev/2017/11/18/HadoopInstall/</loc>
         <lastmod>2017-11-30T12:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -263,7 +263,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/11/05/SetEnv/</loc>
+        <loc>https://www.staroon.dev/2017/11/05/SetEnv/</loc>
         <lastmod>2017-11-05T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -271,7 +271,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/11/05/HadoopSelect/</loc>
+        <loc>https://www.staroon.dev/2017/11/05/HadoopSelect/</loc>
         <lastmod>2017-11-05T02:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -279,7 +279,7 @@
     </url>
 
     <url>
-        <loc>https://staroon.pro/2017/07/30/HexoInstall/</loc>
+        <loc>https://www.staroon.dev/2017/07/30/HexoInstall/</loc>
         <lastmod>2017-07-31T15:04:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
