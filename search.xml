@@ -3,29 +3,6 @@
   
     
     <entry>
-      <title>失</title>
-      <link href="/2019/02/18/Miss/"/>
-      <url>/2019/02/18/Miss/</url>
-      <content type="html"><![CDATA[<p>失。    </p><p>一不小心<br>我把她弄丢了    </p><p>不会表达<br>不会逗乐<br>不会安慰<br>不会挽留<br>只会沉默    </p><p>我这个人<br>笨笨傻傻<br>幼幼稚稚<br>或许就不配拥有哎    </p>]]></content>
-      
-      <categories>
-          
-          <category> 杂记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 杂记 </tag>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>你好，2019</title>
       <link href="/2019/01/06/Hello2019/"/>
       <url>/2019/01/06/Hello2019/</url>
@@ -651,9 +628,9 @@
             
             <tag> 高可用 </tag>
             
-            <tag> HBase </tag>
-            
             <tag> HA </tag>
+            
+            <tag> HBase </tag>
             
         </tags>
       
@@ -680,9 +657,9 @@
             
             <tag> Hadoop </tag>
             
-            <tag> HA </tag>
-            
             <tag> Zookeeper </tag>
+            
+            <tag> HA </tag>
             
         </tags>
       
