@@ -628,10 +628,10 @@
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
     var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = '昵称,邮箱,网址'.split(',').filter(function(item){
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
         return GUEST_INFO.indexOf(item) > -1
     });
-    var notify = 'true' === 'true';
+    var notify = 'false' === 'true';
     var verify = 'false' === 'true';
     new Valine({
         el: '.vcomment',
@@ -639,7 +639,7 @@
         verify: verify,
         appId: "SIj3bGXv3V6aoVSO9KE5tRMF-gzGzoHsz",
         appKey: "rdB2mrS0PYtGshSdjbqlg00W",
-        placeholder: "来写点什么吧~",
+        placeholder: "Just go go ~",
         pageSize:'10',
         avatar:'wavatar',
         lang:'zh-cn',
