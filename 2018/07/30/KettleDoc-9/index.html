@@ -719,14 +719,14 @@ echo %1 &gt; ShellTest\hello.txt
         return GUEST_INFO.indexOf(item) > -1
     });
     var notify = 'false' === 'true';
-    var verify = 'false' === 'true';
+    var verify = 'true' === 'true';
     new Valine({
         el: '.vcomment',
         notify: notify,
         verify: verify,
         appId: "SIj3bGXv3V6aoVSO9KE5tRMF-gzGzoHsz",
         appKey: "rdB2mrS0PYtGshSdjbqlg00W",
-        placeholder: "Just go go ~",
+        placeholder: "评论请留下邮箱，方便接收回复通知~",
         pageSize:'10',
         avatar:'wavatar',
         lang:'zh-cn',
