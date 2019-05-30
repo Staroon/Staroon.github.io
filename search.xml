@@ -655,9 +655,9 @@
             
             <tag> 高可用 </tag>
             
-            <tag> HA </tag>
-            
             <tag> Hadoop </tag>
+            
+            <tag> HA </tag>
             
             <tag> Zookeeper </tag>
             
@@ -680,9 +680,9 @@
       
         <tags>
             
-            <tag> 大数据 </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> 大数据 </tag>
             
             <tag> Hadoop </tag>
             
