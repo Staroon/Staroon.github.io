@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>https://www.staroon.dev/categories/%E6%95%99%E7%A8%8B/</loc>
-        <lastmod>2018-07-19T03:40:17.702Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.staroon.dev/categories/Kettle/</loc>
         <lastmod>2018-08-07T09:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -36,7 +29,14 @@
 
     <url>
         <loc>https://www.staroon.dev/categories/%E6%9D%82%E8%AE%B0/</loc>
-        <lastmod>2019-01-06T12:00:00.000Z</lastmod>
+        <lastmod>2019-07-27T05:15:14.939Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/categories/%E6%95%99%E7%A8%8B/</loc>
+        <lastmod>2019-07-27T05:16:06.513Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
