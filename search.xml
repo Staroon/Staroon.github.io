@@ -768,11 +768,11 @@
             
             <tag> 大数据 </tag>
             
+            <tag> Hadoop </tag>
+            
             <tag> 高可用 </tag>
             
             <tag> HA </tag>
-            
-            <tag> Hadoop </tag>
             
             <tag> Zookeeper </tag>
             
@@ -834,9 +834,9 @@
             
             <tag> 大数据 </tag>
             
-            <tag> CDH </tag>
-            
             <tag> Hadoop </tag>
+            
+            <tag> CDH </tag>
             
             <tag> HDP </tag>
             
