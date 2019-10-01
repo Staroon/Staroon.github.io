@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://www.staroon.dev/2019/10/01/ES7/</loc>
+        <lastmod>2019-10-01T06:56:26.829Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.staroon.dev/2017/08/12/AddCanvas/</loc>
         <lastmod>2019-07-27T05:16:06.513Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -143,7 +151,7 @@
     </url>
 
     <url>
-        <loc>https://www.staroon.dev/2018/07/18/KettleDoc-3/</loc>
+        <loc>https://www.staroon.dev/2018/07/18/KettleDoc-4/</loc>
         <lastmod>2018-07-18T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -151,7 +159,7 @@
     </url>
 
     <url>
-        <loc>https://www.staroon.dev/2018/07/18/KettleDoc-4/</loc>
+        <loc>https://www.staroon.dev/2018/07/18/KettleDoc-3/</loc>
         <lastmod>2018-07-18T08:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
