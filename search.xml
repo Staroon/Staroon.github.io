@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Logstash 7.0.0的简单使用操作</title>
+      <link href="/2019/10/01/Logstash7/"/>
+      <url>/2019/10/01/Logstash7/</url>
+      
+        <content type="html"><![CDATA[<p>本文是Logstash 7.0.0的同步任务的详细配置说明。<br>主要是自定义mapping以及多个数据源和目标的配置，我就直接放同步任务配置文件的内容了。<br>需要注意的是：    </p><ul><li>严禁过滤掉Logstash自动生成的<strong>type</strong>字段，否则会导致无法正常同步。</li><li>output中的type值需要与input中jdbc的type值相对应。</li></ul><h4 id="同步任务配置文件示例"><a href="#同步任务配置文件示例" class="headerlink" title="同步任务配置文件示例"></a>同步任务配置文件示例</h4><pre><code class="profile">input {    stdin {}    jdbc {        type =&gt; &quot;audit_law&quot;         # 数据库连接地址        jdbc_connection_string =&gt; &quot;jdbc:mysql://192.168.0.196:3306/auditbase?characterEncoding=UTF-8&amp;autoReconnect=true&amp;useSSL=false&quot;         # 数据库连接账号密码；        jdbc_user =&gt; &quot;aaaa&quot;        jdbc_password =&gt; &quot;123456&quot;         # MySQL依赖包路径；        jdbc_driver_library =&gt; &quot;lib/jars/mysql-connector-java-5.1.41-bin.jar&quot;         # the name of the driver class for mysql        jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;        # 解决中文乱码        codec =&gt; plain {charset =&gt; &quot;UTF-8&quot;}         # 数据库重连尝试次数        connection_retry_attempts =&gt; &quot;3&quot;         # 判断数据库连接是否可用，默认false不开启        jdbc_validate_connection =&gt; &quot;true&quot;         # 数据库连接可用校验超时时间，默认3600S        jdbc_validation_timeout =&gt; &quot;3600&quot;         # 开启分页查询（默认false不开启）；        jdbc_paging_enabled =&gt; &quot;true&quot;         # 单次分页查询条数（默认100000,若字段较多且更新频率较高，建议调低此值）；        jdbc_page_size =&gt; &quot;5000&quot;         # statement为查询数据sql，如果sql较复杂，建议配通过statement_filepath配置sql文件的存放路径；         # sql_last_value为内置的变量，存放上次查询结果中最后一条数据tracking_column的值，此处即为ModifyTime；         # statement_filepath =&gt; &quot;mysql/jdbc.sql&quot;        statement =&gt; &quot;SELECT a.ID,&#39;01&#39; AS TYPE,a.NAME,a.DOCUMENT_NO,a.INDUSTRY_NAME,a.REGION_NAME,b.CONTENT,a.PUBLISH_TIME FROM audit_law a LEFT JOIN tab_file_content b ON a.CONTENT_ID = b.ID WHERE a.STATE_CODE=&#39;03&#39; AND PUBLISH_TIME &gt; :sql_last_value ORDER BY PUBLISH_TIME ASC&quot;         # 是否将字段名转换为小写，默认true（如果有数据序列化、反序列化需求，建议改为false）；        lowercase_column_names =&gt; false         # Value can be any of: fatal,error,warn,info,debug，默认info；        sql_log_level =&gt; warn         # 是否记录上次执行结果，true表示会将上次执行结果的tracking_column字段的值保存到last_run_metadata_path指定的文件中；        record_last_run =&gt; true         # 需要记录查询结果某字段的值时，此字段为true，否则默认tracking_column为timestamp的值；        use_column_value =&gt; true         # 需要记录的字段，用于增量同步，需是数据库字段        tracking_column =&gt; &quot;PUBLISH_TIME&quot;         # Value can be any of: numeric,timestamp，Default value is &quot;numeric&quot;        tracking_column_type =&gt; timestamp         # record_last_run上次数据存放位置；        last_run_metadata_path =&gt; &quot;mysql/audit_law_last_id.txt&quot;         # 是否清除last_run_metadata_path的记录，需要增量同步时此字段必须为false；        clean_run =&gt; false         # 同步频率(分 时 天 月 年)，默认每分钟同步一次；        schedule =&gt; &quot;* * * * *&quot;    }    jdbc {        type =&gt; &quot;audit_basis&quot;         # 数据库连接地址        jdbc_connection_string =&gt; &quot;jdbc:mysql://192.168.0.196:3306/auditbase?characterEncoding=UTF-8&amp;autoReconnect=true&amp;useSSL=false&quot;         # 数据库连接账号密码；        jdbc_user =&gt; &quot;aaaa&quot;        jdbc_password =&gt; &quot;123456&quot;         # MySQL依赖包路径；        jdbc_driver_library =&gt; &quot;lib/jars/mysql-connector-java-5.1.41-bin.jar&quot;         # the name of the driver class for mysql        jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;        # 解决中文乱码        codec =&gt; plain {charset =&gt; &quot;UTF-8&quot;}         # 数据库重连尝试次数        connection_retry_attempts =&gt; &quot;3&quot;         # 判断数据库连接是否可用，默认false不开启        jdbc_validate_connection =&gt; &quot;true&quot;         # 数据库连接可用校验超时时间，默认3600S        jdbc_validation_timeout =&gt; &quot;3600&quot;         # 开启分页查询（默认false不开启）；        jdbc_paging_enabled =&gt; &quot;true&quot;         # 单次分页查询条数（默认100000,若字段较多且更新频率较高，建议调低此值）；        jdbc_page_size =&gt; &quot;5000&quot;         # statement为查询数据sql，如果sql较复杂，建议配通过statement_filepath配置sql文件的存放路径；         # sql_last_value为内置的变量，存放上次查询结果中最后一条数据tracking_column的值，此处即为ModifyTime；         # statement_filepath =&gt; &quot;mysql/jdbc.sql&quot;        statement =&gt; &quot;SELECT * FROM (SELECT a.ID,&#39;02&#39; as TYPE,a.QUESTION_NAME AS NAME,a.AUDIT_ITEM_NAME,b.AUDIT_LAW_NAME,GROUP_CONCAT(b.LAW_ITEM_TEXT SEPARATOR &#39;\n&#39;) AS LAW_TEXT,MAX(b.PUBLISH_TIME) AS PUBLISH_TIME FROM audit_basis a LEFT JOIN audit_basis_detail b ON a.ID = b.AUDIT_BASIS_ID WHERE b.STATE_CODE = &#39;02&#39; GROUP BY a.ID) c WHERE PUBLISH_TIME &gt; :sql_last_value ORDER BY PUBLISH_TIME ASC&quot;         # 是否将字段名转换为小写，默认true（如果有数据序列化、反序列化需求，建议改为false）；        lowercase_column_names =&gt; false         # Value can be any of: fatal,error,warn,info,debug，默认info；        sql_log_level =&gt; warn         # 是否记录上次执行结果，true表示会将上次执行结果的tracking_column字段的值保存到last_run_metadata_path指定的文件中；        record_last_run =&gt; true         # 需要记录查询结果某字段的值时，此字段为true，否则默认tracking_column为timestamp的值；        use_column_value =&gt; true         # 需要记录的字段，用于增量同步，需是数据库字段        tracking_column =&gt; &quot;PUBLISH_TIME&quot;         # Value can be any of: numeric,timestamp，Default value is &quot;numeric&quot;        tracking_column_type =&gt; timestamp         # record_last_run上次数据存放位置；        last_run_metadata_path =&gt; &quot;mysql/audit_basis_last_id.txt&quot;         # 是否清除last_run_metadata_path的记录，需要增量同步时此字段必须为false；        clean_run =&gt; false         # 同步频率(分 时 天 月 年)，默认每分钟同步一次；        schedule =&gt; &quot;* * * * *&quot;    }}filter {    json {        source =&gt; &quot;message&quot;        remove_field =&gt; [&quot;message&quot;]    }    # 去除自动添加的 &quot;@timestamp&quot;, &quot;@version&quot; 字段    # 严禁过滤 &quot;type&quot; 字段，会导致无法成功同步数据    mutate {        remove_field =&gt; [&quot;@timestamp&quot;, &quot;@version&quot;]    }}output {    # type 值需与 jdbc 中的 type 值相对应    if [type] == &quot;audit_law&quot; {        elasticsearch {             # 配置ES集群地址            hosts =&gt; [&quot;192.168.0.62:9200&quot;]             # 索引名字，必须小写            index =&gt; &quot;audit_law&quot;             # 数据唯一索引（建议使用数据库KeyID）            document_id =&gt; &quot;%{ID}&quot;            template_overwrite =&gt; true            template =&gt; &quot;mysql/audit_law_mapping.json&quot;        }    }    if [type] == &quot;audit_basis&quot; {        elasticsearch {             # 配置ES集群地址            hosts =&gt; [&quot;192.168.0.62:9200&quot;]             # 索引名字，必须小写            index =&gt; &quot;audit_basis&quot;             # 数据唯一索引（建议使用数据库KeyID）            document_id =&gt; &quot;%{ID}&quot;            template_overwrite =&gt; true            template =&gt; &quot;mysql/audit_basis_mapping.json&quot;        }    }    stdout {        codec =&gt; json_lines    }}</code></pre><h4 id="自定义mapping文件示例"><a href="#自定义mapping文件示例" class="headerlink" title="自定义mapping文件示例"></a>自定义mapping文件示例</h4><pre><code class="json">{  &quot;settings&quot;: {    &quot;number_of_shards&quot; : 1,    &quot;number_of_replicas&quot; : 0,    &quot;analysis.char_filter&quot;:[&quot;html_strip&quot;]  },  &quot;mappings&quot;: {    &quot;properties&quot;: {      &quot;ID&quot;:{        &quot;type&quot;:&quot;keyword&quot;      },      &quot;TYPE&quot;:{        &quot;type&quot;:&quot;keyword&quot;      },      &quot;NAME&quot;:{        &quot;type&quot;: &quot;text&quot;,        &quot;analyzer&quot;: &quot;ik_max_word&quot;,        &quot;search_analyzer&quot;: &quot;ik_smart&quot;      },      &quot;DOCUMENT_NO&quot;:{        &quot;type&quot;:&quot;keyword&quot;      },      &quot;INDUSTRY_NAME&quot;:{        &quot;type&quot;: &quot;text&quot;,        &quot;analyzer&quot;: &quot;ik_max_word&quot;,        &quot;search_analyzer&quot;: &quot;ik_smart&quot;      },      &quot;REGION_NAME&quot;:{        &quot;type&quot;: &quot;text&quot;,        &quot;analyzer&quot;: &quot;ik_max_word&quot;,        &quot;search_analyzer&quot;: &quot;ik_smart&quot;      },      &quot;CONTENT&quot;:{        &quot;type&quot;: &quot;text&quot;,        &quot;analyzer&quot;: &quot;ik_max_word&quot;,        &quot;search_analyzer&quot;: &quot;ik_smart&quot;      },      &quot;PUBLISH_TIME&quot;:{        &quot;type&quot;:&quot;date&quot;      }    }  }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 全文检索 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES </tag>
+            
+            <tag> 全文检索 </tag>
+            
+            <tag> Logstash </tag>
+            
+            <tag> ELK </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ES 7.0.0的简单使用操作</title>
       <link href="/2019/10/01/ES7/"/>
       <url>/2019/10/01/ES7/</url>
@@ -826,9 +857,9 @@
       
         <tags>
             
-            <tag> CentOS </tag>
-            
             <tag> 大数据 </tag>
+            
+            <tag> CentOS </tag>
             
             <tag> Hadoop </tag>
             
