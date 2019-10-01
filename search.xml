@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>MongoDB简单使用操作</title>
+      <link href="/2019/10/01/MongoDB/"/>
+      <url>/2019/10/01/MongoDB/</url>
+      
+        <content type="html"><![CDATA[<p>本文简单介绍了MongoDB在Linux下的简单安装和配置操作，基于MongoDB 4.0.10，CentOS版本7.2。</p><p>官方推荐操作系统：</p><ul><li>Amazon Linux</li><li>Debian 8</li><li>RHEL/CentOS 6.2+</li><li>SLES 12</li><li>Ubuntu LTS 16.04</li><li>Windows Server 2012 R2</li></ul><h4 id="数据库安装"><a href="#数据库安装" class="headerlink" title="数据库安装"></a>数据库安装</h4><ol><li><p>下载安装包<br><code># wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.0.10.tgz</code></p></li><li><p>解压<br><code># tar -zxvf mongodb-linux-x86_64-rhel70-4.0.10.tgz -C /opt/mongodb/</code></p></li><li><p>安装依赖<br><code># yum -y install libcurl openssl</code></p></li><li><p>添加环境变量<br><code># vim /etc/profile</code>    </p><pre><code class="bash"> export PATH=/opt/mongodb/mongodb-linux-x86_64-rhel70-4.0.10 bin:$PATH</code></pre><p> <code># source /etc/profile</code></p></li><li><p>查看是否安装成功<br><code># mongod --version</code></p><pre><code> db version v4.0.10 git version: c389e7f69f637f7a1ac3cc9fae843b635f20b766 OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013 allocator: tcmalloc modules: none build environment:     distmod: rhel70     distarch: x86_64     target_arch: x86_64</code></pre></li><li><p>创建mongod用户<br><code># useradd mongod</code></p></li><li><p>更改mongodb安装目录用户组<br><code># chown mongod:mongod -R mongodb/</code></p></li><li><p>切换到mongod用户<br><code># su mongod</code><br>注：以下全部为在mongod用户下进行的操作</p></li><li><p>创建config文件<br><code>$ vim /opt/mongodb/datas/configs/mongod0.conf</code><br>配置示例：    </p><pre><code class="profile"> systemLog:    destination: file    path: &quot;/opt/mongodb/datas/logs/mongod0.log&quot;    logAppend: true storage:    dbPath: /opt/mongodb/datas/data0    journal:       enabled: true processManagement:    fork: true    pidFilePath: /opt/mongodb/datas/logs/mongod0.pid net:    # 配置127.0.0.1只允许本机连接mongodb服务    # bindIp: 127.0.0.1    # 配置0.0.0.0可允许所有其他主机连接mongodb服务    bindIp: 0.0.0.0     port: 20001 setParameter:    enableLocalhostAuthBypass: false</code></pre></li><li><p>创建目录<br><code>$ mkdir /opt/mongodb/datas/data0</code><br><code>$ mkdir /opt/mongodb/datas/logs</code></p></li><li><p>启动mongod服务<br><code>$ mongod -f /opt/mongodb/datas/configs/mongod0.conf</code></p><pre><code>about to fork child process, waiting until server is ready     for connections.forked process: 20240child process started successfully, parent exiting</code></pre></li><li><p>关闭mongod服务<br><code>$ mongod --shutdown -f /opt/mongodb/datas/configs/mongod0.conf</code></p></li><li><p>进入shell<br><code>mongo --port 20001</code></p></li></ol><h4 id="配置副本集群"><a href="#配置副本集群" class="headerlink" title="配置副本集群"></a>配置副本集群</h4><ol><li>配置文件示例    <pre><code class="profile"> systemLog:    destination: file    path: &quot;/opt/mongod/log/mongod82.log&quot;    logAppend: true storage:    dbPath: /opt/mongod/data    journal:       enabled: true    wiredTiger:       engineConfig:          cacheSizeGB: 32 replication:   replSetName: myRep processManagement:    fork: true    pidFilePath: /opt/mongod/log/mongod82.pid net:    bindIp: 0.0.0.0    port: 30001 setParameter:    enableLocalhostAuthBypass: false</code></pre></li><li>初始化集群<br><code>&gt; rs.initiate({_id:&quot;myRep&quot;, members:[{_id:0, host:&quot;192.168.5.52:30001&quot;},{_id:1, host:&quot;192.168.5.53:30001&quot;}]})</code></li><li>为集群添加仲裁节点<br><code>&gt; rs.addArb(&quot;192.168.5.51:30001&quot;)</code></li><li>查看集群状态<br><code>&gt; rs.status()</code></li></ol><h4 id="其他配置说明"><a href="#其他配置说明" class="headerlink" title="其他配置说明"></a>其他配置说明</h4><ul><li><p>dbPath</p><ul><li>mongod用户必须拥有对配置的dbPath目录的读写权限</li><li>目录中的dbPath文件必须与配置的存储引擎相对应。如果dbPath包含由指定的存储引擎以外的存储引擎创建的数据文件，则不会启动</li></ul></li><li><p>WiredTiger</p><ul><li>默认WiredTiger内部缓存大小：50%(RAM - 1G) 或者 256MB</li><li>默认的WiredTiger内部缓存大小值假定每台计算机有一个MongoDB实例。如果单个计算机包含多个MongoDB实例，则应减少该设置以适应其他mongod 实例。</li><li>调整WiredTiger内部缓存参数：storage.wiredTiger.engineConfig.cacheSizeGB</li><li>应避免将WiredTiger内部缓存大小增加到其默认值以上</li></ul></li><li><p>Linux 平台的 NUMA 配置（根据实际情况配置）</p><ul><li>需要在Linux上禁用zone reclaim</li><li>修改方式：sysctl -w vm.zone_reclaim_mode=0</li><li>使用numactl启动mongod：numactl –interleave=all mongod -f /etc/mongod.conf</li><li>查看系统numa状态：numactl –hardware</li></ul></li><li><p>存储系统不建议使用NFS</p></li><li><p>使用NTP同步所有MongoDB节点</p></li><li><p>文件系统</p><ul><li>Linux下建议使用XFS</li><li>Windows下使用NTFS，不要使用任何FAT文件系统</li></ul></li><li><p>设置vm.swappiness值为1</p><ul><li>编辑文件：/etc/sysctl.conf ，添加一行：vm.swappiness=1</li><li>参考文章：<a href="https://www.staroon.dev/2018/11/30/CDH6Performance/">https://www.staroon.dev/2018/11/30/CDH6Performance/</a></li></ul></li><li><p>禁用THP</p><ul><li>编辑/etc/rc.d/rc.local文件，最下面添加两行配置：<ul><li>echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled</li><li>echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</li></ul></li><li>然后赋予/etc/rc.d/rc.local文件可执行权限：chmod +x /etc/rc.d/rc.local</li><li>参考文章：<a href="https://www.staroon.dev/2018/11/30/CDH6Performance/">https://www.staroon.dev/2018/11/30/CDH6Performance/</a></li></ul></li><li><p>RHEL/CentOS 7 下禁用tuned</p><ul><li>参考文章：<a href="https://www.staroon.dev/2018/11/30/CDH6Performance/">https://www.staroon.dev/2018/11/30/CDH6Performance/</a></li></ul></li><li><p>关闭selinux</p></li><li><p>后台运行</p><ul><li>mongod –fork</li><li>示例配置：<pre><code>systemLog: destination: file path: &quot;/var/log/mongodb/mongod.log&quot; logAppend: truestorage: journal:    enabled: trueprocessManagement: fork: true pidFilePath: /var/run/mongod.pidnet: bindIp: 127.0.0.1 port: 27017setParameter: enableLocalhostAuthBypass: false</code></pre></li></ul></li><li><p>关闭mongod进程</p><ul><li>使用<code>kill -2 &lt;pid&gt;</code></li><li>永远不要使用 <code>kill -9 &lt;pid&gt;</code> 来关闭mongod进程</li></ul></li></ul><h4 id="修改副本集群所有节点IP"><a href="#修改副本集群所有节点IP" class="headerlink" title="修改副本集群所有节点IP"></a>修改副本集群所有节点IP</h4><ol><li>停止集群中所有节点mongod服务    </li><li>重新启动所有节点服务，不使用–replSet选项，使用不同于集群的端口号，并指定dbpath路径<br><code>mongod --dbpath /opt/mongod/data --port 30002</code></li><li>登陆mongo shell修改副本集配置<br><code>&gt; use local</code></li><li>查看原配置<br><code>&gt; db.system.replset.find()</code></li><li>在原配置基础上修改IP配置<br><code>&gt; cfg={ &quot;_id&quot; : &quot;myRep&quot;, &quot;version&quot; : 1, &quot;protocolVersion&quot; : NumberLong(1), &quot;members&quot; : [ { &quot;_id&quot; : 0, &quot;host&quot; : &quot;192.168.5.53:30001&quot;, &quot;arbiterOnly&quot; : false, &quot;buildIndexes&quot; : true, &quot;hidden&quot; : false, &quot;priority&quot; : 3, &quot;tags&quot; : {  }, &quot;slaveDelay&quot; : NumberLong(0), &quot;votes&quot; : 1 }, { &quot;_id&quot; : 1, &quot;host&quot; : &quot;192.168.5.52:30001&quot;, &quot;arbiterOnly&quot; : false, &quot;buildIndexes&quot; : true, &quot;hidden&quot; : false, &quot;priority&quot; : 2, &quot;tags&quot; : {  }, &quot;slaveDelay&quot; : NumberLong(0), &quot;votes&quot; : 1 }, { &quot;_id&quot; : 2, &quot;host&quot; : &quot;192.168.5.51:30001&quot;, &quot;arbiterOnly&quot; : true, &quot;buildIndexes&quot; : true, &quot;hidden&quot; : false, &quot;priority&quot; : 1, &quot;tags&quot; : {  }, &quot;slaveDelay&quot; : NumberLong(0), &quot;votes&quot; : 1 } ], &quot;settings&quot; : { &quot;chainingAllowed&quot; : true, &quot;heartbeatIntervalMillis&quot; : 2000, &quot;heartbeatTimeoutSecs&quot; : 10, &quot;electionTimeoutMillis&quot; : 10000, &quot;getLastErrorModes&quot; : {  }, &quot;getLastErrorDefaults&quot; : { &quot;w&quot; : 1, &quot;wtimeout&quot; : 0 } } }</code></li><li>更新配置<br><code>&gt; db.system.replset.update( { &quot;_id&quot;: &quot;myRep&quot; } , cfg )</code></li><li>退出mongo shell    </li><li>重新按照正常配置开启 mongodb 集群，查看集群状态<br><code>mongod -f /opt/mongod/config/mongod.conf</code></li></ol><h4 id="UnrecoverableRollbackError"><a href="#UnrecoverableRollbackError" class="headerlink" title="UnrecoverableRollbackError"></a>UnrecoverableRollbackError</h4><p>说明：副本集群某节点宕机后，无法回滚超过一天的数据，导致无法启动<br>报错信息：    </p><pre><code>  Rollback failed with unrecoverable error: UnrecoverableRollbackError: not willing to roll back more than 86400 seconds of data.</code></pre><p>解决办法：<br>  默认回滚时长为86400秒，即一天时间，可在配置中修改此参数。<br>  配置文件中添加一项配置，并设置合适的数值即可：</p><pre><code class="profile">setParameter:   rollbackTimeLimitSecs: 864000</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MongoDB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Logstash 7.0.0的简单使用操作</title>
       <link href="/2019/10/01/Logstash7/"/>
       <url>/2019/10/01/Logstash7/</url>
@@ -700,7 +725,7 @@
       <link href="/2018/01/01/Hello2018/"/>
       <url>/2018/01/01/Hello2018/</url>
       
-        <content type="html"><![CDATA[<p>2017，再见。你好，2018。</p><p>2017年，从头失败到脚的一年。<br>从1600公里到0，再从0到正无穷，之间充满了太多的无奈。<br>不管怎样，还是要感谢过去的一年里陪伴我的人，支持我的人，帮助过我的人，想念着我的人，有你们在，真好。</p><p>今天一月一日，是新的一天，也是新的一周，又是新的一月，还是新的一年。<br>在此写下2018年的一些目标：</p><ol><li>至少读12本书，也就是至少每月读一本书（人丑就要多读书。电子版，纸质都行）；</li><li>进行一次说走就走的旅行（单人也行，和朋友一块亦可，去哪里都无所谓）；</li><li>培养一项业余爱好（希望是乐器）；</li><li>找到自己的另一半（这个估计有点悬）；</li><li>工资翻倍。</li></ol><p>借用张嘉佳的《从你的全世界路过》中的一句话：</p><blockquote><p>照顾好自己，爱自己才能爱好别人。如果你压抑，痛苦，忧伤，不自由，又怎么可能在心里腾出温暖的房间，让重要的人住在里面。如果一颗心千疮百孔，住在里面的人就会白雨水打湿。</p></blockquote><p>山小杰你这个傻逼，2018年，照顾好自己。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hello2018/180101/7bDCdF973E.jpeg" alt="mark"></p>]]></content>
+        <content type="html"><![CDATA[<p>2017，再见。你好，2018。</p><p>2017年，从头失败到脚的一年。<br>从1600公里到0，再从0到正无穷，之间充满了太多的无奈。<br>不管怎样，还是要感谢过去的一年里陪伴我的人，支持我的人，帮助过我的人，想念着我的人，有你们在，真好。</p><p>今天一月一日，是新的一天，也是新的一周，又是新的一月，还是新的一年。<br>在此写下2018年的一些目标：</p><ol><li>至少读12本书，也就是至少每月读一本书（人丑就要多读书。电子版，纸质都行）；</li><li>进行一次说走就走的旅行（单人也行，和朋友一块亦可，去哪里都无所谓）；</li><li>培养一项业余爱好（希望是乐器）；</li><li>找到自己的另一半（这个估计有点悬）；</li><li>工资翻倍。</li></ol><p>借用张嘉佳的《从你的全世界路过》中的一句话：</p><blockquote><p>照顾好自己，爱自己才能爱好别人。如果你压抑，痛苦，忧伤，不自由，又怎么可能在心里腾出温暖的房间，让重要的人住在里面。如果一颗心千疮百孔，住在里面的人就会被雨水打湿。</p></blockquote><p>山小杰你这个傻逼，2018年，照顾好自己。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hello2018/180101/7bDCdF973E.jpeg" alt="mark"></p>]]></content>
       
       
       <categories>
@@ -857,9 +882,9 @@
       
         <tags>
             
-            <tag> 大数据 </tag>
-            
             <tag> CentOS </tag>
+            
+            <tag> 大数据 </tag>
             
             <tag> Hadoop </tag>
             

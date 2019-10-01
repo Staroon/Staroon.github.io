@@ -57,7 +57,7 @@
     
     <title>
         
-            标签: Linux | 
+            MongoDB简单使用操作 | 
         
         山小杰的博客
     </title>
@@ -68,7 +68,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="大数据相关技术分享">
-    <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux">
+    <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,MongoDB">
     <meta name="theme-color" content="#3F51B5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -95,6 +95,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?m5ulF+MuHtVgJ9OP9e6vQw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night.min.css?QlnGZk/a4+d8XbwtXBDPiA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -231,7 +234,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="山小杰的博客">
-    <meta name="msapplication-starturl" content="https://www.staroon.dev/tags/Linux/">
+    <meta name="msapplication-starturl" content="https://www.staroon.dev/2019/10/01/MongoDB/">
     <meta name="msapplication-navbutton-color" content="#3F51B5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="山小杰的博客">
@@ -246,13 +249,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.staroon.dev/tags/Linux/">
+    <meta property="og:url" content="https://www.staroon.dev/2019/10/01/MongoDB/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: Linux | 山小杰的博客">
+    <meta property="og:title" content="MongoDB简单使用操作 | 山小杰的博客">
     <meta property="og:image" content="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
     <meta property="og:description" content="大数据相关技术分享">
-    
+    <meta property="og:article:tag" content="MongoDB"> 
 
+    
+        <meta property="article:published_time" content="Tue Oct 01 2019 16:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Tue Oct 01 2019 15:51:15 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -260,13 +266,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/tags/Linux/index.html">
+        <link rel="canonical" href="https://www.staroon.dev/2019/10/01/MongoDB/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://www.staroon.dev/2019/10/01/MongoDB/index.html",
+    "headline": "MongoDB简单使用操作",
+    "datePublished": "Tue Oct 01 2019 16:00:00 GMT+0800",
+    "dateModified": "Tue Oct 01 2019 15:51:15 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "山小杰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png"
+        },
+        "description": "心之所向，身之所往"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "山小杰的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png"
+        }
+    },
+    "keywords": ",MongoDB大数据,Hadoop,ETL,CDH,Linux",
+    "description": "大数据相关技术分享",
+}
+</script>
 
 
     
@@ -317,164 +353,462 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+                    <!-- Post TOC -->
+
     
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-        
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/Cloudera.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/12/01/CDH6Install/">CentOS7下完全离线安装CDH6集群</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文是在CentOS7.5下进行CDH6集群的完全离线部署。CDH5集群与CDH6集群的部署区别比较大，关于CDH5集群的部署请移步：
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/12/01/CDH6Install/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>12月 01, 2018</span>
-                <!-- 添加字数统计，需安装hexo-wordcount插件 -->
-                <span>共计2.5k字，预计阅读时长：11分钟</span>
-            </div>
-        </div>
-
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-        </div>
+        </a>
     </div>
-</div>
+    -->
 
-            
-            
-        
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据库安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据库安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置副本集群"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置副本集群</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#其他配置说明"><span class="post-toc-number">3.</span> <span class="post-toc-text">其他配置说明</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改副本集群所有节点IP"><span class="post-toc-number">4.</span> <span class="post-toc-text">修改副本集群所有节点IP</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#UnrecoverableRollbackError"><span class="post-toc-number">5.</span> <span class="post-toc-text">UnrecoverableRollbackError</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/Cloudera.jpg">
-    
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/12/01/CDH6BeforeInstall/">安装CDH6集群之前的环境准备</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这篇文章是安装CDH6集群之前的环境准备部分。基于CentOS 7.x，其他类型Linux请参考CDH官方文档进行配置。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/12/01/CDH6BeforeInstall/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="山小杰's avatar">
-            </div>
-            <div>
-                <strong>山小杰</strong>
-                <span>12月 01, 2018</span>
-                <!-- 添加字数统计，需安装hexo-wordcount插件 -->
-                <span>共计1.2k字，预计阅读时长：5分钟</span>
-            </div>
-        </div>
-
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/大数据/">大数据</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                MongoDB简单使用操作
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>山小杰</strong>
+        <span>10月 01, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACX0lEQVR42u3aUW7EIAwE0Nz/0u0BVk1ncELS6vFVqWzg8YEt4+PrX48DDw8PDw8PDw/vZbwjHp/zP7/z+ff5Ksk3873h4eHh7eT9ctXGW/9p/jnpfE6+Nzw8PLz9vHaZZNPtr+Z7w8PDw3sb79pL/Dzw4OHh4f0PXp5qJwl3S8XDw8N7G29yoZ9vqE24H6u14OHh4cW89gFs598PvO/h4eHhnfLqlqbgck/aBfLwM2q6wsPDw7uBN0mC57xk9Xw+Hh4e3h7eJDwUS64VZONWLTw8PLyneOebm2yxPZSi9ICHh4e3ndc+ULWFiXmoSA4IDw8Pbz+vfWTKWwqiqzx4cisOHQ8PD28Lb1K0nSTWyZFtint4eHh4MS9PmtsyRJ5854A6MODh4eHdwGuflya/zeevlSHw8PDw9vAmyXTyhSQRnzy54eHh4T3Fyy/r+WP/pAxxWWcEHh4e3kW8teu+PYK8sWCx8IGHh4d3M2+thLr237ZIkYcNPDw8vJ28vDibF1jbYsT8QQ4PDw9vJ2/tIk54efvp2pMbHh4e3lO8tdJDGzDaENIeEB4eHt5+Xtve1OLzom2bQBedEXh4eHgX8fLHpyTZzRPoJGDkQQgPDw9vJ68dxUPU0kU/L/vi4eHh3c074pGXfeeF3bZZAQ8PD28/b9JMMEms51/Gw8PDe5aXXNDtkmshJ5lZdEbg4eHhPcprSwxr7LWGAzw8PLy/wjtf+L7gcUtKjYeHh3dDMSLfXFLkvepo8PDw8Pbz1goBeZE32Vy7yo2tA3h4eHiXNl29f+Dh4eHh4eHh4b1gfANNgu05VCcWZwAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/MongoDB/">MongoDB</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=MongoDB简单使用操作&url=https://www.staroon.dev/2019/10/01/MongoDB/index.html&pic=https://www.staroon.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=MongoDB简单使用操作&url=https://www.staroon.dev/2019/10/01/MongoDB/index.html&via=山小杰" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=MongoDB简单使用操作&summary=大数据相关技术分享&pics=https://www.staroon.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&url=https://www.staroon.dev/2019/10/01/MongoDB/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>本文简单介绍了MongoDB在Linux下的简单安装和配置操作，基于MongoDB 4.0.10，CentOS版本7.2。</p>
+<p>官方推荐操作系统：</p>
+<ul>
+<li>Amazon Linux</li>
+<li>Debian 8</li>
+<li>RHEL/CentOS 6.2+</li>
+<li>SLES 12</li>
+<li>Ubuntu LTS 16.04</li>
+<li>Windows Server 2012 R2</li>
+</ul>
+<h4 id="数据库安装"><a href="#数据库安装" class="headerlink" title="数据库安装"></a>数据库安装</h4><ol>
+<li><p>下载安装包<br><code># wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.0.10.tgz</code></p>
+</li>
+<li><p>解压<br><code># tar -zxvf mongodb-linux-x86_64-rhel70-4.0.10.tgz -C /opt/mongodb/</code></p>
+</li>
+<li><p>安装依赖<br><code># yum -y install libcurl openssl</code></p>
+</li>
+<li><p>添加环境变量<br><code># vim /etc/profile</code>    </p>
+<pre><code class="bash"> export PATH=/opt/mongodb/mongodb-linux-x86_64-rhel70-4.0.10
+ bin:$PATH
+</code></pre>
+<p> <code># source /etc/profile</code></p>
+</li>
+<li><p>查看是否安装成功<br><code># mongod --version</code></p>
+<pre><code> db version v4.0.10
+ git version: c389e7f69f637f7a1ac3cc9fae843b635f20b766
+ OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
+ allocator: tcmalloc
+ modules: none
+ build environment:
+     distmod: rhel70
+     distarch: x86_64
+     target_arch: x86_64
+</code></pre></li>
+<li><p>创建mongod用户<br><code># useradd mongod</code></p>
+</li>
+<li><p>更改mongodb安装目录用户组<br><code># chown mongod:mongod -R mongodb/</code></p>
+</li>
+<li><p>切换到mongod用户<br><code># su mongod</code><br>注：以下全部为在mongod用户下进行的操作</p>
+</li>
+<li><p>创建config文件<br><code>$ vim /opt/mongodb/datas/configs/mongod0.conf</code><br>配置示例：    </p>
+<pre><code class="profile"> systemLog:
+    destination: file
+    path: &quot;/opt/mongodb/datas/logs/mongod0.log&quot;
+    logAppend: true
+ storage:
+    dbPath: /opt/mongodb/datas/data0
+    journal:
+       enabled: true
+ processManagement:
+    fork: true
+    pidFilePath: /opt/mongodb/datas/logs/mongod0.pid
+ net:
+    # 配置127.0.0.1只允许本机连接mongodb服务
+    # bindIp: 127.0.0.1
+    # 配置0.0.0.0可允许所有其他主机连接mongodb服务
+    bindIp: 0.0.0.0 
+    port: 20001
+ setParameter:
+    enableLocalhostAuthBypass: false
+</code></pre>
+</li>
+<li><p>创建目录<br><code>$ mkdir /opt/mongodb/datas/data0</code><br><code>$ mkdir /opt/mongodb/datas/logs</code></p>
+</li>
+<li><p>启动mongod服务<br><code>$ mongod -f /opt/mongodb/datas/configs/mongod0.conf</code></p>
+<pre><code>about to fork child process, waiting until server is ready     for connections.
+forked process: 20240
+child process started successfully, parent exiting
+</code></pre></li>
+<li><p>关闭mongod服务<br><code>$ mongod --shutdown -f /opt/mongodb/datas/configs/mongod0.conf</code></p>
+</li>
+<li><p>进入shell<br><code>mongo --port 20001</code></p>
+</li>
+</ol>
+<h4 id="配置副本集群"><a href="#配置副本集群" class="headerlink" title="配置副本集群"></a>配置副本集群</h4><ol>
+<li>配置文件示例    <pre><code class="profile"> systemLog:
+    destination: file
+    path: &quot;/opt/mongod/log/mongod82.log&quot;
+    logAppend: true
+ storage:
+    dbPath: /opt/mongod/data
+    journal:
+       enabled: true
+    wiredTiger:
+       engineConfig:
+          cacheSizeGB: 32
+ replication:
+   replSetName: myRep
+ processManagement:
+    fork: true
+    pidFilePath: /opt/mongod/log/mongod82.pid
+ net:
+    bindIp: 0.0.0.0
+    port: 30001
+ setParameter:
+    enableLocalhostAuthBypass: false
+</code></pre>
+</li>
+<li>初始化集群<br><code>&gt; rs.initiate({_id:&quot;myRep&quot;, members:[{_id:0, host:&quot;192.168.5.52:30001&quot;},{_id:1, host:&quot;192.168.5.53:30001&quot;}]})</code></li>
+<li>为集群添加仲裁节点<br><code>&gt; rs.addArb(&quot;192.168.5.51:30001&quot;)</code></li>
+<li>查看集群状态<br><code>&gt; rs.status()</code></li>
+</ol>
+<h4 id="其他配置说明"><a href="#其他配置说明" class="headerlink" title="其他配置说明"></a>其他配置说明</h4><ul>
+<li><p>dbPath</p>
+<ul>
+<li>mongod用户必须拥有对配置的dbPath目录的读写权限</li>
+<li>目录中的dbPath文件必须与配置的存储引擎相对应。如果dbPath包含由指定的存储引擎以外的存储引擎创建的数据文件，则不会启动</li>
+</ul>
+</li>
+<li><p>WiredTiger</p>
+<ul>
+<li>默认WiredTiger内部缓存大小：50%(RAM - 1G) 或者 256MB</li>
+<li>默认的WiredTiger内部缓存大小值假定每台计算机有一个MongoDB实例。如果单个计算机包含多个MongoDB实例，则应减少该设置以适应其他mongod 实例。</li>
+<li>调整WiredTiger内部缓存参数：storage.wiredTiger.engineConfig.cacheSizeGB</li>
+<li>应避免将WiredTiger内部缓存大小增加到其默认值以上</li>
+</ul>
+</li>
+<li><p>Linux 平台的 NUMA 配置（根据实际情况配置）</p>
+<ul>
+<li>需要在Linux上禁用zone reclaim</li>
+<li>修改方式：sysctl -w vm.zone_reclaim_mode=0</li>
+<li>使用numactl启动mongod：numactl –interleave=all mongod -f /etc/mongod.conf</li>
+<li>查看系统numa状态：numactl –hardware</li>
+</ul>
+</li>
+<li><p>存储系统不建议使用NFS</p>
+</li>
+<li><p>使用NTP同步所有MongoDB节点</p>
+</li>
+<li><p>文件系统</p>
+<ul>
+<li>Linux下建议使用XFS</li>
+<li>Windows下使用NTFS，不要使用任何FAT文件系统</li>
+</ul>
+</li>
+<li><p>设置vm.swappiness值为1</p>
+<ul>
+<li>编辑文件：/etc/sysctl.conf ，添加一行：vm.swappiness=1</li>
+<li>参考文章：<a href="https://www.staroon.dev/2018/11/30/CDH6Performance/">https://www.staroon.dev/2018/11/30/CDH6Performance/</a></li>
+</ul>
+</li>
+<li><p>禁用THP</p>
+<ul>
+<li>编辑/etc/rc.d/rc.local文件，最下面添加两行配置：<ul>
+<li>echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled</li>
+<li>echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</li>
+</ul>
+</li>
+<li>然后赋予/etc/rc.d/rc.local文件可执行权限：chmod +x /etc/rc.d/rc.local</li>
+<li>参考文章：<a href="https://www.staroon.dev/2018/11/30/CDH6Performance/">https://www.staroon.dev/2018/11/30/CDH6Performance/</a></li>
+</ul>
+</li>
+<li><p>RHEL/CentOS 7 下禁用tuned</p>
+<ul>
+<li>参考文章：<a href="https://www.staroon.dev/2018/11/30/CDH6Performance/">https://www.staroon.dev/2018/11/30/CDH6Performance/</a></li>
+</ul>
+</li>
+<li><p>关闭selinux</p>
+</li>
+<li><p>后台运行</p>
+<ul>
+<li>mongod –fork</li>
+<li>示例配置：<pre><code>systemLog:
+ destination: file
+ path: &quot;/var/log/mongodb/mongod.log&quot;
+ logAppend: true
+storage:
+ journal:
+    enabled: true
+processManagement:
+ fork: true
+ pidFilePath: /var/run/mongod.pid
+net:
+ bindIp: 127.0.0.1
+ port: 27017
+setParameter:
+ enableLocalhostAuthBypass: false
+</code></pre></li>
+</ul>
+</li>
+<li><p>关闭mongod进程</p>
+<ul>
+<li>使用<code>kill -2 &lt;pid&gt;</code></li>
+<li>永远不要使用 <code>kill -9 &lt;pid&gt;</code> 来关闭mongod进程</li>
+</ul>
+</li>
+</ul>
+<h4 id="修改副本集群所有节点IP"><a href="#修改副本集群所有节点IP" class="headerlink" title="修改副本集群所有节点IP"></a>修改副本集群所有节点IP</h4><ol>
+<li>停止集群中所有节点mongod服务    </li>
+<li>重新启动所有节点服务，不使用–replSet选项，使用不同于集群的端口号，并指定dbpath路径<br><code>mongod --dbpath /opt/mongod/data --port 30002</code></li>
+<li>登陆mongo shell修改副本集配置<br><code>&gt; use local</code></li>
+<li>查看原配置<br><code>&gt; db.system.replset.find()</code></li>
+<li>在原配置基础上修改IP配置<br><code>&gt; cfg={ &quot;_id&quot; : &quot;myRep&quot;, &quot;version&quot; : 1, &quot;protocolVersion&quot; : NumberLong(1), &quot;members&quot; : [ { &quot;_id&quot; : 0, &quot;host&quot; : &quot;192.168.5.53:30001&quot;, &quot;arbiterOnly&quot; : false, &quot;buildIndexes&quot; : true, &quot;hidden&quot; : false, &quot;priority&quot; : 3, &quot;tags&quot; : {  }, &quot;slaveDelay&quot; : NumberLong(0), &quot;votes&quot; : 1 }, { &quot;_id&quot; : 1, &quot;host&quot; : &quot;192.168.5.52:30001&quot;, &quot;arbiterOnly&quot; : false, &quot;buildIndexes&quot; : true, &quot;hidden&quot; : false, &quot;priority&quot; : 2, &quot;tags&quot; : {  }, &quot;slaveDelay&quot; : NumberLong(0), &quot;votes&quot; : 1 }, { &quot;_id&quot; : 2, &quot;host&quot; : &quot;192.168.5.51:30001&quot;, &quot;arbiterOnly&quot; : true, &quot;buildIndexes&quot; : true, &quot;hidden&quot; : false, &quot;priority&quot; : 1, &quot;tags&quot; : {  }, &quot;slaveDelay&quot; : NumberLong(0), &quot;votes&quot; : 1 } ], &quot;settings&quot; : { &quot;chainingAllowed&quot; : true, &quot;heartbeatIntervalMillis&quot; : 2000, &quot;heartbeatTimeoutSecs&quot; : 10, &quot;electionTimeoutMillis&quot; : 10000, &quot;getLastErrorModes&quot; : {  }, &quot;getLastErrorDefaults&quot; : { &quot;w&quot; : 1, &quot;wtimeout&quot; : 0 } } }</code></li>
+<li>更新配置<br><code>&gt; db.system.replset.update( { &quot;_id&quot;: &quot;myRep&quot; } , cfg )</code></li>
+<li>退出mongo shell    </li>
+<li>重新按照正常配置开启 mongodb 集群，查看集群状态<br><code>mongod -f /opt/mongod/config/mongod.conf</code></li>
+</ol>
+<h4 id="UnrecoverableRollbackError"><a href="#UnrecoverableRollbackError" class="headerlink" title="UnrecoverableRollbackError"></a>UnrecoverableRollbackError</h4><p>说明：副本集群某节点宕机后，无法回滚超过一天的数据，导致无法启动<br>报错信息：    </p>
+<pre><code>  Rollback failed with unrecoverable error: UnrecoverableRollbackError: not willing to roll back more than 86400 seconds of data.
+</code></pre><p>解决办法：<br>  默认回滚时长为86400秒，即一天时间，可在配置中修改此参数。<br>  配置文件中添加一项配置，并设置合适的数值即可：</p>
+<pre><code class="profile">setParameter:
+   rollbackTimeLimitSecs: 864000
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'true' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "2N5UDpCnbSgubCvuwllMmgDR-MdYXbMMI",
+        appKey: "EB0MDg67b8KcpIsc20hIIQmR",
+        placeholder: "评论请在评论框上方填写昵称和邮箱，方便接收回复通知~",
+        pageSize:'10',
+        avatar:'wavatar',
+        lang:'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/10/01/Logstash7/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -693,6 +1027,14 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
@@ -866,6 +1208,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -878,6 +1224,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

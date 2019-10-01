@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://www.staroon.dev/2019/10/01/MongoDB/</loc>
+        <lastmod>2019-10-01T07:51:15.372Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.staroon.dev/2019/10/01/Logstash7/</loc>
         <lastmod>2019-10-01T07:18:25.811Z</lastmod>
         <changefreq>weekly</changefreq>

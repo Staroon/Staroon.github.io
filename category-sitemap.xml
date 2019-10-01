@@ -21,13 +21,6 @@
     </url>
 
     <url>
-        <loc>https://www.staroon.dev/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
-        <lastmod>2018-12-01T15:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.staroon.dev/categories/%E6%9D%82%E8%AE%B0/</loc>
         <lastmod>2019-07-27T05:15:14.939Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -44,6 +37,13 @@
     <url>
         <loc>https://www.staroon.dev/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/</loc>
         <lastmod>2019-10-01T07:18:25.811Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+        <lastmod>2019-10-01T07:51:15.372Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
