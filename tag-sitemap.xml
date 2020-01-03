@@ -65,13 +65,6 @@
     </url>
 
     <url>
-        <loc>https://www.staroon.dev/tags/Hive/</loc>
-        <lastmod>2017-12-09T12:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.staroon.dev/tags/shell/</loc>
         <lastmod>2018-01-24T02:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -100,13 +93,6 @@
     </url>
 
     <url>
-        <loc>https://www.staroon.dev/tags/ETL/</loc>
-        <lastmod>2018-05-07T08:24:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.staroon.dev/tags/%E6%96%87%E4%BB%B6%E5%8A%A0%E5%AF%86/</loc>
         <lastmod>2018-05-07T08:24:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -116,13 +102,6 @@
     <url>
         <loc>https://www.staroon.dev/tags/%E8%B5%84%E6%BA%90%E5%BA%93/</loc>
         <lastmod>2018-07-18T08:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.staroon.dev/tags/Hadoop/</loc>
-        <lastmod>2018-08-07T09:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -150,13 +129,6 @@
 
     <url>
         <loc>https://www.staroon.dev/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
-        <lastmod>2018-12-01T15:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.staroon.dev/tags/CDH/</loc>
         <lastmod>2018-12-01T15:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -235,6 +207,48 @@
     <url>
         <loc>https://www.staroon.dev/tags/MongoDB/</loc>
         <lastmod>2019-10-01T07:51:15.372Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/tags/CDH/</loc>
+        <lastmod>2020-01-03T14:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/tags/Hadoop/</loc>
+        <lastmod>2020-01-03T14:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/tags/Hive/</loc>
+        <lastmod>2020-01-03T14:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/tags/ETL/</loc>
+        <lastmod>2020-01-03T14:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/tags/StreamSets/</loc>
+        <lastmod>2020-01-03T14:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/tags/Kafka/</loc>
+        <lastmod>2020-01-03T14:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

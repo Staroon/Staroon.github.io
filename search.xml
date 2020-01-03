@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>CDH6集群中安装StreamSets</title>
+      <link href="/2020/01/03/sdcInstall/"/>
+      <url>/2020/01/03/sdcInstall/</url>
+      
+        <content type="html"><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>StreamSets（StreamSets Data Collector）是一款开源的强大的实时数据采集和ETL工具，具有易于使用的用户界面，甚至于不需要写任何代码，只需要做一些拖拽和配置即可完成复杂的Pipeline（数据管道）设计。<br>类似于我们所熟知的ETL工具Kettle，StreamSets也具有很多的组件，其组件可分为三大类，分别对应数据的采集、处理和落地：    </p><ul><li>Origin（数据源）</li><li>Processor（处理器）</li><li>Destination（目的地）   </li></ul><p>StreamSets有多种安装方式，可以使用tar包、rpm包、Cloudera Parcels等方式进行安装。由于我所使用的集群为CDH，故本文就只简单介绍一下StreamSets在CDH集群中的安装配置过程，在后续的文章中我会使用一些例子来介绍StreamSets具体的使用。    </p><p>环境说明：    </p><blockquote><p>Linux版本：CentOS 7.7<br>CDH版本：CDH 6.3.1<br>StreamSets版本：3.12.0    </p></blockquote><p>相关链接：    </p><blockquote><p><a href="https://archives.streamsets.com/index.html" target="_blank" rel="noopener">StreamSets 下载页面</a><br><a href="https://github.com/streamsets/datacollector" target="_blank" rel="noopener">StreamSets Github页面</a><br><a href="https://streamsets.com/" target="_blank" rel="noopener">StreamSets 官网</a>    </p></blockquote><h4 id="安装文件准备"><a href="#安装文件准备" class="headerlink" title="安装文件准备"></a>安装文件准备</h4><p>进入下载页面，默认最先展示的即为最新版本，找到Cloudera Parcels下面对应操作系统版本的下载链接，下载3个文件即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/tVErKLwtRLwE.png" alt="download"><br>分别为：    </p><blockquote><p>parcel包：STREAMSETS_DATACOLLECTOR-3.12.0-el7.parcel<br>校验文件：STREAMSETS_DATACOLLECTOR-3.12.0-el7.parcel.sha<br>csd文件：STREAMSETS-3.12.0.jar    </p></blockquote><p>文件下载完成后将parcel包和校验文件上传至CDH管理节点上的parcel本地存储库目录下，通常该目录默认为：<code>/opt/cloudera/parcel-repo</code>。将csd文件上传至CDH管理节点上的<code>/opt/cloudera/csd</code>目录下，然后将这几个文件的所有者修改为<code>cloudera-scm:cloudera-scm</code>。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/u1BlMTWjTIR0.png" alt="parcel"><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/ukx0gjrNN1cf.png" alt="csd">    </p><p>最后重启一下<strong>cloudera-scm-server</strong>服务即可在CM的WEB界面上看到StreamSets的Parcel包，默认为<code>未分配/未激活</code>状态，手动分配激活一下即可。<br><code># systemctl restart cloudera-scm-server</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/Y52zdZ0CuR3J.png" alt="img">    </p><h4 id="StreamSets安装"><a href="#StreamSets安装" class="headerlink" title="StreamSets安装"></a>StreamSets安装</h4><p>如果上面的步骤都没有出错的话，已经可以在集群的添加服务列表中看到StreamSets选项了，勾选StreamSets，继续：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/WcqRvcpErTNu.png" alt="img"><br>分配主机：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/1GMzhZCJt1dx.png" alt="img"><br>修改配置（最好还是修改一下默认目录）：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/HVizr6OusqnL.png" alt="img"><br>后续下一步下一步即可安装成功，可在CM首页看到StreamSets服务项：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/LIgrS1KS4fiP.png" alt="img"><br>安装完成后即可访问StreamSets的web界面的，默认端口为：18630，默认用户密码为：admin/admin。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/zexdPcUK322A.png" alt="img">    </p><h4 id="StreamSets配置项"><a href="#StreamSets配置项" class="headerlink" title="StreamSets配置项"></a>StreamSets配置项</h4><ul><li>修改java最大堆内存<br>默认为1G内存，可根据实际应用场景修改，前往CM网页StreamSets的服务配置页搜索<code>sdc-env.sh</code>，在<code>sdc-env.sh 的 Data Collector 高级配置代码段（安全阀）</code>配置项中添加<code>export SDC_JAVA_OPTS=&quot;-Xmx3072m -Xms3072m&quot;</code>     </li><li>修改最大batch大小<br>表示每次从数据源读取一批数据的最大记录数，默认最大batch大小为1000，可根据实际情况进行调整，前往CM网页StreamSets的服务配置页搜索<code>maxBatchSize</code>，修改<code>Max Batch Size (Running)</code>的值为合适大小。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/sdc/20200103/mTfhAtXnoika.png" alt="img"><br>其余配置项可参考<a href="http://bigdata001:18630/docs/datacollector/UserGuide/Configuration/DCConfig.html#task_lxk_kjw_1r" target="_blank" rel="noopener">官方配置文档</a>。<br>配置修改完成后重启服务生效。</li></ul><h4 id="本章完"><a href="#本章完" class="headerlink" title="本章完"></a>本章完</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> StreamSets </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CDH </tag>
+            
+            <tag> Hadoop </tag>
+            
+            <tag> Hive </tag>
+            
+            <tag> ETL </tag>
+            
+            <tag> StreamSets </tag>
+            
+            <tag> Kafka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MongoDB简单使用操作</title>
       <link href="/2019/10/01/MongoDB/"/>
       <url>/2019/10/01/MongoDB/</url>
@@ -882,9 +917,9 @@
       
         <tags>
             
-            <tag> CentOS </tag>
-            
             <tag> 大数据 </tag>
+            
+            <tag> CentOS </tag>
             
             <tag> Hadoop </tag>
             
