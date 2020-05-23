@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head>
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -24,25 +24,25 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
-
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
 
 
-    <link rel="dns-prefetch" href="https://hm.baidu.com">
-
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -66,14 +66,14 @@
     <link rel="icon shortcut" type="image/ico" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
     <link rel="icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="大数据相关技术分享">
     <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,Kettle">
     <meta name="theme-color" content="#3F51B5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -242,8 +242,8 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE">
-    <meta name="baidu-site-verification" content="sRi4m8YyKX">
+    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
+    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
 
     <!-- RSS -->
     
@@ -266,7 +266,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2018/07/30/KettleDoc-9/index.html">
+        <link rel="canonical" href="https://www.staroon.dev/2018/07/30/KettleDoc-9/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 
     
@@ -376,7 +376,8 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -418,7 +419,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -459,8 +460,8 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Kettle/">Kettle</a>
-    </li></ul>
+        <a class="post_tag-link" href="/tags/Kettle/" rel="tag">Kettle</a>
+    </ul>
     
 
     <!-- Share -->
@@ -646,8 +647,7 @@ public class ToPinYin {
         }
         return sb.toString();
     }
-}
-</code></pre>
+}</code></pre>
 <p>然后就是改造一下Kettle提供的Java模板，将<code>getPinYin</code>方法整块复制到<code>processRow</code>方法后面：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/X3Z55jjxx7Ec.png" alt="img"><br>然后修改<code>processRow</code>方法里面的<code>/* TODO:</code>部分，<code>get(Fields.In, &quot;name&quot;).getString(r)</code>表示获取数据流中指定的字段数据；<code>get(Fields.Out, &quot;ename&quot;).setValue(r, ename)</code>用于设置输出字段。还要在最上面导入相关类，具体代码如下：    </p>
 <pre><code class="java">import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
@@ -676,8 +676,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
   putRow(data.outputRowMeta, r);
 
   return true;
-}
-</code></pre>
+}</code></pre>
 <p>接着还要在最下面配置一下输出字段信息，有几个输出字段就需要配置几行：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/mFDbbNVCtdKg.png" alt="img"><br>保存，完事！真的完了吗？还没有！还需要导入依赖包，可以从代码中看出中文转拼音我是用的<code>pinyin4j</code>，向kettle lib目录下放入<code>pinyin4j</code>的jar包，然后重新启动<code>Spoon</code>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/KYdfuFq0qw6R.png" alt="img"><br>最后调整一下【字段选择】：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/rYbuAUvjd1Hz.png" alt="img"><br>保存，运行，查看结果：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/N6BsAtTSrRMw.png" alt="img">    </p>
 <h3 id="作业-SQL组件"><a href="#作业-SQL组件" class="headerlink" title="作业-SQL组件"></a>作业-SQL组件</h3><p>作业中的SQL组件通常是用来执行DDL语句的，比较简单，与转换中的【表输入组件】类似，但没有数据输出。<br>新建一个作业，拖出【脚本】分组下的【SQL】组件，组成一个小流程：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/HEtP77vR8kPW.png" alt="img"><br>编辑【SQL】组件，选择目标数据库连接，写上SQL内容，多个SQL使用英文分号分隔开，如果使用了参数变量记得勾选【使用变量替换】：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/nbZKNKu9FMLY.png" alt="img"><br>保存，运行，查看结果：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/1suFTHjxhJvw.png" alt="img"><br>注：转换-脚本分组下也有两个【执行SQL脚本】的组件，有兴趣的可以去研究研究，我这里就不再介绍了。    </p>
 <h3 id="作业-Shell组件"><a href="#作业-Shell组件" class="headerlink" title="作业-Shell组件"></a>作业-Shell组件</h3><p>【Shell】组件是用来执行Windows下的批处理脚本的，也就是后缀为bat的脚本。<br>新建一个作业，拖出【Shell】组件，组成流程：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/0H3HaANOJ9zw.png" alt="img"><br>打开【Shell】组件配置窗口，第一项，勾选【插入脚本】表示在该组件中写脚本，右侧的【脚本】选项卡即是写脚本的位置，若不勾选【插入脚本】，则是通过执行指定脚本文件的方式。不建议勾选【插入脚本】选项，因为勾选【插入脚本】后，Kettle运行Shell的时候会先将脚本内容写到一个临时批处理文件中再去执行，很容易出现中文乱码情况。<br>【脚本文件名】配置项，用于指定批处理脚本文件位置，勾选【插入脚本】后，该项不可配置。<br>【工作路径】配置项，用于指定脚本工作路径，通俗的说，就是在哪个目录下运行这个脚本。<br>最下面的【字段】列表，用于配置脚本入参，可以使用参数变量。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/Z3AO1MmKGdbS.png" alt="img"><br>这是脚本内容：    </p>
@@ -692,8 +691,7 @@ mkdir ShellTest
 ::复制脚本文件到ShellTest目录
 copy Shell-test.bat ShellTest
 
-echo %1 &gt; ShellTest\hello.txt
-</code></pre>
+echo %1 &gt; ShellTest\hello.txt</code></pre>
 <p>保存，运行，查看结果：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/royT6cYpbQxA.png" alt="img"><br>运行日志：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180730/Q3w2J71o60yg.png" alt="img"><br>转换-应用分组下有一个【运行SSH命令】的组件，是向Linux操作系统下远程执行Linux Shell的，有兴趣的可以去看看。    </p>
 <p>本章完！<br>下一章：<a href="https://www.staroon.dev/2018/07/30/KettleDoc-10/">对接大数据平台</a></p>
 
@@ -709,7 +707,7 @@ echo %1 &gt; ShellTest\hello.txt
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -850,7 +848,7 @@ echo %1 &gt; ShellTest\hello.txt
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -867,8 +865,8 @@ echo %1 &gt; ShellTest\hello.txt
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/全文检索/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">3</span></a>
-            </li></ul>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%99%E7%A8%8B/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记<span class="sidebar_archives-count">3</span></a>
+            </ul>
         </li>
         
             <li class="divider"></li>
@@ -953,8 +951,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-    <div class="pets"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.abowman.com/widgets/penguins/penguins.swf?" width="280" height="200"><param name="movie" value="https://cdn.abowman.com/widgets/penguins/penguins.swf?"><param name="AllowScriptAccess" value="always"><param name="wmode" value="opaque"><param name="scale" value="noscale"><param name="salign" value="tl"></object></div>
 
 
 
@@ -1159,7 +1155,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

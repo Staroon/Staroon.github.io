@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head>
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -24,25 +24,25 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
-
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
 
 
-    <link rel="dns-prefetch" href="https://hm.baidu.com">
-
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -66,14 +66,14 @@
     <link rel="icon shortcut" type="image/ico" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
     <link rel="icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="大数据相关技术分享">
     <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,Kettle">
     <meta name="theme-color" content="#3F51B5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -242,8 +242,8 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE">
-    <meta name="baidu-site-verification" content="sRi4m8YyKX">
+    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
+    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
 
     <!-- RSS -->
     
@@ -266,7 +266,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2018/07/18/KettleDoc-1/index.html">
+        <link rel="canonical" href="https://www.staroon.dev/2018/07/18/KettleDoc-1/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 
     
@@ -376,7 +376,8 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -418,7 +419,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -459,8 +460,8 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Kettle/">Kettle</a>
-    </li></ul>
+        <a class="post_tag-link" href="/tags/Kettle/" rel="tag">Kettle</a>
+    </ul>
     
 
     <!-- Share -->
@@ -607,8 +608,7 @@
 </ul>
 <h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><p>Kettle 8.1要求jdk版本1.8以上，Windows下jdk环境的配置这里就不赘述了。只说一下其中一种可能的情况：系统已配置jdk环境，但不是jdk1.8，又不想升级已配置的jdk环境，即需要<strong>单独为Kettle配置jdk1.8环境</strong>。<br>操作如下：首先安装jdk1.8，不用修改系统环境变量。然后进入 <code>data-integration</code>目录找到<code>Spoon.bat</code>文件，右键使用<strong>除了记事本以外的文本编辑器</strong>打开（比如 VS Code、EditPlus、Notepad ++），在”<code>cd /D %~dp0</code>“下面添加一行（路径指向jdk1.8的目录，可以使用相对路径）：”<code>set JAVA_HOME=/path/to/jdk1.8</code>“即可。如图所示:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/xkOTRakGtwyB.png" alt="img"></p>
 <h3 id="JVM参数"><a href="#JVM参数" class="headerlink" title="JVM参数"></a>JVM参数</h3><p>Kettle 8.1默认使用的最大jvm堆内存是2G，执行某些复杂作业可能会出现堆内存溢出错误（<code>OutOfMemoryError</code>），此时就需要调正Kettle的jvm参数。<br>依旧是<code>data-integration</code>目录下的<code>Spoon.bat</code>文件，找到</p>
-<pre><code class="bat">if &quot;%PENTAHO_DI_JAVA_OPTIONS%&quot;==&quot;&quot; set PENTAHO_DI_JAVA_OPTIONS=&quot;-Xms1024m&quot; &quot;-Xmx2048m&quot; &quot;-XX:MaxPermSize=256m&quot;
-</code></pre>
+<pre><code class="bat">if &quot;%PENTAHO_DI_JAVA_OPTIONS%&quot;==&quot;&quot; set PENTAHO_DI_JAVA_OPTIONS=&quot;-Xms1024m&quot; &quot;-Xmx2048m&quot; &quot;-XX:MaxPermSize=256m&quot;</code></pre>
 <p>这一行，适当增大”<code>-Xmx</code>“参数值即可。<br>如果出现了栈溢出错误（<code>StackOverFlowError</code>）（一般不会出现），则需要再增加一个参数”<code>-Xss</code>“，数值需要根据本机内存配置适当填写。<br>如图所示：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/ygRaKzNIkhbA.png" alt="img"></p>
 <h3 id="KETTLE-HOME"><a href="#KETTLE-HOME" class="headerlink" title="KETTLE_HOME"></a>KETTLE_HOME</h3><p>Kettle运行时会使用一个名叫”<code>.kettle</code>“的文件夹，里面存放着一些配置文件。默认该目录在C盘个人用户目录下：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/L7G3SZr9Qs5N.png" alt="img"><br>通常情况下没什么问题，但如果需要同时安装多个Kettle的话，最好还是单独配置一下<code>KETTLE_HOME</code>，这样的话，<code>.kettle</code>目录就会自动创建在配置的<code>KETTLE_HOME</code>目录下。<br>仍旧是<code>data-integration</code>目录下的<code>Spoon.bat</code>文件，在”<code>cd /D %~dp0</code>“下面添加一行”<code>set KETTLE_HOME=../</code>“，如图所示：<br> <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/cLvuzC8sK7vc.png" alt="img"><br>这次使用了相对路径，启动Kettle后会在<strong>Spoon.bat所在目录的上一层目录</strong>下创建一个<code>.kettle</code>文件夹(当然也可以使用绝对路径)：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/InPwufFufS59.png" alt="img"></p>
 <h3 id="依赖包导入"><a href="#依赖包导入" class="headerlink" title="依赖包导入"></a>依赖包导入</h3><p>Kettle是没有内置数据库jdbc连接驱动的，当测试数据库连接的时候报出未找到驱动错误，那肯定是忘记导入jdbc驱动了。因此需要提前把常用数据库的jdbc驱动放置到<code>data-integration/lib/</code>目录下，另外，若是在Java代码组件中使用了第三方依赖包，也需要依赖包放置到该目录下。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/kettle/doc/20180719/eIW4tw8CDERU.png" alt="img"><br>不同版本的jdbc驱动对于不同版本的数据库可能会出现不兼容问题，导入驱动的时候需要对照下数据库版本。<br>不能把一个数据库的多个版本的jdbc驱动同时导入，会造成依赖冲突。</p>
@@ -626,7 +626,7 @@
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -767,7 +767,7 @@
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -784,8 +784,8 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/全文检索/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">3</span></a>
-            </li></ul>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%99%E7%A8%8B/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记<span class="sidebar_archives-count">3</span></a>
+            </ul>
         </li>
         
             <li class="divider"></li>
@@ -870,8 +870,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-    <div class="pets"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.abowman.com/widgets/penguins/penguins.swf?" width="280" height="200"><param name="movie" value="https://cdn.abowman.com/widgets/penguins/penguins.swf?"><param name="AllowScriptAccess" value="always"><param name="wmode" value="opaque"><param name="scale" value="noscale"><param name="salign" value="tl"></object></div>
 
 
 
@@ -1076,7 +1074,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

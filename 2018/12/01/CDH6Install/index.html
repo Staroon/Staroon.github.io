@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head>
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -24,25 +24,25 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
-
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
 
 
-    <link rel="dns-prefetch" href="https://hm.baidu.com">
-
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -66,14 +66,14 @@
     <link rel="icon shortcut" type="image/ico" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
     <link rel="icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="大数据相关技术分享">
     <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,大数据,CDH,Linux">
     <meta name="theme-color" content="#3F51B5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -242,8 +242,8 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE">
-    <meta name="baidu-site-verification" content="sRi4m8YyKX">
+    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
+    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
 
     <!-- RSS -->
     
@@ -266,7 +266,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2018/12/01/CDH6Install/index.html">
+        <link rel="canonical" href="https://www.staroon.dev/2018/12/01/CDH6Install/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 
     
@@ -376,7 +376,8 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -418,7 +419,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -459,8 +460,8 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CDH/">CDH</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Linux/">Linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/大数据/">大数据</a>
-    </li></ul>
+        <a class="post_tag-link" href="/tags/CDH/" rel="tag">CDH</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag">大数据</a>
+    </ul>
     
 
     <!-- Share -->
@@ -546,8 +547,7 @@
 ├── cloudera-manager-server-6.0.1-610811.el7.x86_64.rpm
 └── cloudera-manager-server-db-2-6.0.1-610811.el7.x86_64.rpm
 
-0 directories, 4 files
-</code></pre><h3 id="MySQL-JDBC驱动"><a href="#MySQL-JDBC驱动" class="headerlink" title="MySQL JDBC驱动"></a>MySQL JDBC驱动</h3><p>要求使用5.1.26以上版本的jdbc驱动，可<a href="https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz" target="_blank" rel="noopener">点击这里</a>直接下载<code>mysql-connector-java-5.1.47.tar.gz</code>   </p>
+0 directories, 4 files</code></pre><h3 id="MySQL-JDBC驱动"><a href="#MySQL-JDBC驱动" class="headerlink" title="MySQL JDBC驱动"></a>MySQL JDBC驱动</h3><p>要求使用5.1.26以上版本的jdbc驱动，可<a href="https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.47.tar.gz" target="_blank" rel="noopener">点击这里</a>直接下载<code>mysql-connector-java-5.1.47.tar.gz</code>   </p>
 <h3 id="CDH-6-0-1"><a href="#CDH-6-0-1" class="headerlink" title="CDH 6.0.1"></a>CDH 6.0.1</h3><p>CDH6 Parcels：<a href="https://archive.cloudera.com/cdh6/6.0.1/parcels/" target="_blank" rel="noopener">https://archive.cloudera.com/cdh6/6.0.1/parcels/</a><br>需要下载<code>CDH-6.0.1-1.cdh6.0.1.p0.590678-el7.parcel</code>和<code>manifest.json</code>这两个文件</p>
 <h2 id="配置Cloudera-Manager-yum库"><a href="#配置Cloudera-Manager-yum库" class="headerlink" title="配置Cloudera Manager yum库"></a>配置Cloudera Manager yum库</h2><p>注意：不要尝试使用FTP搭建CM的YUM库！    </p>
 <p>首先安装<code>httpd</code>和<code>createrepo</code>：<br><code>yum -y install httpd createrepo</code><br>启动<code>httpd</code>服务并设置开机自启动：<br><code>systemctl start httpd</code><br><code>systemctl enable httpd</code><br>然后进入到前面准备好的存放Cloudera Manager RPM包的目录<code>cloudera-repos</code>下：<br><code>cd /upload/cloudera-repos/</code><br>生成RPM元数据：<br><code>createrepo .</code>    </p>
@@ -559,14 +559,12 @@ Saving Primary metadata
 Saving file lists metadata
 Saving other metadata
 Generating sqlite DBs
-Sqlite DBs complete
-</code></pre><p>然后将<code>cloudera-repos</code>目录移动到httpd的html目录下：<br><code>mv cloudera-repos /var/www/html/</code><br>确保可以通过浏览器查看到这些RPM包：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/86sifJkpHNT5.png" alt="img"><br>接着在<strong>Cloudera Manager Server</strong>主机上创建cm6的repo文件（要把哪个节点作为Cloudera Manager Server节点，就在这个节点上创建repo文件）：<br><code>cd /etc/yum.repos.d</code><br><code>vim cloudera-manager.repo</code><br>添加如下内容：    </p>
+Sqlite DBs complete</code></pre><p>然后将<code>cloudera-repos</code>目录移动到httpd的html目录下：<br><code>mv cloudera-repos /var/www/html/</code><br>确保可以通过浏览器查看到这些RPM包：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/86sifJkpHNT5.png" alt="img"><br>接着在<strong>Cloudera Manager Server</strong>主机上创建cm6的repo文件（要把哪个节点作为Cloudera Manager Server节点，就在这个节点上创建repo文件）：<br><code>cd /etc/yum.repos.d</code><br><code>vim cloudera-manager.repo</code><br>添加如下内容：    </p>
 <pre><code>[cloudera-manager]
 name=Cloudera Manager 6.0.1
 baseurl=http://cdh601/cloudera-repos/
 gpgcheck=0
-enabled=1
-</code></pre><p>保存，退出,然后执行<code>yum clean all &amp;&amp; yum makecache</code>命令：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/zR1TeRS8nYWb.png" alt="img"></p>
+enabled=1</code></pre><p>保存，退出,然后执行<code>yum clean all &amp;&amp; yum makecache</code>命令：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181203/zR1TeRS8nYWb.png" alt="img"></p>
 <h2 id="安装Cloudera-Manager-Server"><a href="#安装Cloudera-Manager-Server" class="headerlink" title="安装Cloudera Manager Server"></a>安装Cloudera Manager Server</h2><p>这一步只需要在CM Server节点上操作。<br>执行下面的命令：<br><code>yum install cloudera-manager-daemons cloudera-manager-agent cloudera-manager-server</code><br>将会需要很多依赖包，所以说还是有必要搭一个局域网内yum源的：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/k5JHMj3QUGvi.png" alt="img">    </p>
 <h2 id="配置本地Parcel存储库"><a href="#配置本地Parcel存储库" class="headerlink" title="配置本地Parcel存储库"></a>配置本地Parcel存储库</h2><p>Cloudera Manager Server安装完成后，进入到本地Parcel存储库目录：<br><code>cd /opt/cloudera/parcel-repo</code><br>将第一部分下载的CDH Parcel文件（<code>CDH-6.0.1-1.cdh6.0.1.p0.590678-el7.parcel</code>和<code>manifest.json</code>）上传至该目录下，然后执行命令生成sha文件：<br><code>sha1sum CDH-6.0.1-1.cdh6.0.1.p0.590678-el7.parcel | awk &#39;{ print $1 }&#39; &gt; CDH-6.0.1-1.cdh6.0.1.p0.590678-el7.parcel.sha</code><br>然后执行下面的命令修改文件所有者：<br><code>chown -R cloudera-scm:cloudera-scm /opt/cloudera/parcel-repo/*</code><br>最终<code>/opt/cloudera/parcel-repo</code>目录内容如下：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/vEGbZpYWxa47.png" alt="img"></p>
 <h2 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h2><p>MySQL的安装在环境准备部分中已经有说明，这里就跳过MySQL安装了。    </p>
@@ -621,66 +619,63 @@ innodb_log_file_size = 512M
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 
-sql_mode=STRICT_ALL_TABLES
-</code></pre>
+sql_mode=STRICT_ALL_TABLES</code></pre>
 <h3 id="配置mysql-jdbc驱动"><a href="#配置mysql-jdbc驱动" class="headerlink" title="配置mysql jdbc驱动"></a>配置mysql jdbc驱动</h3><p>从前面下载好的<code>mysql-connector-java-5.1.47.tar.gz</code>包中解压出<code>mysql-connector-java-5.1.47-bin.jar</code>文件，将<code>mysql-connector-java-5.1.47-bin.jar</code>文件上传至CM Server节点上的<code>/usr/share/java/</code>目录下并重命名为<code>mysql-connector-java.jar</code>（如果<code>/usr/share/java/</code>目录不存在，需要手动创建）：<br><code>tar zxvf mysql-connector-java-5.1.47.tar.gz</code><br><code>mkdir -p /usr/share/java/</code><br><code>cp mysql-connector-java-5.1.47-bin.jar /usr/share/java/mysql-connector-java.jar</code></p>
 <h3 id="创建CDH所需要的数据库"><a href="#创建CDH所需要的数据库" class="headerlink" title="创建CDH所需要的数据库"></a>创建CDH所需要的数据库</h3><p>根据所需要安装的服务参照下表创建对应的数据库以及数据库用户，数据库必须使用utf8编码，创建数据库时要记录好用户名及对应密码： </p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">服务名</th>
-<th style="text-align:center">数据库名</th>
-<th style="text-align:center">用户名</th>
+<th align="center">服务名</th>
+<th align="center">数据库名</th>
+<th align="center">用户名</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">Cloudera Manager Server</td>
-<td style="text-align:center">scm</td>
-<td style="text-align:center">scm</td>
+<tbody><tr>
+<td align="center">Cloudera Manager Server</td>
+<td align="center">scm</td>
+<td align="center">scm</td>
 </tr>
 <tr>
-<td style="text-align:center">Activity Monitor</td>
-<td style="text-align:center">amon</td>
-<td style="text-align:center">amon</td>
+<td align="center">Activity Monitor</td>
+<td align="center">amon</td>
+<td align="center">amon</td>
 </tr>
 <tr>
-<td style="text-align:center">Reports Manager</td>
-<td style="text-align:center">rman</td>
-<td style="text-align:center">rman</td>
+<td align="center">Reports Manager</td>
+<td align="center">rman</td>
+<td align="center">rman</td>
 </tr>
 <tr>
-<td style="text-align:center">Hue</td>
-<td style="text-align:center">hue</td>
-<td style="text-align:center">hue</td>
+<td align="center">Hue</td>
+<td align="center">hue</td>
+<td align="center">hue</td>
 </tr>
 <tr>
-<td style="text-align:center">Hive Metastore Server</td>
-<td style="text-align:center">metastore</td>
-<td style="text-align:center">hive</td>
+<td align="center">Hive Metastore Server</td>
+<td align="center">metastore</td>
+<td align="center">hive</td>
 </tr>
 <tr>
-<td style="text-align:center">Sentry Server</td>
-<td style="text-align:center">sentry</td>
-<td style="text-align:center">sentry</td>
+<td align="center">Sentry Server</td>
+<td align="center">sentry</td>
+<td align="center">sentry</td>
 </tr>
 <tr>
-<td style="text-align:center">Cloudera Navigator Audit Server</td>
-<td style="text-align:center">nav</td>
-<td style="text-align:center">nav</td>
+<td align="center">Cloudera Navigator Audit Server</td>
+<td align="center">nav</td>
+<td align="center">nav</td>
 </tr>
 <tr>
-<td style="text-align:center">Cloudera Navigator Metadata Server</td>
-<td style="text-align:center">navms</td>
-<td style="text-align:center">navms</td>
+<td align="center">Cloudera Navigator Metadata Server</td>
+<td align="center">navms</td>
+<td align="center">navms</td>
 </tr>
 <tr>
-<td style="text-align:center">Oozie</td>
-<td style="text-align:center">oozie</td>
-<td style="text-align:center">oozie</td>
+<td align="center">Oozie</td>
+<td align="center">oozie</td>
+<td align="center">oozie</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>我这里就先创建4个数据库及对应用户：    </p>
 <pre><code class="sql">mysql&gt; CREATE DATABASE scm DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 Query OK, 1 row affected (0.11 sec)
@@ -707,8 +702,7 @@ mysql&gt; GRANT ALL ON metastore.* TO &#39;hive&#39;@&#39;%&#39; IDENTIFIED BY &
 Query OK, 0 rows affected, 1 warning (0.00 sec)
 
 mysql&gt; FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.00 sec)
-</code></pre>
+Query OK, 0 rows affected (0.00 sec)</code></pre>
 <p>查看授权是否正确：    </p>
 <pre><code class="sql">mysql&gt; SHOW GRANTS FOR &#39;scm&#39;@&#39;%&#39;;
 +----------------------------------------------+
@@ -744,8 +738,7 @@ mysql&gt; SHOW GRANTS FOR &#39;hive&#39;@&#39;%&#39;;
 | GRANT USAGE ON *.* TO &#39;hive&#39;@&#39;%&#39;                    |
 | GRANT ALL PRIVILEGES ON `metastore`.* TO &#39;hive&#39;@&#39;%&#39; |
 +----------------------------------------------------------+
-2 rows in set (0.00 sec)
-</code></pre>
+2 rows in set (0.00 sec)</code></pre>
 <h2 id="设置Cloudera-Manager-数据库"><a href="#设置Cloudera-Manager-数据库" class="headerlink" title="设置Cloudera Manager 数据库"></a>设置Cloudera Manager 数据库</h2><p>Cloudera Manager Server包含一个配置数据库的脚本。</p>
 <ul>
 <li>mysql数据库与CM Server是同一台主机<br>执行命令：<code>/opt/cloudera/cm/schema/scm_prepare_database.sh mysql scm scm</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/CDH6/20181201/EmwlJvBIFSac.png" alt="img"></li>
@@ -783,7 +776,7 @@ mysql&gt; SHOW GRANTS FOR &#39;hive&#39;@&#39;%&#39;;
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -924,7 +917,7 @@ mysql&gt; SHOW GRANTS FOR &#39;hive&#39;@&#39;%&#39;;
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -941,8 +934,8 @@ mysql&gt; SHOW GRANTS FOR &#39;hive&#39;@&#39;%&#39;;
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/全文检索/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">3</span></a>
-            </li></ul>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%99%E7%A8%8B/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记<span class="sidebar_archives-count">3</span></a>
+            </ul>
         </li>
         
             <li class="divider"></li>
@@ -1027,8 +1020,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-    <div class="pets"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.abowman.com/widgets/penguins/penguins.swf?" width="280" height="200"><param name="movie" value="https://cdn.abowman.com/widgets/penguins/penguins.swf?"><param name="AllowScriptAccess" value="always"><param name="wmode" value="opaque"><param name="scale" value="noscale"><param name="salign" value="tl"></object></div>
 
 
 
@@ -1233,7 +1224,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head>
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -24,25 +24,25 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
-
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
 
 
-    <link rel="dns-prefetch" href="https://hm.baidu.com">
-
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -66,14 +66,14 @@
     <link rel="icon shortcut" type="image/ico" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
     <link rel="icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="大数据相关技术分享">
     <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,大数据,Hadoop">
     <meta name="theme-color" content="#3F51B5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -242,8 +242,8 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE">
-    <meta name="baidu-site-verification" content="sRi4m8YyKX">
+    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
+    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
 
     <!-- RSS -->
     
@@ -266,7 +266,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2017/12/22/Hadoop3Install/index.html">
+        <link rel="canonical" href="https://www.staroon.dev/2017/12/22/Hadoop3Install/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 
     
@@ -376,7 +376,8 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -418,7 +419,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -459,8 +460,8 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Hadoop/">Hadoop</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/大数据/">大数据</a>
-    </li></ul>
+        <a class="post_tag-link" href="/tags/Hadoop/" rel="tag">Hadoop</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag">大数据</a>
+    </ul>
     
 
     <!-- Share -->
@@ -543,8 +544,7 @@
 <h1 id="Hadoop3-0单机版不靠谱配置"><a href="#Hadoop3-0单机版不靠谱配置" class="headerlink" title="Hadoop3.0单机版不靠谱配置"></a>Hadoop3.0单机版不靠谱配置</h1><p>注意标题，<strong>不靠谱配置</strong>！！！</p>
 <p>部署过程也不细说了，跟之前差不多，配置文件名称除了<strong>节点配置文件</strong>由<strong>slaves</strong>改为了<strong>workers</strong>，其他都没变。这里就直接放基本配置信息了:</p>
 <ol>
-<li><strong>hadoop-env.sh</strong><pre><code class="bash">export JAVA_HOME=/usr/java/jdk1.8.0_131
-</code></pre>
+<li><strong>hadoop-env.sh</strong><pre><code class="bash">export JAVA_HOME=/usr/java/jdk1.8.0_131</code></pre>
 </li>
 <li><strong>core-site.xml</strong><pre><code class="xml">&lt;configuration&gt;
 &lt;property&gt;
@@ -555,8 +555,7 @@
  &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
  &lt;value&gt;/hadoop/hadoop3/&lt;/value&gt;
 &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
+&lt;/configuration&gt;</code></pre>
 </li>
 <li><strong>hdfs-site.xml</strong><pre><code class="xml">&lt;configuration&gt;
 &lt;property&gt;
@@ -567,16 +566,14 @@
  &lt;name&gt;dfs.permissions&lt;/name&gt;
  &lt;value&gt;false&lt;/value&gt;
 &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
+&lt;/configuration&gt;</code></pre>
 </li>
 <li><strong>mapred-site.xml</strong><pre><code class="xml">&lt;configuration&gt;
 &lt;property&gt;
  &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
  &lt;value&gt;yarn&lt;/value&gt;
 &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
+&lt;/configuration&gt;</code></pre>
 </li>
 <li><strong>yarn-site.xml</strong><pre><code class="xml">&lt;configuration&gt;
 &lt;property&gt;  
@@ -587,36 +584,29 @@
  &lt;name&gt;yarn.nodemanager.env-whitelist&lt;/name&gt;
  &lt;value&gt;JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME&lt;/value&gt;
 &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
+&lt;/configuration&gt;</code></pre>
 </li>
-<li><strong>workers</strong>–这个配置文件在Hadoop 2.7.x版本的名字是<strong>slaves</strong><pre><code>master1
-</code></pre></li>
+<li><strong>workers</strong>–这个配置文件在Hadoop 2.7.x版本的名字是<strong>slaves</strong><pre><code>master1</code></pre></li>
 <li>系统环境变量配置<pre><code class="bash">export HADOOP_PREFIX=/usr/hadoop/hadoop-3.0.0
-export PATH=$PATH:$HADOOP_PREFIX/bin:$HADOOP_PREFIX/sbin
-</code></pre>
+export PATH=$PATH:$HADOOP_PREFIX/bin:$HADOOP_PREFIX/sbin</code></pre>
 </li>
 </ol>
 <h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>配置完了，那就启动吧，启动命令跟之前一样：<code>start-dfs.sh</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/adImBABedl.png" alt="profile"><br>哎，有警告，原来是<strong>HADOOP_PREFIX</strong>不让用了，那就按照提示改成<strong>HADOOP_HOME</strong>：<br>重新配置环境变量如下:</p>
 <pre><code class="bash">export HADOOP_HOME=/usr/hadoop/hadoop-3.0.0
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-</code></pre>
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin</code></pre>
 <p>刷新环境变量后再次启动Hadoop：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/b73igbl3mc.png" alt="dfs-user"><br>报错!!!根据错误信息，发现必须要为这些命令指定一个用户。</p>
 <p>看了一下Hadoop的配置文件，发现<strong>hadoop-env.sh</strong>文件中最后面有一段话：</p>
 <pre><code># To prevent accidents, shell commands be (superficially) locked
 # to only allow certain users to execute certain subcommands.
-# It uses the format of (command)_(subcommand)_USER.
-</code></pre><p>即需要在<strong>hadoop-env.sh</strong>文件中新增3行配置：</p>
+# It uses the format of (command)_(subcommand)_USER.</code></pre><p>即需要在<strong>hadoop-env.sh</strong>文件中新增3行配置：</p>
 <pre><code class="bash">export HDFS_NAMENODE_USER=root
 export HDFS_DATANODE_USER=root
-export HDFS_SECONDARYNAMENODE_USER=root
-</code></pre>
+export HDFS_SECONDARYNAMENODE_USER=root</code></pre>
 <p>如图所示:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/G4Ik8kjIHg.png" alt="set-dfs-user"></p>
 <p>再次执行<code>start-dfs.sh</code>，启动成功：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/c1DjJIGBGG.png" alt="start-dfs"></p>
 <p>然后启动Yarn： <code>start-yarn.sh</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/dB6hcHeE7L.png" alt="yarn-user"><br>报错，所以还需要指定<strong>YARN_RESOURCEMANAGER_USER</strong>和<strong>YARN_NODEMANAGER_USER</strong>这两个用户，继续在<strong>hadoop-env.sh</strong>文件中新增2行配置：</p>
 <pre><code class="bash">export YARN_RESOURCEMANAGER_USER=root
-export YARN_NODEMANAGER_USER=root
-</code></pre>
+export YARN_NODEMANAGER_USER=root</code></pre>
 <p>如图所示:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/j4aKAaI2B3.png" alt="set-yarn-user"><br>再次启动，成功:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/L428dFh71j.png" alt="start-yarn"></p>
 <p>所以<strong>hadoop-env.sh</strong>文件最终需要配置的是:</p>
 <pre><code class="bash">export JAVA_HOME=/usr/java/jdk1.8.0_131
@@ -625,8 +615,7 @@ export HDFS_NAMENODE_USER=root
 export HDFS_DATANODE_USER=root
 export HDFS_SECONDARYNAMENODE_USER=root
 export YARN_RESOURCEMANAGER_USER=root
-export YARN_NODEMANAGER_USER=root
-</code></pre>
+export YARN_NODEMANAGER_USER=root</code></pre>
 <h1 id="WEB页面"><a href="#WEB页面" class="headerlink" title="WEB页面"></a>WEB页面</h1><p>由于端口变化，所以NameNode WEB UI 地址为：<code>http://namenode_ip_or_hostname:9870</code></p>
 <p>Overview页面：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/iBKfllaHhg.png" alt="overview"></p>
 <p>Datanodes页面：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/f8Jl3igcK8.png" alt="datanodes"></p>
@@ -634,8 +623,9 @@ export YARN_NODEMANAGER_USER=root
 <ul>
 <li><strong>创建文件夹</strong><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/gL1bhlHjfD.gif" alt="create-dir"></li>
 <li><strong>上传文件</strong><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/hDghfj6fdG.gif" alt="upload-file"></li>
-<li><strong>剪切文件</strong><br><strong>勾选</strong>你要进行剪切的文件，点击<strong>Cut</strong>，网页会提示你操作文件或文件夹的个数，然后找到目标位置，点击<strong>Paste</strong>即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/iB903hAhbI.gif" alt="move-file"></li>
+<li><strong>剪切文件</strong></li>
 </ul>
+<p><strong>勾选</strong>你要进行剪切的文件，点击<strong>Cut</strong>，网页会提示你操作文件或文件夹的个数，然后找到目标位置，点击<strong>Paste</strong>即可：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/iB903hAhbI.gif" alt="move-file"></p>
 <p>网页上还可以进行权限、用户、用户组、文件副本数量的设置，不过默认的网页用户是<strong>dr.who</strong>，没有权限进行用户与用户组的设置：</p>
 <ul>
 <li><strong>设置权限</strong><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/Hadoop3Install/171222/KljecidK4h.png" alt="set-permission"></li>
@@ -665,7 +655,7 @@ export YARN_NODEMANAGER_USER=root
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -806,7 +796,7 @@ export YARN_NODEMANAGER_USER=root
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -823,8 +813,8 @@ export YARN_NODEMANAGER_USER=root
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/全文检索/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">3</span></a>
-            </li></ul>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%99%E7%A8%8B/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记<span class="sidebar_archives-count">3</span></a>
+            </ul>
         </li>
         
             <li class="divider"></li>
@@ -909,8 +899,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-    <div class="pets"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.abowman.com/widgets/penguins/penguins.swf?" width="280" height="200"><param name="movie" value="https://cdn.abowman.com/widgets/penguins/penguins.swf?"><param name="AllowScriptAccess" value="always"><param name="wmode" value="opaque"><param name="scale" value="noscale"><param name="salign" value="tl"></object></div>
 
 
 
@@ -1115,7 +1103,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

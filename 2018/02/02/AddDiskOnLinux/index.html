@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head>
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -24,25 +24,25 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
-
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
 
 
-    <link rel="dns-prefetch" href="https://hm.baidu.com">
-
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -66,14 +66,14 @@
     <link rel="icon shortcut" type="image/ico" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
     <link rel="icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="大数据相关技术分享">
     <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,CentOS">
     <meta name="theme-color" content="#3F51B5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -242,8 +242,8 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE">
-    <meta name="baidu-site-verification" content="sRi4m8YyKX">
+    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
+    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
 
     <!-- RSS -->
     
@@ -266,7 +266,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2018/02/02/AddDiskOnLinux/index.html">
+        <link rel="canonical" href="https://www.staroon.dev/2018/02/02/AddDiskOnLinux/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 
     
@@ -376,12 +376,13 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看当前磁盘使用状况"><span class="post-toc-number">1.</span> <span class="post-toc-text">查看当前磁盘使用状况</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#列出现有的磁盘及分区信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">列出现有的磁盘及分区信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对新磁盘-dev-sdb-进行分区操作"><span class="post-toc-number">3.</span> <span class="post-toc-text">对新磁盘 /dev/sdb 进行分区操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#再次查看磁盘分区信息"><span class="post-toc-number">4.</span> <span class="post-toc-text">再次查看磁盘分区信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#格式化新分区-dev-sdb1"><span class="post-toc-number">5.</span> <span class="post-toc-text">格式化新分区 /dev/sdb1</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建分区挂载目录"><span class="post-toc-number">6.</span> <span class="post-toc-text">创建分区挂载目录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#挂载新分区"><span class="post-toc-number">7.</span> <span class="post-toc-text">挂载新分区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看磁盘使用情况"><span class="post-toc-number">8.</span> <span class="post-toc-text">查看磁盘使用情况</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置开机自动挂载磁盘"><span class="post-toc-number">9.</span> <span class="post-toc-text">设置开机自动挂载磁盘</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#完工"><span class="post-toc-number">10.</span> <span class="post-toc-text">完工!</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看当前磁盘使用状况"><span class="post-toc-number">1.</span> <span class="post-toc-text">查看当前磁盘使用状况</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#列出现有的磁盘及分区信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">列出现有的磁盘及分区信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对新磁盘-dev-sdb-进行分区操作"><span class="post-toc-number">3.</span> <span class="post-toc-text">对新磁盘 &#x2F;dev&#x2F;sdb 进行分区操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#再次查看磁盘分区信息"><span class="post-toc-number">4.</span> <span class="post-toc-text">再次查看磁盘分区信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#格式化新分区-dev-sdb1"><span class="post-toc-number">5.</span> <span class="post-toc-text">格式化新分区 &#x2F;dev&#x2F;sdb1</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建分区挂载目录"><span class="post-toc-number">6.</span> <span class="post-toc-text">创建分区挂载目录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#挂载新分区"><span class="post-toc-number">7.</span> <span class="post-toc-text">挂载新分区</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看磁盘使用情况"><span class="post-toc-number">8.</span> <span class="post-toc-text">查看磁盘使用情况</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置开机自动挂载磁盘"><span class="post-toc-number">9.</span> <span class="post-toc-text">设置开机自动挂载磁盘</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#完工"><span class="post-toc-number">10.</span> <span class="post-toc-text">完工!</span></a></li></ol>
     </ul>
     
 
@@ -418,7 +419,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -459,8 +460,8 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CentOS/">CentOS</a>
-    </li></ul>
+        <a class="post_tag-link" href="/tags/CentOS/" rel="tag">CentOS</a>
+    </ul>
     
 
     <!-- Share -->
@@ -543,8 +544,7 @@ tmpfs                912M     0  912M   0% /dev/shm
 tmpfs                912M  8.6M  904M   1% /run
 tmpfs                912M     0  912M   0% /sys/fs/cgroup
 /dev/sda1            197M  119M   79M  61% /boot
-tmpfs                183M     0  183M   0% /run/user/0
-</code></pre><h4 id="列出现有的磁盘及分区信息"><a href="#列出现有的磁盘及分区信息" class="headerlink" title="列出现有的磁盘及分区信息"></a>列出现有的磁盘及分区信息</h4><p><code># fdisk -l</code></p>
+tmpfs                183M     0  183M   0% /run/user/0</code></pre><h4 id="列出现有的磁盘及分区信息"><a href="#列出现有的磁盘及分区信息" class="headerlink" title="列出现有的磁盘及分区信息"></a>列出现有的磁盘及分区信息</h4><p><code># fdisk -l</code></p>
 <pre><code># /dev/sda 是原有的磁盘，可以看到这块磁盘下面的分区信息
 Disk /dev/sda: 42.9 GB, 42949672960 bytes, 83886080 sectors
 Units = sectors of 1 * 512 = 512 bytes
@@ -574,8 +574,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disk /dev/mapper/cl-swap: 2147 MB, 2147483648 bytes, 4194304 sectors
 Units = sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-</code></pre><h4 id="对新磁盘-dev-sdb-进行分区操作"><a href="#对新磁盘-dev-sdb-进行分区操作" class="headerlink" title="对新磁盘 /dev/sdb 进行分区操作"></a>对新磁盘 <strong><code>/dev/sdb</code></strong> 进行分区操作</h4><p><code># fdisk /dev/sdb</code></p>
+I/O size (minimum/optimal): 512 bytes / 512 bytes</code></pre><h4 id="对新磁盘-dev-sdb-进行分区操作"><a href="#对新磁盘-dev-sdb-进行分区操作" class="headerlink" title="对新磁盘 /dev/sdb 进行分区操作"></a>对新磁盘 <strong><code>/dev/sdb</code></strong> 进行分区操作</h4><p><code># fdisk /dev/sdb</code></p>
 <pre><code>Welcome to fdisk (util-linux 2.23.2).
 
 Changes will remain in memory only, until you decide to write them.
@@ -625,8 +624,7 @@ Command (m for help): w
 The partition table has been altered!
 
 Calling ioctl() to re-read partition table.
-Syncing disks.
-</code></pre><h4 id="再次查看磁盘分区信息"><a href="#再次查看磁盘分区信息" class="headerlink" title="再次查看磁盘分区信息"></a>再次查看磁盘分区信息</h4><p><code># fdisk -l</code></p>
+Syncing disks.</code></pre><h4 id="再次查看磁盘分区信息"><a href="#再次查看磁盘分区信息" class="headerlink" title="再次查看磁盘分区信息"></a>再次查看磁盘分区信息</h4><p><code># fdisk -l</code></p>
 <pre><code>Disk /dev/sda: 42.9 GB, 42949672960 bytes, 83886080 sectors
 Units = sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
@@ -659,8 +657,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disk /dev/mapper/cl-swap: 2147 MB, 2147483648 bytes, 4194304 sectors
 Units = sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-</code></pre><h4 id="格式化新分区-dev-sdb1"><a href="#格式化新分区-dev-sdb1" class="headerlink" title="格式化新分区 /dev/sdb1"></a>格式化新分区 <strong><code>/dev/sdb1</code></strong></h4><p>这里使用<strong>ext4</strong>文件系统<br><code># mkfs.ext4 /dev/sdb1</code></p>
+I/O size (minimum/optimal): 512 bytes / 512 bytes</code></pre><h4 id="格式化新分区-dev-sdb1"><a href="#格式化新分区-dev-sdb1" class="headerlink" title="格式化新分区 /dev/sdb1"></a>格式化新分区 <strong><code>/dev/sdb1</code></strong></h4><p>这里使用<strong>ext4</strong>文件系统<br><code># mkfs.ext4 /dev/sdb1</code></p>
 <pre><code>mke2fs 1.42.9 (28-Dec-2013)
 Filesystem label=
 OS type: Linux
@@ -681,8 +678,7 @@ Superblock backups stored on blocks:
 Allocating group tables: done                            
 Writing inode tables: done                            
 Creating journal (32768 blocks): done
-Writing superblocks and filesystem accounting information: done   
-</code></pre><h4 id="创建分区挂载目录"><a href="#创建分区挂载目录" class="headerlink" title="创建分区挂载目录"></a>创建分区挂载目录</h4><p><code># mkdir /mnt/disk01</code></p>
+Writing superblocks and filesystem accounting information: done   </code></pre><h4 id="创建分区挂载目录"><a href="#创建分区挂载目录" class="headerlink" title="创建分区挂载目录"></a>创建分区挂载目录</h4><p><code># mkdir /mnt/disk01</code></p>
 <h4 id="挂载新分区"><a href="#挂载新分区" class="headerlink" title="挂载新分区"></a>挂载新分区</h4><p><code># mount /dev/sdb1 /mnt/disk01/</code></p>
 <h4 id="查看磁盘使用情况"><a href="#查看磁盘使用情况" class="headerlink" title="查看磁盘使用情况"></a>查看磁盘使用情况</h4><p><code># df -h</code></p>
 <pre><code>Filesystem           Size  Used Avail Use% Mounted on
@@ -694,10 +690,8 @@ tmpfs                912M     0  912M   0% /sys/fs/cgroup
 /dev/sda1            197M  119M   79M  61% /boot
 tmpfs                183M     0  183M   0% /run/user/0
 # 多出来了这个
-/dev/sdb1             40G   49M   38G   1% /mnt/disk01
-</code></pre><h4 id="设置开机自动挂载磁盘"><a href="#设置开机自动挂载磁盘" class="headerlink" title="设置开机自动挂载磁盘"></a>设置开机自动挂载磁盘</h4><p><code># vim /etc/fstab</code></p>
-<pre><code>/dev/sdb1    /mnt/disk01    ext4    defaults    0 0
-</code></pre><p>说明: </p>
+/dev/sdb1             40G   49M   38G   1% /mnt/disk01</code></pre><h4 id="设置开机自动挂载磁盘"><a href="#设置开机自动挂载磁盘" class="headerlink" title="设置开机自动挂载磁盘"></a>设置开机自动挂载磁盘</h4><p><code># vim /etc/fstab</code></p>
+<pre><code>/dev/sdb1    /mnt/disk01    ext4    defaults    0 0</code></pre><p>说明: </p>
 <blockquote>
 <p>第一列是设备名<br>第二列是挂载点（挂载目录）<br>第三列是要使用的文件系统<br>第四列是挂载参数，使用默认即可（defaults）<br>第五列是dump备份参数，1：每天备份，2：不定期备份，0：不备份<br>第六列是扇区检验参数，1：最早检验，2：标识为1的设备检验完之后检验，0：不检验</p>
 </blockquote>
@@ -714,7 +708,7 @@ tmpfs                183M     0  183M   0% /run/user/0
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -855,7 +849,7 @@ tmpfs                183M     0  183M   0% /run/user/0
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -872,8 +866,8 @@ tmpfs                183M     0  183M   0% /run/user/0
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/全文检索/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">3</span></a>
-            </li></ul>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%99%E7%A8%8B/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记<span class="sidebar_archives-count">3</span></a>
+            </ul>
         </li>
         
             <li class="divider"></li>
@@ -958,8 +952,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-    <div class="pets"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.abowman.com/widgets/penguins/penguins.swf?" width="280" height="200"><param name="movie" value="https://cdn.abowman.com/widgets/penguins/penguins.swf?"><param name="AllowScriptAccess" value="always"><param name="wmode" value="opaque"><param name="scale" value="noscale"><param name="salign" value="tl"></object></div>
 
 
 
@@ -1164,7 +1156,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>

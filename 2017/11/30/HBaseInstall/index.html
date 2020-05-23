@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head>
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -24,25 +24,25 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
-
-
-
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
 
 
-    <link rel="dns-prefetch" href="https://hm.baidu.com">
-
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 
 
 
@@ -66,14 +66,14 @@
     <link rel="icon shortcut" type="image/ico" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
     <link rel="icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="大数据相关技术分享">
     <meta name="keywords" content="大数据,Hadoop,ETL,CDH,Linux,大数据,高可用,HBase,HA">
     <meta name="theme-color" content="#3F51B5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -242,8 +242,8 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE">
-    <meta name="baidu-site-verification" content="sRi4m8YyKX">
+    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
+    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
 
     <!-- RSS -->
     
@@ -266,7 +266,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2017/11/30/HBaseInstall/index.html">
+        <link rel="canonical" href="https://www.staroon.dev/2017/11/30/HBaseInstall/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -332,7 +332,7 @@
     <!-- Custom Head -->
     
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 
     
@@ -376,12 +376,13 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装HBase-所有节点"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装HBase(所有节点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置HBase环境变量-所有节点"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置HBase环境变量 (所有节点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改hbase-env-sh"><span class="post-toc-number">3.</span> <span class="post-toc-text">修改hbase-env.sh</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改regionservers"><span class="post-toc-number">4.</span> <span class="post-toc-text">修改regionservers</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置backup-masters-默认没有-需要新建"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置backup-masters(默认没有,需要新建)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改hbase-site-xml"><span class="post-toc-number">6.</span> <span class="post-toc-text">修改hbase-site.xml</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#把hadoop的hdfs-site-xml和core-site-xml复制到hbase-conf下"><span class="post-toc-number">7.</span> <span class="post-toc-text">把hadoop的hdfs-site.xml和core-site.xml复制到hbase/conf下</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#复制hbase-conf文件夹里的内容到其他节点"><span class="post-toc-number">8.</span> <span class="post-toc-text">复制hbase/conf文件夹里的内容到其他节点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动hbase-在master上执行，其它机器不需要执行"><span class="post-toc-number">9.</span> <span class="post-toc-text">启动hbase (在master上执行，其它机器不需要执行)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试Master高可用"><span class="post-toc-number">10.</span> <span class="post-toc-text">测试Master高可用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OVER"><span class="post-toc-number">11.</span> <span class="post-toc-text">OVER</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装HBase-所有节点"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装HBase(所有节点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置HBase环境变量-所有节点"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置HBase环境变量 (所有节点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改hbase-env-sh"><span class="post-toc-number">3.</span> <span class="post-toc-text">修改hbase-env.sh</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改regionservers"><span class="post-toc-number">4.</span> <span class="post-toc-text">修改regionservers</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置backup-masters-默认没有-需要新建"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置backup-masters(默认没有,需要新建)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改hbase-site-xml"><span class="post-toc-number">6.</span> <span class="post-toc-text">修改hbase-site.xml</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#把hadoop的hdfs-site-xml和core-site-xml复制到hbase-conf下"><span class="post-toc-number">7.</span> <span class="post-toc-text">把hadoop的hdfs-site.xml和core-site.xml复制到hbase&#x2F;conf下</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#复制hbase-conf文件夹里的内容到其他节点"><span class="post-toc-number">8.</span> <span class="post-toc-text">复制hbase&#x2F;conf文件夹里的内容到其他节点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动hbase-在master上执行，其它机器不需要执行"><span class="post-toc-number">9.</span> <span class="post-toc-text">启动hbase (在master上执行，其它机器不需要执行)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试Master高可用"><span class="post-toc-number">10.</span> <span class="post-toc-text">测试Master高可用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OVER"><span class="post-toc-number">11.</span> <span class="post-toc-text">OVER</span></a></li></ol>
     </ul>
     
 
@@ -418,7 +419,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -459,8 +460,8 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/HA/">HA</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/HBase/">HBase</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/大数据/">大数据</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/高可用/">高可用</a>
-    </li></ul>
+        <a class="post_tag-link" href="/tags/HA/" rel="tag">HA</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/HBase/" rel="tag">HBase</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag">大数据</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/%E9%AB%98%E5%8F%AF%E7%94%A8/" rel="tag">高可用</a>
+    </ul>
     
 
     <!-- Share -->
@@ -538,54 +539,48 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Hostname</th>
-<th style="text-align:center">HMaster</th>
-<th style="text-align:center">Backup Master</th>
-<th style="text-align:center">HRegionServer</th>
+<th align="center">Hostname</th>
+<th align="center">HMaster</th>
+<th align="center">Backup Master</th>
+<th align="center">HRegionServer</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">master1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<tbody><tr>
+<td align="center">master1</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align:center">master2</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">1</td>
-<td style="text-align:center"></td>
+<td align="center">master2</td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align:center">worker1</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">1</td>
+<td align="center">worker1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
 </tr>
 <tr>
-<td style="text-align:center">worker2</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">1</td>
+<td align="center">worker2</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="安装HBase-所有节点"><a href="#安装HBase-所有节点" class="headerlink" title="安装HBase(所有节点)"></a>安装HBase(所有节点)</h2><p><code># tar -zxvf hbase-1.2.6-bin.tar.gz -C /usr/hadoop/</code></p>
 <h2 id="配置HBase环境变量-所有节点"><a href="#配置HBase环境变量-所有节点" class="headerlink" title="配置HBase环境变量 (所有节点)"></a>配置HBase环境变量 (所有节点)</h2><p><code># vim /etc/profile</code></p>
 <pre><code class="profile">export HBASE_HOME=/usr/hadoop/hbase-1.2.6
-export PATH=$PATH:$HBASE_HOME/bin
-</code></pre>
+export PATH=$PATH:$HBASE_HOME/bin</code></pre>
 <p><code># source /etc/profile</code></p>
 <h2 id="修改hbase-env-sh"><a href="#修改hbase-env-sh" class="headerlink" title="修改hbase-env.sh"></a>修改<code>hbase-env.sh</code></h2><p>进入到HBase配置文件目录:<br><code># cd /usr/hadoop/hbase-1.2.6/conf</code><br><code># vim hbase-env.sh</code></p>
 <pre><code>export JAVA_HOME=/usr/java/jdk1.8.0_131
-export HBASE_MANAGES_ZK=false    # 不使用hbase内置的zookeper
-</code></pre><h2 id="修改regionservers"><a href="#修改regionservers" class="headerlink" title="修改regionservers"></a>修改<code>regionservers</code></h2><p><code># vim regionservers</code><br>删除:localhost</p>
+export HBASE_MANAGES_ZK=false    # 不使用hbase内置的zookeper</code></pre><h2 id="修改regionservers"><a href="#修改regionservers" class="headerlink" title="修改regionservers"></a>修改<code>regionservers</code></h2><p><code># vim regionservers</code><br>删除:localhost</p>
 <pre><code>worker1
-worker2
-</code></pre><h2 id="配置backup-masters-默认没有-需要新建"><a href="#配置backup-masters-默认没有-需要新建" class="headerlink" title="配置backup-masters(默认没有,需要新建)"></a>配置<code>backup-masters</code>(默认没有,需要新建)</h2><p><code># vim backup-masters</code></p>
-<pre><code>master2    # 备用master的hostname
-</code></pre><h2 id="修改hbase-site-xml"><a href="#修改hbase-site-xml" class="headerlink" title="修改hbase-site.xml"></a>修改<code>hbase-site.xml</code></h2><p><code># vim hbase-site.xml</code></p>
+worker2</code></pre><h2 id="配置backup-masters-默认没有-需要新建"><a href="#配置backup-masters-默认没有-需要新建" class="headerlink" title="配置backup-masters(默认没有,需要新建)"></a>配置<code>backup-masters</code>(默认没有,需要新建)</h2><p><code># vim backup-masters</code></p>
+<pre><code>master2    # 备用master的hostname</code></pre><h2 id="修改hbase-site-xml"><a href="#修改hbase-site-xml" class="headerlink" title="修改hbase-site.xml"></a>修改<code>hbase-site.xml</code></h2><p><code># vim hbase-site.xml</code></p>
 <pre><code class="xml">&lt;configuration&gt;
   &lt;property&gt;
     &lt;name&gt;hbase.rootdir&lt;/name&gt;
@@ -599,8 +594,7 @@ worker2
     &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
     &lt;value&gt;master1,master2,worker1&lt;/value&gt;
   &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
+&lt;/configuration&gt;</code></pre>
 <h2 id="把hadoop的hdfs-site-xml和core-site-xml复制到hbase-conf下"><a href="#把hadoop的hdfs-site-xml和core-site-xml复制到hbase-conf下" class="headerlink" title="把hadoop的hdfs-site.xml和core-site.xml复制到hbase/conf下"></a>把hadoop的<code>hdfs-site.xml</code>和<code>core-site.xml</code>复制到<code>hbase/conf</code>下</h2><p><code># cp /usr/hadoop/hadoop-2.7.3/etc/hadoop/hdfs-site.xml /usr/hadoop/hbase-1.2.6/conf/</code><br><code># cp /usr/hadoop/hadoop-2.7.3/etc/hadoop/core-site.xml /usr/hadoop/hbase-1.2.6/conf/</code></p>
 <h2 id="复制hbase-conf文件夹里的内容到其他节点"><a href="#复制hbase-conf文件夹里的内容到其他节点" class="headerlink" title="复制hbase/conf文件夹里的内容到其他节点"></a>复制<code>hbase/conf</code>文件夹里的内容到其他节点</h2><p><code># scp * root@master2:/usr/hadoop/hbase-1.2.6/conf</code><br><code># scp * root@worker1:/usr/hadoop/hbase-1.2.6/conf</code><br><code># scp * root@worker2:/usr/hadoop/hbase-1.2.6/conf</code></p>
 <h2 id="启动hbase-在master上执行，其它机器不需要执行"><a href="#启动hbase-在master上执行，其它机器不需要执行" class="headerlink" title="启动hbase (在master上执行，其它机器不需要执行)"></a>启动hbase (在master上执行，其它机器不需要执行)</h2><p>启动之前需要确保Hadoop和Zookeeper集群已启动!!!<br>启动hbase：<br><code># start-hbase.sh</code><br>检查hbase启动情况：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/HBaseInstall/171130/CdeHaKFG5k.png" alt="jps"><br>访问网页查看<br><strong>Master</strong>:<code>http://hm-ip:16010/master-status</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/HBaseInstall/171130/KFHK2fmG3e.png" alt="hmaster"><br><strong>Backup Master</strong>: <code>http://bak-hm-ip:16010/master-status</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/HBaseInstall/171130/l39HE00gI2.png" alt="bak-master"><br><strong>RegionServer</strong>: <code>http://rs-ip:16030/rs-status</code><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/HBaseInstall/171130/2c1G28l77d.png" alt="rs"></p>
@@ -619,7 +613,7 @@ worker2
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style="padding:10px;" class="vcomment"></div>
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -760,7 +754,7 @@ worker2
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -777,8 +771,8 @@ worker2
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/全文检索/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/大数据/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/教程/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂记/">杂记<span class="sidebar_archives-count">3</span></a>
-            </li></ul>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%99%E7%A8%8B/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记<span class="sidebar_archives-count">3</span></a>
+            </ul>
         </li>
         
             <li class="divider"></li>
@@ -863,8 +857,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
-    <div class="pets"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.abowman.com/widgets/penguins/penguins.swf?" width="280" height="200"><param name="movie" value="https://cdn.abowman.com/widgets/penguins/penguins.swf?"><param name="AllowScriptAccess" value="always"><param name="wmode" value="opaque"><param name="scale" value="noscale"><param name="salign" value="tl"></object></div>
 
 
 
@@ -1069,7 +1061,9 @@ It will not impact the appearance and can give developers a lot of support :)
 <script>
 	var agent = navigator.userAgent.toLowerCase();
 	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
 	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
 	}
 </script>
