@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>https://www.staroon.dev/tags/Spark/</loc>
+        <lastmod>2022-03-12T07:17:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/tags/ETL/</loc>
+        <lastmod>2022-03-12T07:17:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.staroon.dev/tags/MySQL/</loc>
+        <lastmod>2022-03-12T07:17:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.staroon.dev/tags/Kafka/</loc>
         <lastmod>2020-01-03T14:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -11,13 +32,6 @@
 
     <url>
         <loc>https://www.staroon.dev/tags/StreamSets/</loc>
-        <lastmod>2020-01-03T14:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.staroon.dev/tags/ETL/</loc>
         <lastmod>2020-01-03T14:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -124,13 +138,6 @@
     <url>
         <loc>https://www.staroon.dev/tags/%25E5%25A4%25A7%25E6%2595%25B0%25E6%258D%25AE/</loc>
         <lastmod>2018-12-01T15:00:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.staroon.dev/tags/MySQL/</loc>
-        <lastmod>2018-12-01T06:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

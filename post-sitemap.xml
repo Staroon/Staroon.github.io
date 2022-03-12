@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://www.staroon.dev/2022/03/12/SparkMySQL/</loc>
+        <lastmod>2022-03-12T07:17:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.staroon.dev/2020/01/03/sdcInstall/</loc>
         <lastmod>2020-01-03T14:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
