@@ -38,8 +38,6 @@
 
     <link rel="dns-prefetch" href="https://hm.baidu.com"/>
 
-    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
-
 
 
     <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
@@ -234,7 +232,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="山小杰的博客">
-    <meta name="msapplication-starturl" content="https://www.staroon.dev/2018/11/30/CDH6Performance/">
+    <meta name="msapplication-starturl" content="https://www.hoyoo.dev/2018/11/30/CDH6Performance/">
     <meta name="msapplication-navbutton-color" content="#3F51B5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="山小杰的博客">
@@ -242,14 +240,14 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
-    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
+    
+    <meta name="baidu-site-verification" content="codeva-OJWBEewbnS" />
 
     <!-- RSS -->
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.staroon.dev/2018/11/30/CDH6Performance/">
+    <meta property="og:url" content="https://www.hoyoo.dev/2018/11/30/CDH6Performance/">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="CDH6集群性能调优（操作系统层面） | 山小杰的博客">
     <meta property="og:image" content="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
@@ -266,7 +264,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2018/11/30/CDH6Performance/index.html" />
+        <link rel="canonical" href="https://www.hoyoo.dev/2018/11/30/CDH6Performance/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -278,7 +276,7 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://www.staroon.dev/2018/11/30/CDH6Performance/index.html",
+    "mainEntityOfPage": "https://www.hoyoo.dev/2018/11/30/CDH6Performance/index.html",
     "headline": "CDH6集群性能调优（操作系统层面）",
     "datePublished": "Fri Nov 30 2018 21:00:00 GMT+0800",
     "dateModified": "Fri Nov 30 2018 23:00:00 GMT+0800",
@@ -309,19 +307,11 @@
 
     <!-- Analytics -->
     
-        <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-131014421-1', 'auto');ga('send', 'pageview');
-</script>
-    
     
         <script>
     var _hmt = _hmt || [];
     (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?31c867b157fb461d2211600fa6f3c372';
+    hm.src = 'https://hm.baidu.com/hm.js?7b585f440223bcda0e6a2426a43dcc0c';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(hm, s);
     })();
@@ -446,7 +436,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACeElEQVR42u3aS27DMAwFQN//0u22QNDkPcqWjWC8CvKzRgFIhuLx89XXgYeHh4eHh4eH9zDeEV9/3//6Da/ftnKXpU/h4eHhbeF9CLX/8N6zk/cnz+Rrw8PDw9vPa5PBbHHJZ5fWhoeHh/cwXkJNwnfyKh4eHt538JI00LYz2hIcDw8P7zm84g9/XBa/b8vmvE29Fjw8PLyYNzsA2/P4tvM9PDw8vH949UjTqERum7ynDV3h4eHhXcDLj/NnQwPJWFW+cdGxGR4eHt7FvLyV0DZb89Qya3ng4eHh3cU7ymtWXucHZsmqLmnj4uHh4cW8JDS3zySvvt+sdogBDw8Pbz8vD9OzFm0+wpUnoaJLjYeHh7eFN1vKLLgnW1a0j/Hw8PC28JJAnwyb5sdg7RhBcUc8PDy8Lbw2fLct4Pz9efrBw8PDu4s3azrkqWKlXZuMf+Hh4eHdy5s1Jt5v02yQq916PDw8vJ28NmQX7dQkiJeF+/AfAx4eHt5GXnKbljpLRfmwFx4eHt7VvJXhqrY4zpfYHs7h4eHh7eclyDbcJ8mjDf3DXgseHh7eqbyzjqySrZk1gusCHQ8PD28LL2+5tqOlycFYO7Lw4efBw8PDu5jXBt/2WKsdzJoNs+Lh4eHt5LXXuQV3cay1kvfw8PDwTuW1Q/ztUGl+nJY3fD9sBB4eHt4WXp4M1jdiVqznjQk8PDy8nbxZMsi3qU1FyXqGM2V4eHh4G3krN15pYRTNETw8PLwH89qWRLtlSYo6uaTGw8PDW5hKygvo9RGrdnRgmBjw8PDwTuW1obktqdvHCePC0QE8PDy8U4eunn/h4eHh4eHh4eE94PoFxPA1AI08lB4AAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACVUlEQVR42u3aUXLDIAwE0Nz/0u0F6mYlAXYyz1+eJMV+fCC64vXz1dcLDw8PDw8PDw/vYbxXfP0x0L/fJr+/up+8Gx4eHt4ZXvJaV59M8L2R34yAh4eHd5B3teD27hN29Vn//x4PDw/vybxoaxsv8b3n4uHh4X0iL1/0kxGSCcLDw8N7Gi/5h3/Vqyff3pC14OHh4cW8vMl0/v5ofw8PDw8v4JWPNA2mIAkg5hceHh7ebt48ok0ChUlEmx8Cw8PDwzvDW/uwvBmW/1UeIuPh4eHdy+sVj1VBRnWC8PDw8M7zqscCqpvmvDzkW/NyjIuHh4e3lFdd0PNXqU5cspV/M914eHh4m3m9aKBaBpKm12Q68PDw8E7yEuSkfZVHDL3nFrIWPDw8vEW8yfKdjzOJgEcNMDw8PLwNvPxFq4xkoe8dLHjzPnh4eHhHeL2tc7JM7z7UhYeHh3cvb21hqE5BfqChvKXGw8PD28xLhpi0tapb7epk4eHh4e3mrT0y1ZusSViMh4eH9wRe/nnvvnqMoDyVeHh4eMd55di0FblW449CocLDw8M7yOsxJvFr9XBVFGHg4eHh3cSrFo98K1yNa0eHrvDw8PA28HY08vMtcjUsjiYLDw8PbzOvuijnTf1eweiFF3h4eHjneUkxSALWXpSQxByFqcfDw8M7yMsX6Lz9X17WW3g8PDy8T+FVC0lSNnrbcTw8PLzP4s3bZr0o5FBhwMPDwxuHEasKQBVwKMbFw8PD29AAy6PbSVCbFKHLcfDw8PA2877vwsPDw8PDw8PDe8D1C7lSZ6P1xf7wAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -488,7 +478,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CDH6集群性能调优（操作系统层面）&url=https://www.staroon.dev/2018/11/30/CDH6Performance/index.html&pic=https://www.staroon.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CDH6集群性能调优（操作系统层面）&url=https://www.hoyoo.dev/2018/11/30/CDH6Performance/index.html&pic=https://www.hoyoo.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -497,7 +487,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CDH6集群性能调优（操作系统层面）&url=https://www.staroon.dev/2018/11/30/CDH6Performance/index.html&via=山小杰" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CDH6集群性能调优（操作系统层面）&url=https://www.hoyoo.dev/2018/11/30/CDH6Performance/index.html&via=山小杰" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -515,7 +505,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=CDH6集群性能调优（操作系统层面）&summary=大数据相关技术分享&pics=https://www.staroon.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&url=https://www.staroon.dev/2018/11/30/CDH6Performance/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=CDH6集群性能调优（操作系统层面）&summary=大数据相关技术分享&pics=https://www.hoyoo.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&url=https://www.hoyoo.dev/2018/11/30/CDH6Performance/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -744,7 +734,7 @@
     <!-- Pages  -->
     
         <li>
-            <a href="/tags" title="标签云">
+            <a href="/tags/" title="标签云">
                 
                     <i class="material-icons sidebar-material-icons">loyalty</i>
                 
@@ -754,7 +744,7 @@
         
     
         <li>
-            <a href="/timeline" title="时间轴">
+            <a href="/timeline/" title="时间轴">
                 
                     <i class="material-icons sidebar-material-icons">schedule</i>
                 
@@ -764,7 +754,7 @@
         
     
         <li>
-            <a href="/gallery" title="图片库">
+            <a href="/gallery/" title="图片库">
                 
                     <i class="material-icons sidebar-material-icons">style</i>
                 
@@ -774,7 +764,7 @@
         
     
         <li>
-            <a href="/about" title="关于我">
+            <a href="/about/" title="关于我">
                 
                     <i class="material-icons sidebar-material-icons">person</i>
                 
@@ -784,7 +774,7 @@
         
     
         <li>
-            <a href="/links" title="友情链接">
+            <a href="/links/" title="友情链接">
                 
                     <i class="material-icons sidebar-material-icons">link</i>
                 

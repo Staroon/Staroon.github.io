@@ -2,48 +2,48 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://www.staroon.dev</loc>
+        <loc>https://www.hoyoo.dev</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>https://www.staroon.dev/about/</loc>
+        <loc>https://www.hoyoo.dev/about/</loc>
         <lastmod>2019-11-22T14:24:11.418Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://www.staroon.dev/timeline/</loc>
+        <loc>https://www.hoyoo.dev/timeline/</loc>
         <lastmod>2019-07-27T05:38:32.396Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://www.staroon.dev/tags/</loc>
+        <loc>https://www.hoyoo.dev/tags/</loc>
         <lastmod>2019-07-27T05:37:52.752Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://www.staroon.dev/gallery/</loc>
+        <loc>https://www.hoyoo.dev/gallery/</loc>
         <lastmod>2019-07-27T05:33:07.393Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://www.staroon.dev/links/</loc>
+        <loc>https://www.hoyoo.dev/links/</loc>
         <lastmod>2019-07-27T05:29:27.247Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://www.staroon.dev/categories/</loc>
+        <loc>https://www.hoyoo.dev/categories/</loc>
         <lastmod>2019-07-27T04:00:24.209Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

@@ -38,8 +38,6 @@
 
     <link rel="dns-prefetch" href="https://hm.baidu.com"/>
 
-    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
-
 
 
     <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
@@ -234,7 +232,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="山小杰的博客">
-    <meta name="msapplication-starturl" content="https://www.staroon.dev/2017/11/30/HBaseInstall/">
+    <meta name="msapplication-starturl" content="https://www.hoyoo.dev/2017/11/30/HBaseInstall/">
     <meta name="msapplication-navbutton-color" content="#3F51B5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="山小杰的博客">
@@ -242,14 +240,14 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
-    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
+    
+    <meta name="baidu-site-verification" content="codeva-OJWBEewbnS" />
 
     <!-- RSS -->
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.staroon.dev/2017/11/30/HBaseInstall/">
+    <meta property="og:url" content="https://www.hoyoo.dev/2017/11/30/HBaseInstall/">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="HBase-1.2.6高可用配置 | 山小杰的博客">
     <meta property="og:image" content="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
@@ -266,7 +264,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2017/11/30/HBaseInstall/index.html" />
+        <link rel="canonical" href="https://www.hoyoo.dev/2017/11/30/HBaseInstall/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -278,7 +276,7 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://www.staroon.dev/2017/11/30/HBaseInstall/index.html",
+    "mainEntityOfPage": "https://www.hoyoo.dev/2017/11/30/HBaseInstall/index.html",
     "headline": "HBase-1.2.6高可用配置",
     "datePublished": "Thu Nov 30 2017 21:00:00 GMT+0800",
     "dateModified": "Thu Nov 30 2017 21:00:00 GMT+0800",
@@ -309,19 +307,11 @@
 
     <!-- Analytics -->
     
-        <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-131014421-1', 'auto');ga('send', 'pageview');
-</script>
-    
     
         <script>
     var _hmt = _hmt || [];
     (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?31c867b157fb461d2211600fa6f3c372';
+    hm.src = 'https://hm.baidu.com/hm.js?7b585f440223bcda0e6a2426a43dcc0c';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(hm, s);
     })();
@@ -446,7 +436,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aQY6DQAwEwPz/07vXlSLYts0MJCpOkQJhigOetP36+erjhYeHh4eHh4eH9zDeKz7+nn/402/n9+4yugoPDw9vC++fV+0b73xBOfj8zOra8PDw8PbzqsXg/Jzzq3JwdW14eHh4T+PlW+Hqbyaf8fDw8D6Rl7/E82+TM/Hw8PCeycv/8E+WflROqvfFw8PDu5fXa4Dt+Xxbfw8PDw/vgFc9kmXl0W31nGiFeHh4eIt5Ry/ifFDgfFnVEa7qt82sBQ8PD2/Ay4cDJldFy4rHsMpbajw8PLxLeb0goNcMS+6VF5Vmfw8PDw/vUl4eRuQb6DzUOC8DyaPEw8PD28nLN69XjU8lW+deyIuHh4e3mpcvq9emmjyUXssNDw8Pbw8vH67KMb04I2+/FQoDHh4e3jJejlmx9ElwjIeHh7eTl7ed8gC3F/hOxr/w8PDwdvImxSDnJeNZl41q4eHh4S3mzQee8kKSh8LVAQI8PDy8nbxqJFG9WTXsqD4aPDw8vHt51fZ/vlGubsQngwh4eHh4q3m9zWsevObgaoHBw8PDu4tXjQaSwpBvrJNHUC42eHh4eFt4E0ChqT8oFfm2Hg8PD281r/oTSQCxs5GGh4eHt5/Xi3Qn7f9mWysvVHh4eHiLeVcNTvVChF4QXBgdwMPDw1vGm8SvSdzQe5TVrTkeHh7eft6kGEyCiRuyFjw8PLyNvOoYVt42qw4u4OHh4X0iL2+e9UKKHIyHh4d3F6/a9OoFu/ljrcYfeHh4eDt51SAgj2uTjXi+BY+GG/Dw8PAW877vwMPDw8PDw8PDe8DxC51OupZAMleWAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYklEQVR42u3aQVIDMQwEwPz/0/AAqGVGXjtLqn3iEILbB1uM9Pr66PXCw8PDw8PDw8N7GO8Vr/y3fvmT8Wdu2BseHh7eEd4fV22w6esNJYCfn5ntDQ8PD+8kL9lWfrnnF33yDcWR4eHh4T2S124lv+Lx8PDwPpW3fijXTwIeHh7ef+El//Bff76Nd/PH5lDWgoeHhxfz8ibT+Z+P9vfw8PDwAl490nRZUudRbxtVDIeu8PDw8Dbw8ot4FhPkj037DXh4eHjP4a3HBHlgkQS7+ZODh4eHd4bXNv5nke4suh0OfuHh4eG9ibfObgvx5Ikaxrh4eHh423iz1ZbjbbBbHyIeHh7eZt5sNGo2bpUX2SslOx4eHt4Z3l2hbTIukADy4YNhSo2Hh4e3wGufgXykIG+wJWMESw0wPDw8vG28pAjOt5IEDUnE0Dbh8PDw8HbzZmXu7AFIyus2zsDDw8N7L28lmMhb+7OjLMIRPDw8vCO8dmSqbVOtlNr1keHh4eEd4SXl7/WXzgroNoxI9oCHh4d3hjd7Hq43kVz07aEMY1w8PDy8DbyVlth642pW0NczZXh4eHjbePmlnPBmxXr7XOHh4eG9l7cyNNA+J3lpnh83Hh4e3m5eu3YHu7MjwMPDwzvJe8UrL6DrllUwXHXD0BUeHh7erbz2Ws//ZN4kSx6G6Ojx8PDwDvJmF3QObocG2kFVPDw8vOfz2ou7Hbq6LYzAw8PDewxvpdHVBiI3jA7g4eHhHZ9KyqPYFdJ64w0PDw/vDK+9mtuodwYYFvd4eHh4m3mft/Dw8PDw8PDw8B6wvgHoJF3JjPSurgAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -488,7 +478,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HBase-1.2.6高可用配置&url=https://www.staroon.dev/2017/11/30/HBaseInstall/index.html&pic=https://www.staroon.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HBase-1.2.6高可用配置&url=https://www.hoyoo.dev/2017/11/30/HBaseInstall/index.html&pic=https://www.hoyoo.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -497,7 +487,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=HBase-1.2.6高可用配置&url=https://www.staroon.dev/2017/11/30/HBaseInstall/index.html&via=山小杰" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=HBase-1.2.6高可用配置&url=https://www.hoyoo.dev/2017/11/30/HBaseInstall/index.html&via=山小杰" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -515,7 +505,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=HBase-1.2.6高可用配置&summary=大数据相关技术分享&pics=https://www.staroon.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&url=https://www.staroon.dev/2017/11/30/HBaseInstall/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=HBase-1.2.6高可用配置&summary=大数据相关技术分享&pics=https://www.hoyoo.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&url=https://www.hoyoo.dev/2017/11/30/HBaseInstall/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -534,7 +524,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>接上一篇:<a href="https://www.staroon.dev/2017/11/18/HadoopInstall/">Hadoop安装</a><br>这一篇进行HBase-1.2.6(高可用)的安装与基本配置。<br>HBase下载：<a href="https://mirror.bit.edu.cn/apache/hbase/" target="_blank" rel="noopener">点击进入下载</a></p>
+        <p>接上一篇:<a href="https://www.staroon.dev/2017/11/18/HadoopInstall/" target="_blank" rel="noopener">Hadoop安装</a><br>这一篇进行HBase-1.2.6(高可用)的安装与基本配置。<br>HBase下载：<a href="https://mirror.bit.edu.cn/apache/hbase/" target="_blank" rel="noopener">点击进入下载</a></p>
 <p>HBase相关服务分配：</p>
 <table>
 <thead>
@@ -783,7 +773,7 @@ worker2</code></pre><h2 id="配置backup-masters-默认没有-需要新建"><a h
     <!-- Pages  -->
     
         <li>
-            <a href="/tags" title="标签云">
+            <a href="/tags/" title="标签云">
                 
                     <i class="material-icons sidebar-material-icons">loyalty</i>
                 
@@ -793,7 +783,7 @@ worker2</code></pre><h2 id="配置backup-masters-默认没有-需要新建"><a h
         
     
         <li>
-            <a href="/timeline" title="时间轴">
+            <a href="/timeline/" title="时间轴">
                 
                     <i class="material-icons sidebar-material-icons">schedule</i>
                 
@@ -803,7 +793,7 @@ worker2</code></pre><h2 id="配置backup-masters-默认没有-需要新建"><a h
         
     
         <li>
-            <a href="/gallery" title="图片库">
+            <a href="/gallery/" title="图片库">
                 
                     <i class="material-icons sidebar-material-icons">style</i>
                 
@@ -813,7 +803,7 @@ worker2</code></pre><h2 id="配置backup-masters-默认没有-需要新建"><a h
         
     
         <li>
-            <a href="/about" title="关于我">
+            <a href="/about/" title="关于我">
                 
                     <i class="material-icons sidebar-material-icons">person</i>
                 
@@ -823,7 +813,7 @@ worker2</code></pre><h2 id="配置backup-masters-默认没有-需要新建"><a h
         
     
         <li>
-            <a href="/links" title="友情链接">
+            <a href="/links/" title="友情链接">
                 
                     <i class="material-icons sidebar-material-icons">link</i>
                 

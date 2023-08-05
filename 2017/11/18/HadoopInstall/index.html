@@ -38,8 +38,6 @@
 
     <link rel="dns-prefetch" href="https://hm.baidu.com"/>
 
-    <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
-
 
 
     <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
@@ -234,7 +232,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="山小杰的博客">
-    <meta name="msapplication-starturl" content="https://www.staroon.dev/2017/11/18/HadoopInstall/">
+    <meta name="msapplication-starturl" content="https://www.hoyoo.dev/2017/11/18/HadoopInstall/">
     <meta name="msapplication-navbutton-color" content="#3F51B5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="山小杰的博客">
@@ -242,14 +240,14 @@
     <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="ShMukTnhtJp2k_UVloxkjata5vQbOZKIM0VFkL-OYHE" />
-    <meta name="baidu-site-verification" content="sRi4m8YyKX" />
+    
+    <meta name="baidu-site-verification" content="codeva-OJWBEewbnS" />
 
     <!-- RSS -->
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.staroon.dev/2017/11/18/HadoopInstall/">
+    <meta property="og:url" content="https://www.hoyoo.dev/2017/11/18/HadoopInstall/">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Hadoop-2.7.3高可用配置 | 山小杰的博客">
     <meta property="og:image" content="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
@@ -266,7 +264,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.staroon.dev/2017/11/18/HadoopInstall/index.html" />
+        <link rel="canonical" href="https://www.hoyoo.dev/2017/11/18/HadoopInstall/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -278,7 +276,7 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://www.staroon.dev/2017/11/18/HadoopInstall/index.html",
+    "mainEntityOfPage": "https://www.hoyoo.dev/2017/11/18/HadoopInstall/index.html",
     "headline": "Hadoop-2.7.3高可用配置",
     "datePublished": "Sat Nov 18 2017 11:00:00 GMT+0800",
     "dateModified": "Thu Nov 30 2017 20:00:00 GMT+0800",
@@ -309,19 +307,11 @@
 
     <!-- Analytics -->
     
-        <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-131014421-1', 'auto');ga('send', 'pageview');
-</script>
-    
     
         <script>
     var _hmt = _hmt || [];
     (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?31c867b157fb461d2211600fa6f3c372';
+    hm.src = 'https://hm.baidu.com/hm.js?7b585f440223bcda0e6a2426a43dcc0c';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(hm, s);
     })();
@@ -446,7 +436,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYElEQVR42u3aUU7DQAwFwN7/0nAAIH22u26oJl+oJGSnSOvVsx9fH3098PDw8PDw8PDwbsZ7xNf1Uz9/+8uLx2+JnsLDw8Nb4T3Zai/vSRZXfXayNjw8PLxN3l8b7l/3JK9MisT1J/na8PDw8O7My6l5aUm+Jjw8PLz/y+vdU14oHh4e3u15kyNys1l1t6wFDw8PL+blTab9n1f7e3h4eHgBb7KVJ6MDkxi3uUI8PDy8w7x8I46Os63DcW9ICw8PD++9vCQeTQpDXiryGDf5B+Dh4eG9l5cHEHlkkBeS3hrw8PDwNnnVGKJ6dK7GspOSgIeHh7fJqxaGnHG93V/fnzyLh4eHt89LlpsUiWq40DtwRyvHw8PDO8yrAq6P19X4oPoVJEMGeHh4eKd5vaGo3uF7EkYUCgYeHh7eCq8aPeTxbnWjn1Px8PDwdni90KE6dFXlvWzoCg8PD+8Ybz6AlZOqX8dopgwPDw/vAG/SvpqUh3xcIHkvHh4e3iYvLwz5lZeTavhbnozAw8PDO8DrFYZ526waH0ef4OHh4a3wqoNQvcC3Fx/nzTY8PDy8fV71aFs9HEeN/9MNMDw8PLwVXsLI22C9gLgQbeDh4eEd5vXC2XI7v9geG4XCeHh4eId5vfZ8EhnkB+5qARgNXeHh4eG9iFcdAsgPx72goXc0x8PDw9vn9Zr6L97WWyUKDw8P7/68PGjIQ4f8LU/+Dh4eHt4tefPjch5MlAe28PDw8BZ5vdGoapMsj27zmAMPDw9vnzcZeOqNUlXD30L7DQ8PD+8w7/MuPDw8PDw8PDy8G1zfrKeQbDksFXkAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYklEQVR42u3aQW6EMAwFUO5/6XZbqYL+n0BIRy+rUYeCH4vEY/v4+uh14OHh4eHh4eHhbcY74vX7v67/cv2Us2tuiA0PDw9vCe+PrTYIfYb089uzz/nT8fDw8FbyzgJKrrkO+nqjv44njw0PDw9vf16+ZY8l3Hh4eHifxMvvkBwGY3fGw8PD24GXb/HzZd+8nLG01oKHh4cX8/Jw139e2t/Dw8PDC3j1SNMJeKyJlaTIdYR4eHh4D/PyjTgpv7aDUzMHAx4eHt4OvPZIyNtjyUFy/Wry9hseHh7e07y8hZ+3o+4dBWjHF/Dw8PCe5iXpcl5iGBsyaMsWdZUaDw8P71ZemzS3obf3nE+v8fDw8J7mJWluu+m3R85Y6wsPDw/vLV4eUJ5A502v/Hi4rdaCh4eHN81rD4OxIYCxQyi/Hg8PD28H3jysHd4aGxeIfjHg4eHh3cpLfvDPD0LlxYg2EcfDw8Pbgdc+pm1ltcWOesgADw8P72HeWCjzo1rzCToeHh7eW7w8rBn8HwFNF3zx8PDwVvLm098jWIOBliMLeHh4eCt57XY/VswtmljxS4x+MeDh4eEt542FOFaMyA8VPDw8vB14ecMpKR+0xd+8/VYXI/Dw8PBu5bWrbfPnReGZV4CHh4e3ktemtnm7qy1PtGMHp/fEw8PDW8LLD4N8659vmC2tUuPh4eE9VuecaZjlhYwWj4eHh7c/LwG3qfbMcYKHh4f3v3htiHm6nA+24uHh4b3Fy5teR7naLT4ZusLDw8N7l5eHON8My+/Qjlvh4eHhreF93sLDw8PDw8PDw9tgfQMdtTUAmFLgjgAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -488,7 +478,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hadoop-2.7.3高可用配置&url=https://www.staroon.dev/2017/11/18/HadoopInstall/index.html&pic=https://www.staroon.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hadoop-2.7.3高可用配置&url=https://www.hoyoo.dev/2017/11/18/HadoopInstall/index.html&pic=https://www.hoyoo.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -497,7 +487,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hadoop-2.7.3高可用配置&url=https://www.staroon.dev/2017/11/18/HadoopInstall/index.html&via=山小杰" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hadoop-2.7.3高可用配置&url=https://www.hoyoo.dev/2017/11/18/HadoopInstall/index.html&via=山小杰" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -515,7 +505,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=Hadoop-2.7.3高可用配置&summary=大数据相关技术分享&pics=https://www.staroon.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&url=https://www.staroon.dev/2017/11/18/HadoopInstall/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的博客&title=Hadoop-2.7.3高可用配置&summary=大数据相关技术分享&pics=https://www.hoyoo.devhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&url=https://www.hoyoo.dev/2017/11/18/HadoopInstall/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -534,7 +524,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://www.staroon.dev/2017/11/05/SetEnv/">前一篇文章</a>已经大致介绍了安装Hadoop需要的一些环境准备工作，这篇文章就来进行下原生Hadoop（完全分布式+高可用）的安装与配置。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://www.staroon.dev/2017/11/05/SetEnv/" target="_blank" rel="noopener">前一篇文章</a>已经大致介绍了安装Hadoop需要的一些环境准备工作，这篇文章就来进行下原生Hadoop（完全分布式+高可用）的安装与配置。</p>
 <p>Hadoop Namenode存在单点故障问题，Hadoop2.0版本以后可以开启两个Namenode来解决这个问题，一个为Active Namenode管理集群，一个为Standby Namenode作为热备份。</p>
 <p>Standby Namenode节点与Active Namenode节点之间数据的同步依赖于JournalNode服务。<br>Zookeeper和ZKFC(ZKFailoverController)服务可以保证集群中有且只有一个Active状态的Namenode。</p>
 <p>本文同时配置了<code>NameNode</code>和<code>Resource Manager</code>的高可用(HA)。</p>
@@ -900,7 +890,7 @@ export PATH=$PATH:$HADOOP_PREFIX/bin:$HADOOP_PREFIX/sbin</code></pre>
     <!-- Pages  -->
     
         <li>
-            <a href="/tags" title="标签云">
+            <a href="/tags/" title="标签云">
                 
                     <i class="material-icons sidebar-material-icons">loyalty</i>
                 
@@ -910,7 +900,7 @@ export PATH=$PATH:$HADOOP_PREFIX/bin:$HADOOP_PREFIX/sbin</code></pre>
         
     
         <li>
-            <a href="/timeline" title="时间轴">
+            <a href="/timeline/" title="时间轴">
                 
                     <i class="material-icons sidebar-material-icons">schedule</i>
                 
@@ -920,7 +910,7 @@ export PATH=$PATH:$HADOOP_PREFIX/bin:$HADOOP_PREFIX/sbin</code></pre>
         
     
         <li>
-            <a href="/gallery" title="图片库">
+            <a href="/gallery/" title="图片库">
                 
                     <i class="material-icons sidebar-material-icons">style</i>
                 
@@ -930,7 +920,7 @@ export PATH=$PATH:$HADOOP_PREFIX/bin:$HADOOP_PREFIX/sbin</code></pre>
         
     
         <li>
-            <a href="/about" title="关于我">
+            <a href="/about/" title="关于我">
                 
                     <i class="material-icons sidebar-material-icons">person</i>
                 
@@ -940,7 +930,7 @@ export PATH=$PATH:$HADOOP_PREFIX/bin:$HADOOP_PREFIX/sbin</code></pre>
         
     
         <li>
-            <a href="/links" title="友情链接">
+            <a href="/links/" title="友情链接">
                 
                     <i class="material-icons sidebar-material-icons">link</i>
                 
