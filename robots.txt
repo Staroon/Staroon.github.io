@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: 
-Sitemap: https://www.hoyoo.dev/sitemap.xml
+Sitemap: https://blog.holoyoo.com/sitemap.xml

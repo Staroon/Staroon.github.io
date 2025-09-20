@@ -3,23 +3,23 @@
 
 
     <sitemap>
-        <loc>https://www.hoyoo.dev/post-sitemap.xml</loc>
-        <lastmod>2022-03-12T07:17:00.000Z</lastmod>
+        <loc>https://blog.holoyoo.com/post-sitemap.xml</loc>
+        <lastmod>2025-09-20T06:59:32.970Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://www.hoyoo.dev/page-sitemap.xml</loc>
-        <lastmod>2019-11-22T14:24:11.418Z</lastmod>
+        <loc>https://blog.holoyoo.com/page-sitemap.xml</loc>
+        <lastmod>2025-09-20T07:04:55.013Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://www.hoyoo.dev/category-sitemap.xml</loc>
-        <lastmod>2022-03-12T07:17:00.000Z</lastmod>
+        <loc>https://blog.holoyoo.com/category-sitemap.xml</loc>
+        <lastmod>2025-09-20T06:59:32.970Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://www.hoyoo.dev/tag-sitemap.xml</loc>
-        <lastmod>2022-03-12T07:17:00.000Z</lastmod>
+        <loc>https://blog.holoyoo.com/tag-sitemap.xml</loc>
+        <lastmod>2025-09-20T06:59:32.970Z</lastmod>
     </sitemap>
 
 </sitemapindex>
