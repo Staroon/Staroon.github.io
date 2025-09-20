@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+
+
+
+    <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            利用GitHub Pages + Hexo框架搭建个人博客 | 
+        
+        山小杰的大数据园子
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
+    <link rel="icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="大数据相关技术分享">
+    <meta name="keywords" content="大数据,Hadoop,Spark,Flink,ETL,CDH,Linux,博客搭建,Hexo,GoDaddy域名,DNSPod,GitHub">
+    <meta name="theme-color" content="#3F51B5">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?m5ulF+MuHtVgJ9OP9e6vQw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night.min.css?QlnGZk/a4+d8XbwtXBDPiA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #3F51B5;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #3F51B5 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #3F51B5 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #3F51B5 !important;
+  }
+
+  .toTop {
+    background: #3F51B5 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #3F51B5;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #3F51B5;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #3F51B5;
+  }
+
+  .post-toc a:hover {
+    color: #3F51B5;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #E8EAF6;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="山小杰的大数据园子">
+    <meta name="msapplication-starturl" content="https://blog.holoyoo.com/2017/07/30/HexoInstall/">
+    <meta name="msapplication-navbutton-color" content="#3F51B5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="山小杰的大数据园子">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
+
+    <!-- Site Verification -->
+    
+    <meta name="baidu-site-verification" content="codeva-OJWBEewbnS" />
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.holoyoo.com/2017/07/30/HexoInstall/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="利用GitHub Pages + Hexo框架搭建个人博客 | 山小杰的大数据园子">
+    <meta property="og:image" content="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png">
+    <meta property="og:description" content="大数据相关技术分享">
+    <meta property="og:article:tag" content="博客搭建"> <meta property="og:article:tag" content="Hexo"> <meta property="og:article:tag" content="GoDaddy域名"> <meta property="og:article:tag" content="DNSPod"> <meta property="og:article:tag" content="GitHub"> 
+
+    
+        <meta property="article:published_time" content="Sun Jul 30 2017 21:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jul 31 2017 23:04:15 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.holoyoo.com/2017/07/30/HexoInstall/" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.holoyoo.com/2017/07/30/HexoInstall/",
+    "headline": "利用GitHub Pages + Hexo框架搭建个人博客",
+    "datePublished": "Sun Jul 30 2017 21:00:00 GMT+0800",
+    "dateModified": "Mon Jul 31 2017 23:04:15 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "山小杰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png"
+        },
+        "description": "心之所向，身之所往"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "山小杰的大数据园子",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png"
+        }
+    },
+    "keywords": ",博客搭建,Hexo,GoDaddy域名,DNSPod,GitHub大数据,Hadoop,Spark,Flink,ETL,CDH,Linux",
+    "description": "大数据相关技术分享",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?7b585f440223bcda0e6a2426a43dcc0c';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">安装Node.js</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85Git-for-Win"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">安装Git for Win</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%B3%A8%E5%86%8CGitHub%E8%B4%A6%E5%8F%B7"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">注册GitHub账号</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Git%E9%85%8D%E7%BD%AE"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">Git配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0Git%E4%BB%93%E5%BA%93"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">创建本地Git仓库</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%83%A8%E7%BD%B2Hexo"><span class="post-toc-number">2.</span> <span class="post-toc-text">部署Hexo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">安装Hexo</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96Hexo"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">初始化Hexo</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BC%80%E5%A7%8B%E5%86%99%E6%96%87%E7%AB%A0"><span class="post-toc-number">4.</span> <span class="post-toc-text">开始写文章</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%88%B0GitHub"><span class="post-toc-number">5.</span> <span class="post-toc-text">部署博客到GitHub</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%88%9B%E5%BB%BAGithub%E4%BB%93%E5%BA%93"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">创建Github仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE"><span class="post-toc-number">5.0.2.</span> <span class="post-toc-text">部署配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83"><span class="post-toc-number">5.0.3.</span> <span class="post-toc-text">博客发布</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0"><span class="post-toc-number">5.0.4.</span> <span class="post-toc-text">博客更新</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D"><span class="post-toc-number">6.</span> <span class="post-toc-text">注册个人域名</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B0%86%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D%E4%B8%8E%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A"><span class="post-toc-number">7.</span> <span class="post-toc-text">将个人域名与博客绑定</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DNS%E8%AE%BE%E7%BD%AE"><span class="post-toc-number">7.0.1.</span> <span class="post-toc-text">DNS设置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="post-toc-number">7.0.2.</span> <span class="post-toc-text">域名服务器设置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%86%85%E8%AE%BE%E7%BD%AE"><span class="post-toc-number">7.0.3.</span> <span class="post-toc-text">博客内设置</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/hexoInstall.png)">
+    
+            <p class="article-headline-p">
+                利用GitHub Pages + Hexo框架搭建个人博客
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>山小杰</strong>
+        <span>7月 30, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWklEQVR42u3bUXKkMAwEUO5/6eQAuwMtyRgy9fw1lXHA7wcUqXP8fPU68PDw8PDw8PDwXsY74vXv/k9X+M8t4ytPzoaHh4e3k3fxqD09xCd28vPqT87PhoeHh7eflz+yk9tXvz2/b+F1goeHh/cyXq/Izst0PDw8vO/jJb+V7M+vjIeHh/dmXrU4nhx6XrLj4eHhPcurlr87Pz8w38PDw8M75ZUjTfFtkjFYdc/tmTI8PDy8gDcJVCVlcW+01ivN8fDw8J7izUNUSfA0eTHkozU8PDy8nbwqchJvzf8NoPotHh4e3k5e8rDuNV6rw7Nq4xgPDw/vWV5S2uaF7yRYUD0VHh4e3n5e4Y/8oNitHn2y/+MrBw8PD28LLx9TVRsHebmcl9oXYzM8PDy8m3l5K2FyxGp4K2+R4OHh4e3n5S+Jc96kqZGHBvDw8PDexus1cPOCeF58N9u4eHh4eEt5eYQ0H3St2pkX8Xh4eHg7eb2G6cUNWu2JPIiwbL6Hh4eH1+JFI6VinHTVCyDH4+Hh4e3n9R7fq5oayTULsS08PDy8m3lRkdo67h3gBV1qPDw8vEW8ZsN00MJYEEvFw8PDe4hXjZb2HuVrYwQXd8TDw8O7mVddvZBB/rlX1uPh4eHt5N0RG90T7sfDw8N7ltcbOOVti0nBnUQQ8PDw8J7iVZu51fH/MV4LkhF4eHh423nzoED5QR+X3Xh4eHh/hZePtcrxqWKUAQ8PD28/b9JEmOzMgwWjZAQeHh7eUl6vETAqfFvR2CjcgIeHh3cz7/sWHh4eHh4eHh7eC9YvwaylgW+nECAAAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-none-link" href="/tags/DNSPod/" rel="tag">DNSPod</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/GoDaddy%E5%9F%9F%E5%90%8D/" rel="tag">GoDaddy域名</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=利用GitHub Pages + Hexo框架搭建个人博客&url=https://blog.holoyoo.com/2017/07/30/HexoInstall/&pic=https://blog.holoyoo.comhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=利用GitHub Pages + Hexo框架搭建个人博客&url=https://blog.holoyoo.com/2017/07/30/HexoInstall/&via=山小杰" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=山小杰的大数据园子&title=利用GitHub Pages + Hexo框架搭建个人博客&summary=大数据相关技术分享&pics=https://blog.holoyoo.comhttps://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/title/blog-logo.png&url=https://blog.holoyoo.com/2017/07/30/HexoInstall/" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>+++本文全部是在Windows10平台联网环境下操作的+++</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<a href="https://nodejs.org/en/download/">Node.js</a></h4><p>Hexo是基于Node.js的静态博客框架，所以需要安装这个。官网下载msi安装程序（我用的是node-v6.10.3-x64.msi）安装，同时安装过程中不要忘了勾选Add  to PATH选项，用来添加系统环境变量:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0574.png" alt=""></p>
+<h4 id="安装Git-for-Win"><a href="#安装Git-for-Win" class="headerlink" title="安装Git for Win"></a>安装<a href="https://github.com/waylau/git-for-win">Git for Win</a></h4><p>Git可以很方便的提交代码到GitHub仓库中。由于众所周知的原因，官网下载Git会很慢，所以我找了个国内下载源。<br>Git安装（全部默认即可）完成后开始菜单会有个Git文件夹，我们需要用到的是Git Bash:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0575.png" alt=""></p>
+<h4 id="注册GitHub账号"><a href="#注册GitHub账号" class="headerlink" title="注册GitHub账号"></a>注册<a href="https://github.com/">GitHub账号</a></h4><p>因为需要用到GitHub的GitHub Pages功能，所以需要有一个GitHub账号。还有，没有GitHub账号的程序员不是一个合格的程序员！</p>
+<h4 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h4><p>1.配置账户：<br>打开Git Bash，输入以下两条命令(name替换成你的github用户名，email替换成你注册github时用的邮箱):<br><code>git config --global user.name &quot;name&quot;</code><br><code>git config --global user.email &quot;email&quot;</code></p>
+<p>可以使用<code>git config --list</code>命令来查看当前的配置信息，可以看到<code>user.name</code>和<code>user.email</code>已经出现在了最后两行:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0577.png" alt=""><br>如果你发现信息输入有误，重新执行上面两条命令即可。</p>
+<p>2.配置SSH密钥：<br>打开Git Bash，确保当前位置是用户工作目录，也就是:<strong>~</strong>这个位置：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0600.png" alt=""><br>不在这个位置的话可以输入：<br><code>cd ~</code><br>进入这个目录<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0602.png" alt=""><br>可以看到，这个目录其实是对应电脑上<strong>C:\Users\用户名</strong>这个位置。<br>执行下面的命令来生成ssh密钥文件：<br><code>ssh-keygen -t rsa -C &quot;email&quot;</code><br>email替换成你注册github时用的邮箱。<br>一路回车，过程中让你输入东西的时候不要输入，直接回车，使用默认即可，完后当前目录<br>会多出一个名叫<strong>.ssh</strong>的文件夹，我们进入这个文件夹：<br><code>cd .ssh</code><br>里面有两个密钥文件：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0603.png" alt=""><br>不带<code>.pub</code>后缀的是私钥，带<code>.pub</code>后缀的是公钥，私钥我们要自己保存好，不要泄露出去，公钥是可以公开分享的。<br>然后我们把公钥里面的内容全部复制出来，可以使用cat命令使密钥内容显示出来再复制，也可以使用文本编辑器（不推荐使用记事本）打开再复制：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0604.png" alt=""></p>
+<p>再然后登陆我们前面注册的github账号，点击头像，进入设置<br>找到<strong>SSH and GPG keys</strong>，点击右侧的<strong>New SSH key</strong>：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0605.png" alt=""><br><strong>Title</strong>随便填，把我们刚才复制的公钥内容粘贴进<strong>Key</strong>下面的输入框内，点击<strong>Add SSH key</strong><br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0606.png" alt=""></p>
+<p>最后测试一下SSH<br>命令行执行：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0609.png" alt=""><br>第一次执行这个命令的话程序会问你是否要继续进行连接，输入<code>yes</code>回车就好。<br>然后控制台输出：<br><code>Hi Staroon! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>说明SSH密钥配置成功！！！</p>
+<h4 id="创建本地Git仓库"><a href="#创建本地Git仓库" class="headerlink" title="创建本地Git仓库"></a>创建本地Git仓库</h4><p>我这里把它建在了D盘，所有文件夹名字都是可以自定义的。打开Git Bash:<br><code>cd \d:</code><br><code>mkdir git_repository</code><br>创建我们的博客文件夹：<br><code>cd git_repository</code><br><code>mkdir blog</code><br>进入blog文件夹：<br><code>cd blog</code><br>这是我电脑上的blog文件夹全路径: <strong>/d/git_repository/blog</strong></p>
+<h2 id="部署Hexo"><a href="#部署Hexo" class="headerlink" title="部署Hexo"></a>部署Hexo</h2><h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>打开Git Bash，执行下面的命令:<br><code>npm install -g hexo-cli</code><br>稍等一会儿，不要着急，会开始自动下载安装:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0579.png" alt=""><br>可能会报下面的两个警告，不用理会，我还没发现有什么影响。</p>
+<blockquote>
+<p><code>npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\hexo-cli\node_modules\chokidar\node_modules\fsevents):</code><br><code>npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.2: wanted &#123;&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;&#125; (current: &#123;&quot;os&quot;:&quot;win32&quot;,&quot;arch&quot;:&quot;x64&quot;&#125;)</code>   </p>
+</blockquote>
+<p>可以使用<code>hexo -v</code>命令测试是否安装成功:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0580.png" alt=""></p>
+<h4 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h4><p>进入blog文件夹，空白处鼠标右键，点击Git Bash Here进入命令窗口，执行初始化命令：<br><code>hexo init</code><br>等待初始化完成…<br>最后会有一句: </p>
+<blockquote>
+<p><code>INFO  Start blogging with Hexo!</code></p>
+</blockquote>
+<p>然后执行:<br><code>npm install</code><br>等待执行结束，初始化成功！现在就已经可以开始使用Hexo了！！！</p>
+<p>但是还有一些插件最好提前装上：</p>
+<ul>
+<li>索引生成器：<code>npm install hexo-generator-index --save</code></li>
+<li>归档生成器：<code>npm install hexo-generator-archive --save</code></li>
+<li>分类生成器：<code>npm install hexo-generator-category --save</code></li>
+<li>标签生成器：<code>npm install hexo-generator-tag --save</code></li>
+<li>本地搜索: <code>npm install hexo-generator-search --save</code></li>
+<li>本地化服务：<code>npm install hexo-server --save</code></li>
+<li>Git部署功能：<code>npm install hexo-deployer-git --save</code></li>
+<li>渲染器：<code>npm install hexo-renderer-marked --save</code></li>
+<li>渲染器：<code>npm install hexo-renderer-stylus --save</code></li>
+<li>置顶功能：<code>npm install hexo-helper-post-top --save</code></li>
+<li>二维码分享: <code>npm install hexo-helper-qrcode --save</code></li>
+<li>站点地图: <code>npm install hexo-generator-seo-friendly-sitemap --save</code></li>
+</ul>
+<p>初始化完成后的文件夹结构是这样的:<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0581.png" alt=""></p>
+<p>关于该目录下的文件及文件夹说明，查看<a href="https://hexo.io/zh-cn/docs/setup.html">hexo官方文档</a>即可。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置文件<code>_config.yml</code>，具体的配置信息还是去<a href="https://hexo.io/zh-cn/docs/configuration.html">hexo官方文档</a>看吧。</p>
+<p>建议用专业的文本编辑器编辑该文件，不要用Win自带的记事本。我用的是EditPlus.</p>
+<h2 id="开始写文章"><a href="#开始写文章" class="headerlink" title="开始写文章"></a>开始写文章</h2><p>参考<a href="https://hexo.io/zh-cn/docs/writing.html">hexo官方文档</a>挺好，突然发现官方文档挺详细。。。<br>说明一下，官方文档里新建文章的命令是:<br><code>hexo new [layout] &lt;title&gt;</code><br><code>[layout]</code>默认为<code>post</code>，可以不用加<code>[layout]</code>命令。<br>比如我想新建一个名叫<code>helloHexo</code>的文章，直接命令：<br><code>hexo new &quot;helloHexo&quot;</code><br>即可，然后控制台会输出该文档位置信息：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0591.png" alt=""><br>进入存放我们文章的文件夹，可以看到我们的<code>helloHexo.md</code>已经在这了，另外还有一个<code>hello-word.md</code>文件，这里面写的是一些常用hexo命令，可以删掉这个文件。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0592.png" alt=""><br>用文本编辑器或者Markdown编辑器打开<code>helloHexo.md</code>就可以写文章啦~~<br>我正在用的Markdown编辑器是：<a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+<p>打开该文件，里面已经有一部分内容了：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0593.png" alt=""></p>
+<p>这一部分内容官方称为<a href="https://hexo.io/zh-cn/docs/front-matter.html">Front-matter</a>，可以参考官方文档补充这一部分的内容。</p>
+<p>三道杠<code>---</code>下面的空白地方就是我们要写文章内容的部分了，全部使用Markdown语法。</p>
+<p>一些Markdown语法：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0594.png" alt=""></p>
+<p>文章写完了，先预览一下吧~~<br>这就需要用到我们之前装的server插件了<br>命令行输入：<br><code>hexo server</code><br>启动本地服务器：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0595.png" alt=""></p>
+<p>浏览器访问 <code>http://localhost:4000/</code> 就可以看到最原始状态的博客啦~<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0596.png" alt=""></p>
+<p>说明：同样的Markdown语法在不同的网站上可能会显示出不同的效果，不过没关系，只要能在Github上显示出我们想要的效果就行了，因为我们的目的就是把博客部署在Github上！</p>
+<p>默认的主题太丑？<br>hexo有很多第三方主题，如何配置使用可以去各主题官网查看。</p>
+<p>如何搜索主题？<br>Github上搜索关键字<code>hexo theme</code>一大堆主题</p>
+<p>至此，本地博客已经搭建完成！</p>
+<h2 id="部署博客到GitHub"><a href="#部署博客到GitHub" class="headerlink" title="部署博客到GitHub"></a>部署博客到GitHub</h2><h4 id="创建Github仓库"><a href="#创建Github仓库" class="headerlink" title="创建Github仓库"></a>创建Github仓库</h4><p>仓库名字一定要是：<strong>{github username}.github.io</strong><br>比如我的github用户名是<strong>Staroon</strong>，则仓库名字为：<strong>Staroon.github.io</strong><br>用户名即是Owner那里的用户名<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0599.png" alt=""></p>
+<h4 id="部署配置"><a href="#部署配置" class="headerlink" title="部署配置"></a>部署配置</h4><p>配置<code>_config.yml</code>文件。<br>翻到最下面找到<strong>deploy</strong>这一项，填写：</p>
+<blockquote>
+<p>type: git<br>repo: <a href="mailto:git@github.com">git@github.com</a>:<strong>{username}</strong>/<strong>{username}</strong>.github.io.git<br>branch: master   </p>
+</blockquote>
+<p>如下图所示<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0607.png" alt=""></p>
+<h4 id="博客发布"><a href="#博客发布" class="headerlink" title="博客发布"></a>博客发布</h4><p>命令行执行：<br><code>hexo g</code><br>然后执行：<br><code>hexo d</code><br>当控制台输出：<code>INFO  Deploy done: git</code>的时候，说明项目已经成功的发布到github上，耐心等待一会儿，就可以通过访问<strong>{username}.github.io</strong>来访问博客了~~</p>
+<h4 id="博客更新"><a href="#博客更新" class="headerlink" title="博客更新"></a>博客更新</h4><p><code>hexo new &quot;name&quot;</code>或者直接在<strong>/source/_posts/</strong>里面新建<code>.md</code>文件<br>写完Markdown文章后，执行：<br><code>hexo g -d</code><br>即可一键部署。</p>
+<p>每次博客内容有改动都可以使用<code>hexo g -d</code>进行部署。</p>
+<p>至此，博客搭建教程已经全部完成！</p>
+<h2 id="注册个人域名"><a href="#注册个人域名" class="headerlink" title="注册个人域名"></a>注册个人域名</h2><p>找个正规的域名厂商注册即可。<br>我是在<a href="https://sg.godaddy.com/zh/">GoDaddy</a>上注册的。</p>
+<h2 id="将个人域名与博客绑定"><a href="#将个人域名与博客绑定" class="headerlink" title="将个人域名与博客绑定"></a>将个人域名与博客绑定</h2><h4 id="DNS设置"><a href="#DNS设置" class="headerlink" title="DNS设置"></a>DNS设置</h4><p>国内推荐使用<a href="https://www.dnspod.cn/">DNSPod</a><br>国外的话可以使用<a href="https://www.cloudflare.com">Cloudflare</a>，可以免费使用https。</p>
+<p>这里以DNSPod为例：<br>注册登录，在<strong>域名解析</strong>里面<strong>添加域名</strong><br>将上面注册的域名添加进去<br>然后点击<strong>添加纪录</strong>添加3条记录，如下图所示：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0610.png" alt=""><br>两条A记录指向的IP分别是：</p>
+<ul>
+<li>192.30.252.153</li>
+<li>192.30.252.154</li>
+</ul>
+<p>CNAME记录指向的是你的原博客地址:<strong>{username}.github.io</strong></p>
+<h4 id="域名服务器设置"><a href="#域名服务器设置" class="headerlink" title="域名服务器设置"></a>域名服务器设置</h4><p>这里以GoDaddy为例：<br>进入<strong>我的产品</strong>页，找到要管理的域名，点击<strong>DNS</strong>进入DNS管理页面：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0611.png" alt=""></p>
+<p>然后找到<strong>域名服务器</strong>点击<strong>更改</strong>：</p>
+<p><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0612.png" alt=""></p>
+<p>将域名服务器修改为DNSPod提供的域名服务器即可。<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0613.png" alt=""></p>
+<h4 id="博客内设置"><a href="#博客内设置" class="headerlink" title="博客内设置"></a>博客内设置</h4><p>在博客<strong>source</strong>目录下，新建一个<strong>CNAME</strong>文件<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0614.png" alt=""><br>编辑该文件，将你的新域名写进去：<br><img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/hexoInstall/snap0615.png" alt=""></p>
+<p>然后执行<code>hexo g -d</code>重新部署</p>
+<p>完成！！！</p>
+<p>耐心等待一会儿，就可以使用新域名访问博客了！</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'true' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "2N5UDpCnbSgubCvuwllMmgDR-MdYXbMMI",
+        appKey: "EB0MDg67b8KcpIsc20hIIQmR",
+        placeholder: "评论请在评论框上方填写昵称和邮箱，方便接收回复通知~",
+        pageSize:'10',
+        avatar:'wavatar',
+        lang:'zh-cn',
+        serverURLs:'https://2n5udpcn.api.lncldglobal.com',
+        guest_info: guest_info
+    });
+</script>
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/08/12/AddCanvas/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/06/04/HelloWorld/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/gallery/thumb/Apr2.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://blogfiles-1254091060.cos.ap-shanghai.myqcloud.com/blog/avatar.png" alt="山小杰's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        staroon@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:staroon@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">move_to_inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2022/03/">三月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">bookmark</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Kettle/">Kettle<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spark/">Spark<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/StreamSets/">StreamSets<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/">全文检索<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%99%E7%A8%8B/">教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags/" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">loyalty</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline/" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">schedule</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery/" title="图片库">
+                
+                    <i class="material-icons sidebar-material-icons">style</i>
+                
+                图片库
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about/" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links/" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- pets -->
+
+
+
+
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/Dreaoon" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Staroon/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/12587459/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+    
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;山小杰的大数据园子
+            <br>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            
+        </div>
+        <script>
+            var now = new Date(); 
+            function createtime() { 
+                var grt= new Date("06/04/2017 23:00:00");
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = "本站已正常运行 "+dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+        setInterval("createtime()",250);
+        </script>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#1A237E'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #1A237E, 0 0 15px #1A237E'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#1A237E',
+        'border-left-color': '#1A237E'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+    
+        <script type="text/javascript" src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script><script>var sf = new Snowflakes({color: "#3F51B5", count: 39, speed: 0.6, minOpacity: 0.3, maxOpacity: 0.9, minSize: 3, maxSize: 12});</script>
+    
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2017;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
